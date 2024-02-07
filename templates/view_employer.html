@@ -1,0 +1,75 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body><form action="/wForce/employerprofile_post/" method="post" enctype="multipart/form-data"><table width="200" border="1">
+  <tr>
+    <th width="218" scope="row">Cover Photo</th>
+    <td colspan="2"><img src="{{ data.Photo }}" height="100px" width="100px"></td>
+  </tr>
+  <tr align="left">
+    <th scope="row"><label for="textfield">Employer Name :{{ data.Companyname }}</label></th>
+    <td colspan="2"><label for="textfield2">Email:{{ data.Email }}</label></td>
+  </tr>
+  <tr align="left">
+    <th scope="row"><label for="textfield3">Phone number:{{ data.Phone }}</label></th>
+    <td colspan="2"><label for="textfield4">Website:{{ data.Website }}</label></td>
+  </tr>
+  <tr align="left">
+    <th scope="row"><label for="textfield5">Founded date:{{ data.Date}}</label></th>
+    <td colspan="2"><label for="textfield6">Company Size:{{ data.Companysize }}</label></td>
+  </tr>
+  <tr align="left">
+    <th scope="row"><label for="select">Category:{{ data.Category }}</label></th>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr align="left">
+    <th colspan="3" scope="row"><label for="textarea">About Company:{{ data.Aboutcompany }}</label></th>
+    </tr>
+  <tr>
+    <th scope="row"><label for="fileField4">Photo 1<img src="{{ data.Photo1}}" alt="" height="100px" width="100px"/></label></th>
+
+    <td width="188"><label for="fileField5">Photo 2<img src="{{ data.Photo2}}" alt="" height="100px" width="100px"/></label></td>
+    <td width="146"><label for="fileField6">Photo 3<img src="{{ data.Photo3}}" alt="" height="100px" width="100px"/></label></td>
+  </tr>
+  <tr align="left">
+    <th colspan="3" scope="row"><label for="textfield7">Location:{{ data.Place }}</label></th>
+    </tr>
+  <tr align="left">
+    <th scope="row"><label>Post:{{ data.Post }}
+      
+    </label></th>
+    <th scope="row"><label>State:{{ data.State }}
+      
+    </label></th>
+    <th scope="row"><label>District:{{ data.District }}
+      
+    </label></th>
+    </tr>
+  <tr align="left">
+    <th colspan="3"><label for="textfield8">Pincode:{{ data.Pincode }} <input type="hidden" value="{{ data.LOGIN.id }}" name="lid"></label></th>
+    </tr>
+
+</table>
+    {% if check == "yes" %}
+        <table>
+        <tr>
+            <td>Fee Info</td>
+            <td>{{ Feetype }}<br>{{ Fee }}Rs/-<br>{{ Date }}<br>{{ status }}</td>
+        </tr>
+        <tr>
+    <th><input type="submit" name="button" id="button" value="Approve" /></th>
+    <td colspan="2"><input type="submit" name="button" id="button2" value="Reject" /></td>
+  </tr>
+        </table>
+    {% else %}
+      <div style="color: red">No Payment
+
+      </div>
+    {% endif %}
+</form>
+
+</body>
+</html>

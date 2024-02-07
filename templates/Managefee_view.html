@@ -1,0 +1,25 @@
+{% extends "adminindex.html" %}
+{% block body %}
+<body><form action="" method="post">
+<table class="table table-striped table-hover">
+  <tr>
+    <th scope="col">Sl.No</th>
+    <th scope="col">Type</th>
+    <th scope="col">Fee</th>
+    <th scope="col">&nbsp;</th>
+    <th scope="col">&nbsp;</th>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>&nbsp;{{ forloop.counter }}</td>
+    <td>{{ i.Type }}&nbsp;</td>
+    <td>{{ i.Amount }}&nbsp;</td>
+    <td><a href="/wForce/editfee/{{ i.id }}" class="btn btn-outline-primary">edit</a></td>
+    <td><a href="/wForce/deletefee/{{ i.id }}" class="btn btn-outline-danger">delete</a></td>
+  </tr>
+    {% endfor %}
+</table>
+
+</form>
+</body>
+{% endblock %}

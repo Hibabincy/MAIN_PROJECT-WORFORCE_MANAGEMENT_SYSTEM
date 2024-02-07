@@ -1,0 +1,51 @@
+{% extends "adminindex.html" %}
+{% block body %}
+
+<body><form action="/wForce/approvalofregistrationemployer_POST/#about" method="post">
+    {% csrf_token %}
+<table class="pull-left">
+  <tr>
+    <th scope="col"><input type="text" name="textfield" id="textfield" class="form-controle" placeholder="search with name"/></th>
+    <th scope="col"><input type="submit" name="button" id="button" value="Search"class="btn btn-success" /></th>
+  </tr>
+</table><br>
+<table class="table table-bordered">
+  <tr>
+    <th scope="col">Sl.No</th>
+    <th scope="col">Company Name</th>
+    <th scope="col">Address</th>
+    <th scope="col">Phone</th>
+    <th scope="col">Email</th>
+    <th scope="col">&nbsp;</th>
+    <th scope="col">&nbsp;</th>
+    <th scope="col">&nbsp;</th>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>&nbsp;{{ forloop.counter }}</td>
+    <td>&nbsp;{{ i.Companyname }}</td>
+      <td>{{ i.Place}}<br>{{ i.Post}}<br>{{ i.District}}<br>&nbsp;{{ i.State}}<br>{{ i.Pincode}}</td>
+    <td>{{ i.Phone }}</td>
+    <td>{{i.Email}}</td>
+
+{#      <td>&nbsp;{{ i.Photo}}</td>#}
+{#      <td>&nbsp;{{ i.Date}}</td>#}
+{#      <td>&nbsp;{{ i.Status}}</td>#}
+{#      <td>&nbsp;{{ i.Category}}</td>#}
+{#      <td>&nbsp;{{ i.Website}}</td>#}
+{#      <td>&nbsp;<img src="{{ i.Photo1}}" alt="" height="100px" width="100px"/></td>#}
+{#      <td>&nbsp;&nbsp;<img src="{{ i.Photo2}}" alt=""height="100px" width="100px"/></td>#}
+{#      <td>&nbsp;&nbsp;<img src="{{ i.Photo3}}" alt="" height="100px" width="100px"/></td>#}
+{#      <td>&nbsp;{{ i.Aboutcompany}}</td>#}
+{#      <td>&nbsp;{{ i.Companysize}}</td>#}
+
+    <td><a href="/wForce/approvalofregistrationemployer_more/{{ i.LOGIN.id }}" class="btn btn-info">view profile</a></td>
+{#    <td><a href="#">Approval</a></td>#}
+{#    <td><a href="#">Reject</a></td>#}
+  </tr>
+    {% endfor  %}
+</table>
+
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% load static %}
+<html lang="zxx">
+
+<head>
+	<title>Arcome Builders Responsive Widget Template : W3Layouts</title>
+
+	<!-- Meta tags -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<!-- Style -->
+     <style>
+        body {
+            background-color:#A3E4D7 ; /* Set your desired pink color */
+        }
+    </style>
+	<link rel="stylesheet" href="/static/login/css/style.css" type="text/css" media="all" />
+</head>
+
+<body>
+	<!-- login form -->
+	<section class="w3l-login">
+		<div class="overlay">
+			<div class="wrapper">
+				<div class="logo">
+    <h1 class="brand-logo" href="index.html" style="color: #BFEFFF; font-family: 'Your Font Name', 'fantasy';font-size: xx-large">ARCOME BUILDERS WORKFORCE</h1>
+</div>
+				<div class="form-section">
+					<h3 style=" font-family: 'Your Font Name', SansSerif; ">SIGN IN</h3>
+					<h6 style=" font-family: 'Your Font Name', SansSerif; ">To continue with Us</h6>
+					<form action="/wForce/login_post/" method="post" class="signin-form">
+                        {% csrf_token %}
+						<div class="form-input">
+							<input type="text" name="textfield" placeholder="Username" required="" autofocus>
+						</div>
+						<div class="form-input">
+							<input type="password" name="textfield2" placeholder="Password" required="">
+						</div>
+						<label class="check-remaind">
+							<input type="checkbox">
+							<span class="checkmark"></span>
+							<p class="remember">Remember me</p>
+						</label>
+						<button type="submit" class="btn btn-primary theme-button mt-4">Log in</button>
+{#						<div class="new-signup">#}
+{#							<a href="#reload" class="signuplink">Forgot username or password?</a>#}
+{#						</div>#}
+					</form>
+
+				</div>
+			</div>
+		</div>
+		<div id='stars'></div>
+		<div id='stars2'></div>
+		<div id='stars3'></div>
+
+		<!-- copyright -->
+		<div class="copy-right">
+
+		</div>
+		<!-- //copyright -->
+	</section>
+
+	<!-- /login form -->
+</body>
+
+</html>
