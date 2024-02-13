@@ -1,0 +1,149 @@
+<!--author: W3layouts
+author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>employer registration</title>
+<!-- metatags-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Sports Camp Registration Form a Flat Responsive Widget,Login form widgets, Sign up Web 	forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Meta tag Keywords -->
+<!-- css files -->
+<link rel="stylesheet" href="/static/empsignup/css/jquery-ui.css"/>
+<link href="/static/empsignup/css/style.css" rel="stylesheet" type="text/css" media="all"/><!--stylesheet-css-->
+<link href="//fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">
+
+<!-- //css files -->
+</head>
+<body>
+	<h1>EMPLOYER REGISTRATION </h1>
+<div class="w3l-main">
+	<div class="w3l-from">
+		<form action="/wForce/employerRegistration_post/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+			<div class="w3l-user">
+				<label class="head">Employer Name<span class="w3l-star"> * </span></label>
+				<input type="text" name="textfield" placeholder="" required="" pattern="[A-Z a-z}+">
+			</div>
+			<div class="w3l-mail">
+				<label class="head">Email<span class="w3l-star"> * </span></label>
+				<input type="email" name="textfield2" placeholder="" required="">
+			</div>
+			<div class="clear"></div>
+			<div class="w3l-details1">
+				<div class="w3l-num">
+					<label class="head">Phone Number<span class="w3l-star"> * </span></label>
+					<input type="text"  name="textfield3" placeholder="" required="" pattern="[9876][0-9]{9}" maxlength="10">
+				</div>
+				<div class="w3l-date">
+					<label class="head">Founded Date<span class="w3l-star"> * </span></label>
+						<div class="styled-input">
+							<input class="date" id="datepicker" name="textfield5" type="text" value="MM/DD/YYYY" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'MM/DD/YYYY';}" required="">
+						</div>
+					</div>
+			<div class="clear"></div>
+			<div class="gender">
+				<label class="head">Category<span class="w3l-star"> * </span></label>
+					<select class="form-control" required="" name="select">
+						<option>construction</option>
+
+					</select>
+			</div>
+<div class="w3l-sym">
+					<label class="head">Post<span class="w3l-star"> * </span></label>
+					<input type="text" name="textfield9" placeholder="" required="">
+			</div>			<div class="clear"></div>
+			</div>
+			<div class="w3l-user">
+				<label class="head">Place/Location<span class="w3l-star"> * </span></label>
+				<input type="text" name="textfield7" placeholder="" required="">
+			</div>
+			<div class="w3l-num">
+					<label class="head">District<span class="w3l-star"> * </span></label>
+					<input type="text"  name="textfield11" placeholder="" required="">
+				</div>
+			<div class="w3l-sym">
+					<label class="head">State<span class="w3l-star"> * </span></label>
+					<input type="text" name="textfield10" placeholder="" required="">
+			</div>
+			<div class="clear"></div>
+			<div class="w3l-num">
+					<label class="head">Pin<span class="w3l-star"> * </span></label>
+					<input type="text"  name="textfield8" placeholder="" required="" pattern="[0-9]{6}" maxlength="6">
+				</div>
+
+
+			<div class="w3l-sym">
+					<label class="head">Website<span class="w3l-star"> * </span></label>
+					<input type="text" name="textfield4" placeholder="" required="">
+			</div>
+			<div class="clear"></div>
+
+			<div class="w3l-lef1">
+{#				<h3>Parent/Guardian Information</h3>#}
+
+
+				<div class="w3l-num">
+					<label class="head">Password<span class="w3l-star"> * </span></label>
+					<input type="text"  name="textfield12" placeholder="" required="" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+				</div>
+			<div class="w3l-sym">
+					<label class="head">Confirm password<span class="w3l-star"> * </span></label>
+					<input type="text" name="textfield13" placeholder="" required="" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+			</div>
+			<div class="clear"></div>
+			</div>
+			<div class="w3l-rem">
+				<div class="w3l-right">
+					<label class="w3l-set2">About</label>
+					<textarea name="textarea"></textarea>
+				</div>
+
+
+                <div class="w3l-mail">
+				<label class="head">Cover Photo<span class="w3l-star"> * </span></label>
+				<input type="file" name="fileField2" placeholder="" required="">
+			</div>
+                <div class="w3l-mail">
+				<label class="head">Photo1<span class="w3l-star"> * </span></label>
+				<input type="file" name="fileField3" placeholder="" required="">
+			</div></div>
+                <div class="w3l-mail">
+				<label class="head">Photo2<span class="w3l-star"> * </span></label>
+				<input type="file" name="fileField4" placeholder="" required="">
+			</div>
+                <div class="w3l-mail">
+				<label class="head">Photo3<span class="w3l-star"> * </span></label>
+				<input type="file" name="fileField5" placeholder="" required="">
+			</div>
+
+				<div class="btn">
+					<input type="submit" name="submit" value="Submit"/>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</form>
+	</div>
+</div>
+{#	<footer>&copy; 2018 Sports Camp Registration Form. All Rights Reserved | Design by <a href="http://w3layouts.com/"> W3layouts</a>#}
+{#	</footer>#}
+	<!-- Default-JavaScript --> <script type="text/javascript" src="/static/empsignup/js/jquery-2.1.4.min.js"></script>
+
+<!-- Calendar -->
+<script src="/static/empsignup/js/jquery-ui.js"></script>
+	<script>
+		$(function() {
+		$( "#datepicker,#datepicker1" ).datepicker();
+		});
+	</script>
+<!-- //Calendar -->
+
+</body>
+</html>

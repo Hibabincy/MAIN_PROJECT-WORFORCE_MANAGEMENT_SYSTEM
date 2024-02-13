@@ -1,22 +1,34 @@
-{% extends "adminindex.html" %}
+{% extends "admindashinbox.html" %}
 {% block body %}
 
-<body><form action="/wForce/addfee_post/" method="post"><table class="table table-striped table-hover" width="200" border="1">
+
+<br>
+    <br>
+<body style="background:#FAFAFA;"><form action="/wForce/addfee_post/" method="post">
+
+<center>
+    <span style="color: #0a0a0a">
+        <h4 style="color: #0a0a0a; font-weight: bold; text-decoration: underline;">Subscription Management-Add Fee</h4>
+    </span>
+</center>
+
+
+    <table class="table  table-striped table-primary">
     {% csrf_token %}
   <tr>
-    <th scope="row">Type</th>
-    <td><select name="select" id="select">
-        <option value="employer">employer</option>
+    <th height="80px" >Type</th>
+    <td><select name="select" class="form-control" id="select">
+        <option value="employer" style="width: 135%">employer</option>
         <option value="worker">worker</option>
     </select></td>
   </tr>
   <tr>
-    <th scope="row">Fee</th>
-    <td><input type="text" name="textfield" id="textfield" /></td>
+    <th scope="row" height="80px">Fee</th>
+    <td><input type="text" class="form-control" required name="textfield" id="textfield" /></td>
   </tr>
   <tr>
     <th scope="row">&nbsp;</th>
-    <td><input type="submit" name="button" id="button" value="Add" /></td>
+    <td><input type="submit" name="button" class="btn btn-success" id="button" value="Add" /></td>
   </tr>
 </table>
 </form>

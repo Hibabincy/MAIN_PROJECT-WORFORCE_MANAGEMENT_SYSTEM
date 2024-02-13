@@ -4636,7 +4636,7 @@ input[type="button"].btn-block {
 .navbar-nav {
   display: flex;
   flex-direction: column;
-  padding-left: 0;
+  padding-right: 0;
   margin-bottom: 0;
   list-style: none;
 }
@@ -17907,7 +17907,7 @@ nav ul li a:before {
   .navbar-collapse {
     -webkit-animation-name: none;
     animation-name: none;
-    float: left;
+    float: right;
     text-align: center;
     width: 100%;
     background: var(--bg-color);

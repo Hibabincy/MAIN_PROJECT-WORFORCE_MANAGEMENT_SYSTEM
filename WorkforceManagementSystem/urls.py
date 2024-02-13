@@ -23,9 +23,9 @@ urlpatterns = [
     path('logout/', views.logout),
     path('login_post/', views.login_post),
     path('employerRegistration/', views.employerRegistration),
-    path('employerRegistration_post/', views.employerRegistration_post),
-    path('employerprofile/', views.employerprofile),
-    path('employerprofile_post/', views.employerprofile_post),
+    path('employerRegistration_post/', views.employerregistration_post),
+    path('employerprofile/', views.employersignup),
+    # path('employerprofile_post/', views.employerprofile_post),
     path('addfee/', views.addfee),
     path('addfee_post/', views.addfee_post),
     path('viewfee/', views.viewfee),
@@ -36,8 +36,20 @@ urlpatterns = [
     path('deletefee/<id>', views.deletefee),
     path('approvalofregistrationemployer/', views.approvalofregistrationemployer),
     path('approvalofregistrationemployer_more/<id>', views.approvalofregistrationemployer_more),
-    path('employer_aprrove_reject/', views.employer_aprrove_reject),
+    path('approve_worker/<lid>', views.approve_worker),
+    path('reject_worker/<lid>', views.reject_worker),
+    path('approvalofregistrationworker/', views.approvalofregistrationworker),
+    path('approvalofregistrationworker_POST/', views.approvalofregistrationworker_POST),
+
+
+
+
+    path('employer_aprrove_reject/<lid>', views.employer_aprrove_reject),
+    path('employer_reject/<lid>', views.employer_reject),
     path('approvalofregistrationemployer_POST/', views.approvalofregistrationemployer_POST),
     path('employerdash/', views.employerdash),
+    path('mainhome/', views.mainhome),
+    path('employerhome/',views.employerhome),
+    path('workerregistration_post/',views.workerregistration_post),
 
 ]
