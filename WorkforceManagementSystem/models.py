@@ -6,6 +6,12 @@ class Login(models.Model):
     Password=models.CharField(max_length=100)
     Type=models.CharField(max_length=100)
 
+
+#
+# ///////////////////////////////// employer //////////////////////////////////////////
+
+
+
 class Employer(models.Model):
     Companyname= models.CharField(max_length=100)
     Phone= models.CharField(max_length=100)
@@ -24,8 +30,45 @@ class Employer(models.Model):
     Photo2= models.CharField(max_length=100)
     Photo3= models.CharField(max_length=100)
     Aboutcompany=models.CharField(max_length=300)
+    registration_date = models.CharField(max_length=100, default="")
     # Companysize=models.CharField(max_length=100)
+
     LOGIN=models.ForeignKey(Login,on_delete=models.CASCADE)
+
+
+
+
+class Projects(models.Model):
+
+    EMPLOYER = models.ForeignKey(Employer,on_delete=models.CASCADE)
+
+    projecttitle= models.CharField(max_length=100)
+
+    projectdescription = models.CharField(max_length=100)
+    projectlocation = models.CharField(max_length=100)
+    created_date= models.CharField(max_length=100)
+    duration= models.CharField(max_length=100)
+    status= models.CharField(max_length=100)
+    no_of_workers=models.CharField(max_length=100,default="")
+
+
+class Jobvaccancy(models.Model):
+    EMPLOYER = models.ForeignKey(Employer, on_delete=models.CASCADE,default="")
+    jobtitle = models.CharField(max_length=100)
+    jobfield = models.CharField(max_length=100)
+
+    created_date = models.CharField(max_length=100)
+
+    location= models.CharField(max_length=100)
+    startdate= models.CharField(max_length=100)
+    enddate= models.CharField(max_length=100)
+    eno_of_vaccancy= models.CharField(max_length=100)
+    skills= models.CharField(max_length=100)
+
+
+#
+# /////////////////////// worker //////////////////////////
+
 
 
 class Worker(models.Model):
@@ -52,6 +95,8 @@ class Worker(models.Model):
     post=models.CharField(max_length=100,default=0)
     district=models.CharField(max_length=100,default=0)
     state=models.CharField(max_length=100,default=0)
+    registration_date=models.CharField(max_length=100,default="")
+
     LOGIN = models.ForeignKey(Login, on_delete=models.CASCADE)
 
 class Previousworks(models.Model):

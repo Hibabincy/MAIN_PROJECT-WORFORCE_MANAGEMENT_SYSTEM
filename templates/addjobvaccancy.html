@@ -1,0 +1,87 @@
+
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{% extends "employerdashindex.html" %}
+{% block body %}
+ <br><center>
+    <span style="color: #0a0a0a">
+        <h2 style="color: #0096FF; font-weight: bold;">Add Job Vacancy</h2>
+    </span>
+</center><br>
+
+<body>
+<form action="/wForce/addjobvacancy_POST/" method="post">
+ <table class="table table-bordered table-hover">
+     {% csrf_token %}
+
+
+  <tr>
+    <th scope="col">Job Title:</th>
+     <td><input type="text" class="form-control" style="text-transform: capitalize" required name="textfield" id="textfield" /></td>
+  </tr>
+    <tr>
+    <th>Job Field:</th>
+     <td><select name="select" class="form-control">
+         <option value="Construction worker">Construction worker</option>
+         <option value="Construction inspector">Construction inspector</option>
+         <option value="Flooring installer">Flooring installer</option>
+         <option value="Surveyor">Surveyor</option>
+         <option value="Glazier">Glazier</option>
+         <option value="Tile setter">Tile setter</option>
+         <option value="Brick mason">Brick mason</option>
+         <option value="Roofer">Roofer</option>
+         <option value="Concrete finisher">Concrete finisher</option>
+         <option value="Ironworker">Ironworker</option>
+         <option value="Crane operator">Crane operator</option>
+         <option value="Plumber">Plumber</option>
+         <option value="Carpenter">Carpenter</option>
+         <option value="Painter">Painter</option>
+         <option value="Electrician">Electrician</option>
+         <option value="Pipefitter">Pipefitter</option>
+         <option value="Cost estimator">Cost estimator</option>
+         <option value="Safety manager">Safety manager</option>
+         <option value="Construction manager">Construction manager</option>
+         <option value="Civil engineer">Civil engineer</option>
+         <option value="Architect">Architect</option>
+     </select></td>
+  </tr>
+{#     <tr>#}
+{#    <th scope="col">Company Name:</th>#}
+{#     <td><input type="text" class="form-control" required name="textfield1" id="textfield1" /></td>#}
+{#  </tr>#}
+    <tr>
+{#   python #}
+      <tr>
+    <th scope="col">Location:</th>
+     <td><input type="text" class="form-control" style="text-transform: capitalize"  required name="textfield4" id="textfield4" /></td>
+  </tr>
+      <tr>
+    <th scope="col">Start Date:</th>
+     <td><input type="date" class="form-control" required name="textfield5" id="textfield5" /></td>
+  </tr>
+       <tr>
+    <th scope="col">End Date:</th>
+     <td><input type="date" class="form-control" required name="textfield6" id="textfield6" /></td>
+  </tr>
+      <th scope="col">Skills:</th>
+     <td><input type="text" class="form-control" style="text-transform: capitalize"  required name="textfield7" id="textfield7" /></td>
+  </tr>
+      <tr>
+    <th scope="col">No of Vacancy:</th>
+     <td><input type="text" class="form-control" required name="textfield8" id="textfield8" /></td>
+  </tr>
+
+
+  <tr>
+    <th scope="col">&nbsp;</th>
+    <td><input type="submit" name="button" id="button" class="btn btn-success" value="Add" /></td>
+  </tr>
+</table>
+</form>
+</body>
+{#</html>#}
+{% endblock %}

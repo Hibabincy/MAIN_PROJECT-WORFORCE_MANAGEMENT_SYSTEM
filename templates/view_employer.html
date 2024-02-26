@@ -45,10 +45,10 @@
           <td ><label for="textfield">{{ data.Date }}</label></td>
   </tr>
 
-           <tr >
-    <td ><label for="textfield">Company Size</label></td>
-          <td ><label for="textfield">{{ data.Companysize }}</label></td>
-  </tr>
+{#           <tr >#}
+{#    <td ><label for="textfield">Company Size</label></td>#}
+{#          <td ><label for="textfield">{{ data.Companysize }}</label></td>#}
+{#  </tr>#}
 
            <tr >
     <td ><label for="textfield">Category</label></td>
@@ -80,11 +80,16 @@
 {#            width: 150px; /* Adjust the width of the photos */#}
 {#            height: auto; /* Maintain aspect ratio */#}
 {#        }#}
+         <tr >
+             <td ><label for="textfield">Our previous projects:</label></td></tr><br><br>
 {#    </style>#}
     <div class="col-lg-3 photo-container"><label for="textfield">Photo 1</label><img src="{{ data.Photo1 }}" alt="" /></div>
     <div class="col-lg-3 photo-container"><label for="textfield">Photo 2</label><img src="{{ data.Photo2 }}" alt="" /></div>
     <div class="col-lg-3 photo-container"><label for="textfield">Photo 3</label><img src="{{ data.Photo3 }}" alt="" /></div>
+
+
 </div>
+    <br>
 
 
 

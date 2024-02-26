@@ -5,7 +5,7 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE HTML>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
 <title>Novus Admin Panel an Admin Panel Category Flat Bootstrap Responsive Website Template | Inbox :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,6 +41,26 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 <script src="/static/admindash1/js/custom.js"></script>
 <link href="/static/admindash1/css/custom.css" rel="stylesheet">
 <!--//Metis Menu -->
+{#      <style>#}
+{#        /* Add background image to the body */#}
+{#        body {#}
+{#            background-image: url('/WorkforceManagementSystem/static/admindash1/images/banner3.jpg');#}
+{#            background-size: cover; /* Adjust as needed */#}
+{#            background-repeat: no-repeat;#}
+{#            /* Additional background styles if needed */#}
+{#        }#}
+{#        /* Style for the card */#}
+{#        .card {#}
+{#            /* Add your card styles here */#}
+{#            /* Example styles */#}
+{#            width: 1000px;#}
+{#            height: 100px;#}
+{#            background-color: white;#}
+{#            border-radius: 10px;#}
+{#            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);#}
+{#            /* Additional styles as needed */#}
+{#        }#}
+{#    </style>#}
 </head> 
 <body class="cbp-spmenu-push">
 
@@ -87,6 +107,25 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 								</li>
 								<li>
 									<a href="/wForce/approvalofregistrationworker/">Verify Worker</a>
+								</li>
+
+                                <li>
+									<a href="/wForce/viewapprovedemployers/">View Approved Employers</a>
+								</li>
+								<li>
+									<a href="/wForce/viewapprovedworkers/">View Approved Workers</a>
+								</li>
+                                <li>
+									<a href="/wForce/viewrejectedemployers/">View Rejected Employers</a>
+								</li>
+								<li>
+									<a href="/wForce/viewrejectedworkers/">View Rejected Workers</a>
+								</li>
+                                <li>
+									<a href="/wForce/viewpendingemployers/">View Pending Employers</a>
+								</li>
+								<li>
+									<a href="/wForce/viewpendingworkers/">View Pending Workers</a>
 								</li>
 {#                                <li>#}
 {#									<a href="/#">Subscription History</a>#}
@@ -142,10 +181,11 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 {#							</ul>#}
 {#							<!-- //nav-second-level -->#}
 {#						</li>#}
+                    <ul class="nav" id="side-menu">
 						<li>
 							<a href="/wForce/mainhome/" class="chart-nav"><i class="fa fa-sign-out nav_icon"></i>Logout </a>
 						</li>
-
+                </ul>
 
 					<div class="clearfix"> </div>
 					<!-- //sidebar-collapse -->
@@ -163,7 +203,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 				<div class="logo">
 					<a href="index.html">
 						<h1>ARCOME </h1>
-						<span>Admin panel</span>
+						<span>Adminpanel</span>
 					</a>
 				</div>
 				<!--//logo-->
@@ -183,7 +223,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 			</div>
       <div class="text-dark">
         <a href="index.html">
-            <h1 style="font-family: cursive; color: #007bff; font-weight: bold;">WELCOME ADMIN</h1>
+            <h1 style="font-family: Georgia; color: black; font-weight: bold;">WELCOME ADMIN</h1>
         </a>
     </div>
     <div class="clearfix"></div>
@@ -353,14 +393,14 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<!-- //header-ends -->
 		<!-- main content start-->
-		<div id="page-wrapper">
+		<div style="background-color: #607D8B" id="page-wrapper">
 			<div class="main-page">
 {#				<h3 class="title1">Inbox</h3>#}
 				<div class="inbox-page">
 
 
 
-                    <div class="card" style="background:white;">
+                    <div class="card" style="background:lightyellow;">
 
 
                         {% block body %}

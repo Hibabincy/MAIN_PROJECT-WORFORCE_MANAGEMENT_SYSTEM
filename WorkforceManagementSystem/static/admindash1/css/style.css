@@ -91,7 +91,7 @@ button#showLeftPush:hover {
 	position: fixed;
 }
 .cbp-spmenu-vertical {
-    width: 309px;
+    width: 307px;
     height: 100%;
     top: 76px;
     z-index: 1000;
@@ -2957,7 +2957,7 @@ button#showLeftPush {
 }
 .cbp-spmenu-vertical {
     padding: 1.5em 0;
-	width: 231px;
+	width: 240px;
 }
 .sidebar ul li a {
     font-size: 0.9em;

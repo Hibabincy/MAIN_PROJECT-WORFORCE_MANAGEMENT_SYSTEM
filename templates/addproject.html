@@ -1,0 +1,52 @@
+
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{% extends "employerdashindex.html" %}
+{% block body %}
+ <br><center>
+    <span style="color: #0a0a0a">
+        <h2 style="color: #0096FF; font-weight: bold;">Add Project</h2>
+    </span>
+</center><br>
+
+<body>
+<form action="/wForce/addproject_POST/" method="post">
+ <table class="table table-bordered table-hover">
+     {% csrf_token %}
+
+
+  <tr>
+    <th scope="col">Project Name:</th>
+     <td><input type="text" class="form-control" required name="textfield" id="textfield" /></td>
+  </tr>
+  <tr>
+    <th scope="col">Project Description:</th>
+    <td><input type="text" class="form-control" required name="textarea" id="textarea" /></td>
+  </tr>
+      <tr>
+    <th scope="col">Project Location:</th>
+         <td><input type="text" class="form-control" required name="textfield1" id="textfield1" /></td>
+
+  </tr>
+      <tr>
+    <th scope="col">Duration:</th>
+      <td><input type="text" class="form-control" required name="textfield2" id="textfield2" /></td>
+  </tr>
+      <tr>
+    <th scope="col">No.of workers needed:</th>
+        <td><input type="text" class="form-control" required name="textfield3" id="textfield3" /></td>
+  </tr>
+
+  <tr>
+    <th scope="col">&nbsp;</th>
+    <td><input type="submit" name="button" id="button" class="btn btn-success" value="Add" /></td>
+  </tr>
+</table>
+</form>
+</body>
+{#</html>#}
+{% endblock %}

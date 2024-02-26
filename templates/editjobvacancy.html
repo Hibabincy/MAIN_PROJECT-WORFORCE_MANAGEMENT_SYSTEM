@@ -1,0 +1,85 @@
+
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{% extends "employerdashindex.html" %}
+{% block body %}
+ <br> <center>
+    <span style="color: #0a0a0a">
+        <h2 style="color: #0096FF; font-weight: bold;">Edit Jobvacancy</h2>
+    </span>
+</center>
+<br>
+<body>
+<form action="/wForce/editjobvacancy_POST/" method="post">
+ <table class="table table-bordered table-hover">
+     {% csrf_token %}
+
+<input type="hidden"name="id" value="{{ data.id }}" >
+  <tr>
+    <th scope="col">Job Title:</th>
+     <td><input type="text" class="form-control" style="text-transform: capitalize"  required name="textfield" id="textfield"  value="{{ data.jobtitle }}"/></td>
+  </tr>
+  <tr>
+    <th scope="col">Job Field:</th>
+<td><select name="select" class="form-control">
+         <option hidden="" value="{{ data.jobfield }}">{{ data.jobfield }}</option>
+         <option value="Construction worker">Construction worker</option>
+         <option value="Construction inspector">Construction inspector</option>
+         <option value="Flooring installer">Flooring installer</option>
+         <option value="Surveyor">Surveyor</option>
+         <option value="Glazier">Glazier</option>
+         <option value="Tile setter">Tile setter</option>
+         <option value="Brick mason">Brick mason</option>
+         <option value="Roofer">Roofer</option>
+         <option value="Concrete finisher">Concrete finisher</option>
+         <option value="Ironworker">Ironworker</option>
+         <option value="Crane operator">Crane operator</option>
+         <option value="Plumber">Plumber</option>
+         <option value="Carpenter">Carpenter</option>
+         <option value="Painter">Painter</option>
+         <option value="Electrician">Electrician</option>
+         <option value="Pipefitter">Pipefitter</option>
+         <option value="Cost estimator">Cost estimator</option>
+         <option value="Safety manager">Safety manager</option>
+         <option value="Construction manager">Construction manager</option>
+         <option value="Civil engineer">Civil engineer</option>
+         <option value="Architect">Architect</option>
+     </select></td>  </tr>
+      <tr>
+    <th scope="col">Location:</th>
+         <td><input type="text" class="form-control" style="text-transform: capitalize"  required name="textfield4" id="textfield4" value="{{ data.location }}" /></td>
+
+  </tr>
+      <tr>
+    <th scope="col">Start Date:</th>
+      <td><input type="text" class="form-control" style="text-transform: capitalize" required name="textfield5" id="textfield5" value="{{ data.startdate }}"/></td>
+  </tr>
+      <tr>
+    <th scope="col">End Date:</th>
+        <td><input type="text" class="form-control"style="text-transform: capitalize"  required name="textfield6" id="textfield6" value="{{ data.enddate}}" /></td>
+  </tr>
+     <tr>
+    <th scope="col">Skills:</th>
+        <td><input type="text" class="form-control" style="text-transform: capitalize"  placeholder="use alphabets only" required name="textfield7" id="textfield7" value="{{ data.skills}}" /></td>
+  </tr>
+{#     pattern="[A-Z a-z]+"#}
+     <tr>
+    <th scope="col">No of Vacancy:</th>
+        <td><input type="text" class="form-control"placeholder="use numbers only" required name="textfield8" id="textfield8" value="{{ data.eno_of_vaccancy}}" /></td>
+  </tr>
+{#      pattern="=[0-9]+" #}
+
+
+  <tr>
+    <th scope="col">&nbsp;</th>
+    <td><input type="submit" name="button" id="button" class="btn btn-success" value="Update" /></td>
+  </tr>
+</table>
+</form>
+</body>
+{#</html>#}
+{% endblock %}

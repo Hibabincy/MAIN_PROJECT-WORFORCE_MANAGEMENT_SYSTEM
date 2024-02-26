@@ -1,0 +1,95 @@
+{% extends 'employerdashindex.html' %}
+{% block body %}
+
+<body>
+<form action="/wForce/editemployerviewprofile_POST/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table class="table table-bordered">
+{#  <tr>#}
+{#    <th width="218" scope="row">Photo</th>#}
+{#    <td colspan="2"><label for="fileField2"></label>#}
+{#      <input type="file" name="fileField" id="fileField2" class="form-control"/></td>#}
+{#  </tr>#}
+  <tr>
+    <th scope="row">Cover Photo</th>
+    <td colspan="2"><label for="fileField3"></label>
+         <img src="{{ data.Photo }}" height="200px" width="180px">
+{#         <img src="{{ data.Photo }}" height="200px">#}
+      <input type="file" name="coverphoto" id="fileField3" class="form-control" /></td>
+  </tr>
+  <tr align="left">
+    <th scope="row"><label for="textfield">Employer Name</label>
+      <input type="text" name="textfield" id="textfield" class="form-control" value="{{ data.Companyname }}" /></th>
+    <td colspan="2"><label for="textfield2">Email</label>
+      <input type="text" name="textfield2" id="textfield2" class="form-control" value="{{ data.Email }}"  /></td>
+  </tr>
+  <tr align="left">
+    <th scope="row"><label for="textfield3">Phone number</label>
+      <input type="text" name="textfield3" id="textfield3" class="form-control" value="{{ data.Phone }}"  /></th>
+    <td colspan="2"><label for="textfield4">Website</label>
+      <input type="text" name="textfield4" id="textfield4" class="form-control" value="{{ data.Website }}" /></td>
+  </tr>
+  <tr align="left">
+    <th scope="row"><label for="textfield5">Founded date</label>
+      <input type="text" name="textfield5" id="textfield5" class="form-control" value="{{ data.Date }}" /></th>
+{#    <td colspan="2"><label for="textfield6">Company Size</label>#}
+{#      <input type="text" name="textfield6" id="textfield6" class="form-control"/></td>#}
+  </tr>
+{#  <tr align="left">#}
+{#    <th scope="row"><label for="select">Category</label>#}
+{#      <select name="select" id="select">#}
+{#      </select></th>#}
+{#    <td colspan="2">&nbsp;</td>#}
+{#  </tr>#}
+  <tr align="left">
+    <th colspan="3" scope="row"><label for="textarea">About Company</label>
+      <textarea name="textarea" id="textarea" cols="45" rows="5" class="form-control" value="{{ data.Aboutcompany }}" ></textarea></th>
+    </tr>
+  <tr>
+    <th scope="row"><label for="fileField4">Photo 1</label>
+      <img src="{{ data.Photo1 }}">
+      <input type="file" name="fileField3" id="fileField4" class="form-control" /></th>
+    <th scope="row"><label for="fileField4">Photo 2</label>
+         <img src="{{ data.Photo2 }}">
+      <input type="file" name="fileField4" id="fileField4" class="form-control" /></th>
+    <th scope="row"><label for="fileField4">Photo 3</label>
+         <img src="{{ data.Photo3 }}">
+      <input type="file" name="fileField5" id="fileField4" class="form-control" /></th>
+{#    <td width="188"><label for="fileField5">Photo 2</label>#}
+{#      <input type="file" name="fileField4" id="fileField5" class="form-control"/></td>#}
+{#    <td width="146"><label for="fileField6">Photo 3</label>#}
+{#      <input type="file" name="fileField5" id="fileField6" class="form-control"/></td>#}
+  </tr>
+  <tr align="left">
+    <th colspan="3" scope="row"><label for="textfield7">Location</label>
+      <input type="text" name="textfield7" id="textfield7" class="form-control" value="{{ data.Place }}" /></th>
+    </tr>
+  <tr align="left">
+    <th colspan="3" scope="row"><label for="textfield7">State</label>
+      <input type="text" name="textfield15" id="textfield7" class="form-control" value="{{ data.State }}" /></th>
+    </tr>
+  <tr align="left">
+    <th colspan="3" scope="row"><label for="textfield7">District</label>
+      <input type="text" name="textfield10" id="textfield7" class="form-control" value="{{ data.District }}" /></th>
+    </tr>
+  <tr align="left">
+    <th colspan="3" scope="row"><label for="textfield7">Post</label>
+      <input type="text" name="textfield9" id="textfield7" class="form-control" value="{{ data.Post }}" /></th>
+    </tr>
+{#  <tr align="left">#}
+{#    <th colspan="3" scope="row"><label for="textarea2">Address</label>#}
+{#      <textarea name="textarea2" id="textarea2" cols="45" rows="5" class="form-control" value="{{ data. }}" ></textarea></th>#}
+{#    </tr>#}
+  <tr align="left">
+    <th colspan="3"><label for="textfield8">Pincode</label>
+      <input type="text" name="textfield8" id="textfield8" class="form-control" value="{{ data.Pincode }}" /></th>
+    </tr>
+  <tr>
+    <th>&nbsp;</th>
+    <td colspan="2"><input type="submit" name="button" class="btn btn-danger" id="button" value="Update" /></td>
+  </tr>
+</table>
+</form>
+
+</body>
+{% endblock %}

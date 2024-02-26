@@ -92,7 +92,7 @@
   .w3l-login {
       position: relative;
       height: 100vh;
-      background: url(../images/bgimage.jpg) no-repeat 0px 0px;
+      background: url(../../loginpage/images/login1.jpg) no-repeat 0px 0px;
       background-size: cover;
   }
 

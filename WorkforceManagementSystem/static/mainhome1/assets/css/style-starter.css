@@ -15145,7 +15145,7 @@ a.view:hover {
 }
 
 .w3l-main-slider .banner-view {
-  background: url(../images/banner1.jpg) no-repeat center;
+  background: url(../images/img1.jpg) no-repeat center;
   background-size: cover;
   min-height: 100vh;
   position: relative;
@@ -15155,19 +15155,19 @@ a.view:hover {
 }
 
 .w3l-main-slider .banner-top1 {
-  background: url(../images/banner2.jpg) no-repeat center;
+  background: url(../images/home2.jpg) no-repeat center;
   background-size: cover;
   min-height: 100vh;
 }
 
 .w3l-main-slider .banner-top2 {
-  background: url(../images/banner3.jpg) no-repeat center;
+  background: url(../images/home3.jpg) no-repeat center;
   background-size: cover;
   min-height: 100vh;
 }
 
 .w3l-main-slider .banner-top3 {
-  background: url(../images/banner4.jpg) no-repeat center;
+  background: url(../images/home4.jpg) no-repeat center;
   background-size: cover;
   min-height: 100vh;
 }
