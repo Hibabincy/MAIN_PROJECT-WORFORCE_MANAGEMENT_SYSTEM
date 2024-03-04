@@ -18,7 +18,7 @@
  <table class="table table-bordered table-hover">
      {% csrf_token %}
 
-<input type="hidden"name="id1" value="{{ data.id }}" >
+<input type="hidden"name="id" value="{{ data.id }}" >
   <tr>
     <th scope="col">Project Name:</th>
      <td><input type="text" class="form-control" required name="textfield" id="textfield"  value="{{ data.projecttitle }}"/></td>

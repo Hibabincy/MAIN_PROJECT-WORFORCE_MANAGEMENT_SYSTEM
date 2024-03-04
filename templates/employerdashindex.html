@@ -66,8 +66,33 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 									<a href="/wForce/employerviewprofile/">View Profile</a>
 								</li>
                                 <li>
-									<a href="#">Search Workers</a>
+									<a href="/wForce/viewsearchedworkers/">Search Workers</a>
 								</li>
+							</ul>
+							<!-- /nav-second-level -->
+						</li>
+                         	<li >
+							<a href="#"><i class="fa fa-briefcase nav_icon"></i> My Projects <span class="fa arrow"></span></a>
+
+							<ul class="nav nav-second-level collapse">
+								<li>
+									<a href="/wForce/addproject/">Add Project</a>
+								</li>
+                                 <li>
+									<a href="/wForce/viewproject/">View Project</a>
+								</li>
+{#                                <li>#}
+{#									<a href="#">Edit Project</a>#}
+{#								</li>#}
+                                <li>
+									<a href="#">Assign Workers to Project</a>
+								</li>
+{#								<li>#}
+{#									<a href="/wForce/viewfee">View </a>#}
+{#								</li>#}
+{#                                <li>#}
+{#									<a href="/#">Subscription History</a>#}
+{#								</li>#}
 							</ul>
 							<!-- /nav-second-level -->
 						</li>
@@ -94,42 +119,19 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 							</ul>
 							<!-- /nav-second-level -->
 						</li>
-                        	<li >
-							<a href="#"><i class="fa fa-briefcase nav_icon"></i> My Projects <span class="fa arrow"></span></a>
 
-							<ul class="nav nav-second-level collapse">
-								<li>
-									<a href="/wForce/addproject/">Add Project</a>
-								</li>
-                                 <li>
-									<a href="/wForce/viewproject/">View Project</a>
-								</li>
-{#                                <li>#}
-{#									<a href="#">Edit Project</a>#}
-{#								</li>#}
-                                <li>
-									<a href="#">Assign Workers to Project</a>
-								</li>
-{#								<li>#}
-{#									<a href="/wForce/viewfee">View </a>#}
-{#								</li>#}
-{#                                <li>#}
-{#									<a href="/#">Subscription History</a>#}
-{#								</li>#}
-							</ul>
-							<!-- /nav-second-level -->
-						</li>
 
 						<li>
-							<a href="#"><i class="fa fa-star nav_icon"></i>Review Management</a>
-{#							<ul class="nav nav-second-level collapse">#}
-{#								<li>#}
-{#									<a href="inbox.html">Inbox <span class="nav-badge-btm">05</span></a>#}
-{#								</li>#}
-{#								<li>#}
-{#									<a href="compose.html">Compose email</a>#}
-{#								</li>#}
-{#							</ul>#}
+							<a href="#"><i class="fa fa-star nav_icon"></i>Review Management
+                            <span class="fa arrow"></span></a>
+							<ul class="nav nav-second-level collapse">
+								<li>
+									<a href="#">Give Reviews</a>
+								</li>
+								<li>
+									<a href="#">View Reviews</a>
+								</li>
+							</ul>
 							<!-- //nav-second-level -->
                         </li>
                         <li>
@@ -393,14 +395,15 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<!-- //header-ends -->
 		<!-- main content start-->
-		<div style="background-color: #A9A9A9" id="page-wrapper">
-			<div  class="main-page">
+	<div style="background-image: url('https://images.unsplash.com/photo-1595853035070-59a39fe84de3?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center;" id="page-wrapper">
+  		<div  class="main-page" style="background-size: cover; background-color: white">
 {#				<h3 class="title1">Inbox</h3>#}
 				<div class="inbox-page">
 
 
 
-                    <div class="card" style="background:white;">
+
+<div class="box" style="background:white;">
 
 
                         {% block body %}

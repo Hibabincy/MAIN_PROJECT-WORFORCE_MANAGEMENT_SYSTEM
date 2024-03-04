@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>View Reviews</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: cadetblue;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .reviews {
+    padding-top: 20px;
+  }
+
+  .review {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .review p {
+    margin: 0;
+    color: #333;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Reviews</h1>
+
+  <div class="reviews" id="reviews">
+    <!-- Existing reviews will be displayed here -->
+  </div>
+</div>
+
+<script>
+  // Retrieve reviews from localStorage and display them
+  document.addEventListener("DOMContentLoaded", function() {
+    var reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+    var reviewsContainer = document.getElementById("reviews");
+
+    reviews.forEach(function(review) {
+      var reviewElement = document.createElement("div");
+      reviewElement.classList.add("review");
+      reviewElement.innerHTML = "<p><strong>" + review.name + ":</strong> " + review.message + "</p>";
+      reviewsContainer.appendChild(reviewElement);
+    });
+  });
+</script>
+
+</body>
+</html>

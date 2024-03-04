@@ -5,6 +5,8 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
+from geopy.distance import geodesic
+
 from WorkforceManagementSystem.models import *
 
 
@@ -22,9 +24,12 @@ def login_post(request):
         request.session['lid']=a.id
 
         if a.Type == 'admin':
-            return HttpResponse('''<script>alert("login successfully");window.location="/wForce/adminhome/"</script>''')
+            # return HttpResponse('''<script>alert("login successfully");window.location="/wForce/adminhome/"</script>''')
+            return HttpResponse('''<script>window.location="/wForce/adminhome/"</script>''')
         elif a.Type=="employer":
-            return HttpResponse('''<script>alert("login successfully");window.location="/wForce/employerdash/"</script>''')
+            # return HttpResponse('''<script>alert("login successfully");window.location="/wForce/employerdash/"</script>''')
+            return HttpResponse(
+                '''<script>window.location="/wForce/employerdash/"</script>''')
         else:
             return HttpResponse('''<script>alert("User not found");window.location="/wForce/login/"</script>''')
     else:
@@ -253,6 +258,12 @@ def viewpendingworkersmore(request,id):
     return render(request, "viewpendingworkersmore.html", {'data': z})
 
 
+def newadmindash(request):
+    return render(request,'newadminindex.html')
+
+def demotable(request):
+    return render(request,'demotable.html')
+
 
 
 
@@ -401,6 +412,10 @@ def employerhome(request):
 #     return render(request, "employsignupindex.html")
 
 
+# def reviewemployer(request):
+#     r=Employer.objects.get(LOGIN=request.session['lid'])
+#     return render(request,"",{'data':r})
+
 
 
 def employerviewprofile(request):
@@ -409,8 +424,9 @@ def employerviewprofile(request):
 
 
 def editemployerviewprofile(request):
+    dt = str(datetime.date.today())
     r=Employer.objects.get(LOGIN=request.session['lid'])
-    return render(request,"editemployerprofile.html",{'data':r})
+    return render(request,"editemployerprofile.html",{'data':r, 'dt':dt})
 
 
 def editemployerviewprofile_POST(request):
@@ -512,8 +528,10 @@ def addproject_POST(request):
 
 
 def viewproject(request):
-    res=Projects.objects.all()
-    return render(request,"viewproject.html",{'data':res})
+    g = Projects.objects.filter(EMPLOYER__LOGIN_id=request.session['lid'])
+    # r=Jobvaccancy.objects.get(PROJECT=g)
+
+    return render(request,"viewproject.html",{'data':g})
 
 
 def viewproject_POST(request):
@@ -539,14 +557,14 @@ def editproject(request,id):
 
 
 def editproject_POST(request):
-    did=request.POST['id1']
+    id=request.POST['id']
     projecttitle = request.POST['textfield']
     projectdescription = request.POST['textarea']
     projectlocation = request.POST['textfield1']
     created_date = datetime.datetime.now().date()
     duration = request.POST['textfield2']
     no_of_workers = request.POST['textfield3']
-    g = Projects.objects.get()
+    g = Projects.objects.get(id=id)
     g.projecttitle = projecttitle
     g.projectdescription = projectdescription
     g.projectlocation = projectlocation
@@ -649,21 +667,6 @@ def editproject_POST(request):
 #
 #
 #     # Saving other details similar to the above
-#
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -672,22 +675,36 @@ def editproject_POST(request):
 
 
 def viewjobvacancy(request):
-    res=Jobvaccancy.objects.all().order_by('-id')
-    return render(request,"viewjobvacancy.html",{'data':res})
+    res=Jobvaccancy.objects.filter(EMPLOYER__LOGIN_id=request.session['lid']).order_by('-id')
+    l=[]
+    p=Projects.objects.filter(EMPLOYER__LOGIN_id=request.session['lid'])
+    for i in p:
+        s=Jobvaccancy.objects.filter(EMPLOYER__LOGIN_id=request.session['lid'],PROJECT=i)
+        ll=[]
+        for m in s:
+            ll.append(m)
+        v={'project':i,'job':ll}
+        l.append(v)
+
+    return render(request,"viewjobvacancy.html",{'data':l})
 
 def addjobvacancy(request):
-    return render(request,"addjobvaccancy.html")
+    g=Projects.objects.filter(EMPLOYER__LOGIN_id=request.session['lid'])
+    return render(request,"addjobvaccancy.html",{'data':g})
 
 
 def addjobvacancy_POST(request):
     jobtitle= request.POST['textfield']
     jobfield = request.POST['select']
 
+    projecttitle=request.POST['projecttitle']
     created_date= datetime.datetime.now().date()
 
     location=request.POST['textfield4']
+    district=request.POST['textfield12']
     startdate=request.POST['textfield5']
     enddate=request.POST['textfield6']
+    salary=request.POST['textfield13']
     eno_of_vaccancy =request.POST['textfield8']
     skills=request.POST['textfield7']
     created_date = datetime.datetime.now().date()
@@ -695,14 +712,16 @@ def addjobvacancy_POST(request):
     g = Jobvaccancy()
     g.jobtitle = jobtitle
     g.jobfield  = jobfield
-
+    g.PROJECT=Projects.objects.get(id=projecttitle)
     g.created_date = created_date
 
     g.location = location
     g.startdate =startdate
     g.enddate=enddate
+    g.district=district
     g.eno_of_vaccancy =eno_of_vaccancy
     g.skills= skills
+    g.salary= salary
     g.EMPLOYER=Employer.objects.get(LOGIN_id=request.session['lid'])
     g.save()
     return HttpResponse('''<script>alert('Added Successfully');window.location="/wForce/addjobvacancy/"</script>''')
@@ -720,9 +739,11 @@ def editjobvacancy_POST(request):
     created_date = datetime.datetime.now().date()
 
     location = request.POST['textfield4']
+    district = request.POST['textfield12']
     startdate = request.POST['textfield5']
     enddate = request.POST['textfield6']
     skills = request.POST['textfield7']
+    salary = request.POST['textfield13']
     eno_of_vaccancy = request.POST['textfield8']
 
 
@@ -737,6 +758,8 @@ def editjobvacancy_POST(request):
     g.startdate = startdate
     g.enddate = enddate
     g.skills = skills
+    g.district = district
+    g.salary = salary
     g.eno_of_vaccancy = eno_of_vaccancy
 
 
@@ -764,7 +787,77 @@ def deletejobvacancy(request,id):
 #     return render(request, "viewjobvacancy.html", {'data': b})
 
 
+def viewsearchedworkers(request):
+    return render(request, "viewsearchedworkers.html")
 
+def viewsearchedworkers_post(request):
+    search= request.POST['textfield']
+    skill= request.POST['textfield2']
+    from geopy.geocoders import Nominatim
+
+
+    geolocator = Nominatim(user_agent="geoapiExercises")
+    location = geolocator.geocode(search)
+    lat,lon= location.latitude, location.longitude
+
+    b = Worker.objects.filter(Skills__icontains=skill,LOGIN__type='worker')
+    l=[]
+    for i in b:
+        distance = geodesic((lat, lon), (float(i.lattitude), float(i.longitude))).kilometers
+        l.append({'id':i.id,'Username':i.Username,
+        'Photo':i.Photo,
+        'Location':i.Location,
+        'post':i.post,
+        'district':i.district,
+        'state':i.state,
+        'Pincode':i.Pincode,
+        'Phone':i.Phone,
+        'Email':i.Email,
+        'latitude':i.lattitude,
+        'longitude':i.longitude,
+        'registration_date':i.registration_date,
+        'distance':distance
+        })
+
+
+    for i in range(0,len(l)):
+        for j in range(0,len(l)):
+
+            if  float(l[i]['distance']) < float(l[j]['distance']):
+
+
+                temp=l[i]
+                l[i]=l[j]
+                l[j]=temp
+
+
+
+
+    return render(request, "viewsearchedworkers.html",{'data':l})
+
+
+def viewworkerrequests(request,id):
+    res=Jobrequest.objects.filter(JOBVACANCY_id=id,status='pending').order_by('-id')
+    return render(request, "viewworkerrequests.html",{"data":res})
+
+def viewworkerrequests_POST(request):
+    return render(request, "viewworkerrequests.html")
+
+
+
+
+
+
+
+
+
+def approveworkerjobrequest(request,id):
+    res=Jobrequest.objects.filter(id=id).update(status="Accepted")
+    return HttpResponse('''<script>alert('Approve Successfull');window.location="/wForce/viewjobvacancy/"</script>''')
+
+def rejectworkerjobrequest(request,id):
+    res=Jobrequest.objects.filter(id=id).update(status="rejected")
+    return HttpResponse('''<script>alert('Reject Successfull');window.location="/wForce/viewjobvacancy/"</script>''')
 
 
 
@@ -805,6 +898,7 @@ def workerregistration_post(request):
     Password = request.POST['password']
     Conformpassword = request.POST['conform password']
     dob = request.POST['dob']
+    print(dob)
     Nationality = request.POST['nationality']
     Qualification = request.POST['qualification']
     Location=request.POST['location']
@@ -812,7 +906,10 @@ def workerregistration_post(request):
     Skill=request.POST['skills']
     post=request.POST['post']
     district=request.POST['district']
-
+    latitude=request.POST['latitude']
+    longitude=request.POST['longitude']
+    from datetime import datetime
+    registration_date = datetime.now().date().today()
     if Login.objects.filter(Username=Email).exists():
         return JsonResponse({'status': 'error', 'message': 'User with this email already exists.'}, status=400)
 
@@ -903,6 +1000,9 @@ def workerregistration_post(request):
     g.state = State
     g.post = post
     g.district = district
+    g.lattitude=latitude
+    g.longitude=longitude
+    g.registration_date=registration_date
     g.LOGIN = d
     g.save()
     return JsonResponse({'status':'ok'})
@@ -1082,9 +1182,13 @@ def editworkerprofile(request):
     return JsonResponse({'status':'ok'})
 
 def viewjobvacancyworker(request):
+    lid=request.POST['lid']
     p=Jobvaccancy.objects.all()
     l=[]
     for i in p:
+        s='yes'
+        if Jobrequest.objects.filter(JOBVACANCY=i.id,WORKER=Worker.objects.get(LOGIN_id=lid)).exists():
+            s='no'
         l.append({'id':i.id,
                   'Company':i.EMPLOYER.Companyname,
                   'email':i.EMPLOYER.Email,
@@ -1095,5 +1199,41 @@ def viewjobvacancyworker(request):
                   'Start_date':i.startdate,
                   'End_date':i.enddate,
                   'Skills':i.skills,
-                  'No_of_vacancy':i.eno_of_vaccancy})
+                  'No_of_vacancy':i.eno_of_vaccancy,
+                  's':s})
     return JsonResponse({'status': 'ok',"data":l})
+
+def viewjobvacancyworkermore(request):
+    jid=request.POST['jid']
+    lid=request.POST['lid']
+    i=Jobvaccancy.objects.get(id=jid)
+    s = 'yes'
+    if Jobrequest.objects.filter(JOBVACANCY=i.id, WORKER=Worker.objects.get(LOGIN_id=lid)).exists():
+        s = 'no'
+    return JsonResponse({'status': 'ok','id':i.id,
+                  'companyname':i.EMPLOYER.Companyname,
+                  'email':i.EMPLOYER.Email,
+                  'phone':i.EMPLOYER.Phone,
+                  'photo':i.EMPLOYER.Photo,
+                  'district':i.district,
+                  'salary':i.salary,
+                  'jobtitle':i.jobtitle,
+                  'jobfield':i.jobfield,
+                  'location':i.location,
+                  'startdate':i.startdate,
+                  'enddate':i.enddate,
+                  'skills':i.skills,
+                  'vacancynumber':i.eno_of_vaccancy,
+                  's':s})
+
+def applyforjob(request):
+    lid=request.POST['lid']
+    jid=request.POST['jid']
+    jobj=Jobrequest()
+    jobj.JOBVACANCY_id=jid
+    jobj.WORKER=Worker.objects.get(LOGIN_id=lid)
+    jobj.date=datetime.datetime.now().strftime("%d-%m-%Y")
+    jobj.status="pending"
+    jobj.save()
+
+    return JsonResponse({'status': 'ok'})

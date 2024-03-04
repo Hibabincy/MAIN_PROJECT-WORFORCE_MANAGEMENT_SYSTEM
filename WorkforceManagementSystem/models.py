@@ -54,16 +54,17 @@ class Projects(models.Model):
 
 class Jobvaccancy(models.Model):
     EMPLOYER = models.ForeignKey(Employer, on_delete=models.CASCADE,default="")
+    PROJECT = models.ForeignKey(Projects, on_delete=models.CASCADE,default="")
     jobtitle = models.CharField(max_length=100)
     jobfield = models.CharField(max_length=100)
-
     created_date = models.CharField(max_length=100)
-
     location= models.CharField(max_length=100)
     startdate= models.CharField(max_length=100)
     enddate= models.CharField(max_length=100)
     eno_of_vaccancy= models.CharField(max_length=100)
     skills= models.CharField(max_length=100)
+    salary= models.CharField(max_length=100,default="")
+    district= models.CharField(max_length=100,default="")
 
 
 #
@@ -96,6 +97,10 @@ class Worker(models.Model):
     district=models.CharField(max_length=100,default=0)
     state=models.CharField(max_length=100,default=0)
     registration_date=models.CharField(max_length=100,default="")
+    lattitude=models.CharField(max_length=100,default=0)
+    longitude=models.CharField(max_length=100,default=0)
+
+
 
     LOGIN = models.ForeignKey(Login, on_delete=models.CASCADE)
 
@@ -115,4 +120,10 @@ class Payment(models.Model):
     FEE = models.ForeignKey(Fee, on_delete=models.CASCADE)
     Date=models.CharField(max_length=100)
     Status=models.CharField(max_length=100)
+
+class Jobrequest(models.Model):
+    JOBVACANCY = models.ForeignKey(Jobvaccancy, on_delete=models.CASCADE)
+    WORKER = models.ForeignKey(Worker, on_delete=models.CASCADE)
+    date = models.CharField(max_length=100)
+    status = models.CharField(max_length=100)
 

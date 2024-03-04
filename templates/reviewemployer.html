@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: cadetblue;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  form {
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+  }
+
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+
+  input[type="submit"],
+  .btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    width: 100px;
+    display: inline-block;
+    text-align: center;
+    margin-right: 10px;
+  }
+
+  input[type="submit"]:hover,
+  .btn:hover {
+    filter: brightness(90%);
+  }
+
+  #addReviewBtn {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  #editReviewBtn {
+    background-color: red;
+    color: white;
+  }
+
+  .reviews {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+  }
+
+  .review {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .review p {
+    margin: 0;
+    color: #333;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Add Review</h1>
+
+
+  <button id="editReviewBtn" class="btn">Edit</button>
+  <button id="addReviewBtn" class="btn">view </button><br><br><br>
+  <form id="reviewForm">
+    <label for="name">Worker Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="message">Review:</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+
+    <input type="submit" value="Submit Review" class="btn" style="background-color: dodgerblue;width: auto ">
+  </form>
+
+  <div class="reviews" id="reviews">
+    <!-- Existing reviews will be displayed here -->
+  </div>
+</div>
+
+<script>
+  // Sample JavaScript for adding reviews dynamically
+  document.getElementById("reviewForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var name = document.getElementById("name").value;
+    var message = document.getElementById("message").value;
+    var review = document.createElement("div");
+    review.classList.add("review");
+    review.innerHTML = "<p><strong>" + name + ":</strong> " + message + "</p>";
+    document.getElementById("reviews").appendChild(review);
+    // Clear form fields after submission
+    document.getElementById("name").value = "";
+    document.getElementById("message").value = "";
+  });
+</script>
+
+</body>
+</html>

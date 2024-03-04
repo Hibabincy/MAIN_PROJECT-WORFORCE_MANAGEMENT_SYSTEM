@@ -1,0 +1,40 @@
+{% extends "employerdashindex.html" %}
+{% block body %}
+<br>
+    <br>
+<body><form action="/wForce/viewworkerrequests_POST/" method="post">
+   <center>
+    <span style="color: #0a0a0a">
+        <h4 style="color: #0a0a0a; font-weight: bold; text-decoration: underline;">View Requests</h4>
+    </span>
+</center>
+<br><br>
+       <div class="card">
+        <div class="card-body">
+            <table class="table table-striped table-bordered table-sm">
+    {% csrf_token %}
+  <tr style="background-color: #fffbb2">
+    <th scope="row">Sl.No</th>
+    <th scope="row">Worker Info</th>
+    <th scope="row">Date</th>
+    <th scope="row">&nbsp;</th>
+    <th scope="row">&nbsp;</th>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>&nbsp;{{ forloop.counter }}</td>
+      <td><a href="" >{{ i.WORKER.Email }}</a></td>
+    <td>{{ i.date }}&nbsp;</td>
+
+{#    <td><a href="/wForce/viewproject/{{ i.id }}" class="btn btn-success">View</a></td>#}
+    <td><a href="/wForce/approveworkerjobrequest/{{ i.id }}" class="btn btn-info">
+
+        Accept</a></td>
+    <td><a href="/wForce/rejectworkerjobrequest/{{ i.id }}" class="btn btn-danger" >Reject</a></td>
+  </tr>
+    {% endfor %}
+</table>
+        </div></div>
+</form>
+</body>
+{% endblock %}

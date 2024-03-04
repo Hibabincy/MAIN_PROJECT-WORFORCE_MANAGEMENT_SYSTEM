@@ -9,16 +9,18 @@
     </span>
 </center>
 <br><br>
-    <table class="table  table-striped table-bordered">
+       <div class="card">
+        <div class="card-body">
+            <table class="table table-striped table-bordered table-sm">
     {% csrf_token %}
-  <tr>
+  <tr style="background-color: #b6b6ed">
     <th scope="row">Sl.No</th>
-    <th scope="row">Project Name</th>
-    <th scope="row">Project Description</th>
+    <th scope="row" width="15%">Project Name</th>
+    <th scope="row" width="35%">Project Description</th>
     <th scope="row">Duration</th>
     <th scope="row">Location</th>
     <th scope="row">No.of workers</th>
-    <th scope="row">Date</th>
+    <th scope="row" width="15%">Date </th>
     <th scope="row">&nbsp;</th>
     <th scope="row">&nbsp;</th>
   </tr>
@@ -44,7 +46,7 @@
   </tr>
     {% endfor %}
 </table>
-
+        </div></div>
 </form>
 </body>
 {% endblock %}

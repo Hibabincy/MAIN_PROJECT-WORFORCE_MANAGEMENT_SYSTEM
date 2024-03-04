@@ -1,21 +1,94 @@
 {% extends 'employerdashindex.html' %}
 {% block body %}
+<head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Light grey background */
+            color: #333; /* Dark text color */
+            margin: 0;
+            padding: 0;
+        }
 
+        .edit-profile-heading {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff; /* Blue heading color */
+            font-size: 36px; /* Adjust font size */
+            text-transform: uppercase; /* Convert text to uppercase */
+            letter-spacing: 2px; /* Add letter spacing */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd; /* Light grey border bottom */
+        }
+
+        th {
+            width: 30%;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="file"] {
+            width: calc(100% - 20px); /* Adjusting for padding */
+            padding: 8px;
+            margin-top: 6px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff; /* Blue submit button */
+            color: #fff; /* White text color */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
 <body>
+<h1 class="edit-profile-heading">Edit Profile</h1>
 <form action="/wForce/editemployerviewprofile_POST/" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <table class="table table-bordered">
+ <table class="stylish-table">
+
+
+
 {#  <tr>#}
 {#    <th width="218" scope="row">Photo</th>#}
 {#    <td colspan="2"><label for="fileField2"></label>#}
 {#      <input type="file" name="fileField" id="fileField2" class="form-control"/></td>#}
 {#  </tr>#}
   <tr>
-    <th scope="row">Cover Photo</th>
-    <td colspan="2"><label for="fileField3"></label>
-         <img src="{{ data.Photo }}" height="200px" width="180px">
+    <th scope="row">
+        Cover Photo<br>
+             <img src="{{ data.Photo }}" height="200px" width="180px">
+
+    </th>
+    <td colspan="3"><label for="fileField3"></label>
 {#         <img src="{{ data.Photo }}" height="200px">#}
-      <input type="file" name="coverphoto" id="fileField3" class="form-control" /></td>
+      <input type="file" accept="image/x-png,image/jpeg" name="coverphoto" id="fileField3" class="form-control" /></td>
   </tr>
   <tr align="left">
     <th scope="row"><label for="textfield">Employer Name</label>
@@ -25,13 +98,13 @@
   </tr>
   <tr align="left">
     <th scope="row"><label for="textfield3">Phone number</label>
-      <input type="text" name="textfield3" id="textfield3" class="form-control" value="{{ data.Phone }}"  /></th>
+      <input type="text" name="textfield3" id="textfield3" class="form-control" value="{{ data.Phone }}"  placeholder="Enter your 10 digit phone number" required="" pattern="[9876][0-9]{9}" maxlength="10" title="enter valied 10 digit number" /></th>
     <td colspan="2"><label for="textfield4">Website</label>
-      <input type="text" name="textfield4" id="textfield4" class="form-control" value="{{ data.Website }}" /></td>
+      <input type="text" name="textfield4" id="textfield4" class="form-control" value="{{ data.Website }}" placeholder="enter your website (eg:http://)" pattern="http(s?)(:\/\/)((www.)?)(([^.]+)\.)?([a-zA-z0-9\-_]+)(.com|.net|.gov|.org|.in)(\/[^\s]*)?" title="eg: http(s?)(:\/\/)" required="" /></td>
   </tr>
   <tr align="left">
     <th scope="row"><label for="textfield5">Founded date</label>
-      <input type="text" name="textfield5" id="textfield5" class="form-control" value="{{ data.Date }}" /></th>
+      <input type="date" name="textfield5" max="{{ dt }}" id="dagtepicker" readonly class="form-control" value="{{ data.Date }}" /></th>
 {#    <td colspan="2"><label for="textfield6">Company Size</label>#}
 {#      <input type="text" name="textfield6" id="textfield6" class="form-control"/></td>#}
   </tr>
@@ -43,18 +116,21 @@
 {#  </tr>#}
   <tr align="left">
     <th colspan="3" scope="row"><label for="textarea">About Company</label>
-      <textarea name="textarea" id="textarea" cols="45" rows="5" class="form-control" value="{{ data.Aboutcompany }}" ></textarea></th>
+      <input type="text" name="textarea" id="textarea" cols="45" rows="5" class="form-control" value="{{ data.Aboutcompany }}" ></input></th>
     </tr>
   <tr>
-    <th scope="row"><label for="fileField4">Photo 1</label>
-      <img src="{{ data.Photo1 }}">
-      <input type="file" name="fileField3" id="fileField4" class="form-control" /></th>
-    <th scope="row"><label for="fileField4">Photo 2</label>
-         <img src="{{ data.Photo2 }}">
-      <input type="file" name="fileField4" id="fileField4" class="form-control" /></th>
+    <th scope="row" width="340px">
+        <label for="fileField4">Photo 1</label>
+      <img src="{{ data.Photo1 }}" height="200px" width="200px">
+      <input type="file" name="fileField3" accept="image/x-png,image/jpeg" id="fileField4" class="form-control" />
+    </th>
+    <th scope="row">
+        <label for="fileField4">Photo 2</label>
+         <img src="{{ data.Photo2 }}" height="200px" width="200px">
+      <input type="file" name="fileField4" accept="image/x-png,image/jpeg" id="fileField4" class="form-control" /></th>
     <th scope="row"><label for="fileField4">Photo 3</label>
-         <img src="{{ data.Photo3 }}">
-      <input type="file" name="fileField5" id="fileField4" class="form-control" /></th>
+         <img src="{{ data.Photo3 }}" height="200px" width="200px">
+      <input type="file" name="fileField5" accept="image/x-png,image/jpeg" id="fileField4" class="form-control" /></th>
 {#    <td width="188"><label for="fileField5">Photo 2</label>#}
 {#      <input type="file" name="fileField4" id="fileField5" class="form-control"/></td>#}
 {#    <td width="146"><label for="fileField6">Photo 3</label>#}
@@ -90,6 +166,23 @@
   </tr>
 </table>
 </form>
+<script src="/static/empsignup/js/jquery-ui.js"></script>
+	<script>
+    $(function() {
+        $("#datepicker").datepicker({
+            maxDate: 0 // Restrict to today or earlier
+        });
+    });
+</script>
+<script src="/static/empsignup/js/jquery-ui.js"></script>
+	<script>
+    $(function() {
+        $("#datepicker").datepicker({
+            maxDate: 0 // Restrict to today or earlier
+        });
+    });
+</script>
 
 </body>
+
 {% endblock %}

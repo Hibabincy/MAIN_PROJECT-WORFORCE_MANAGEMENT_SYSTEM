@@ -14,39 +14,69 @@
 </center><br>
 
 <body>
-<form action="/wForce/addjobvacancy_POST/" method="post">
- <table class="table table-bordered table-hover">
+<form action="/wForce/addjobvacancy_POST/" method="post" style="background-color: rebeccapurple">
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-striped table-bordered table-sm">
      {% csrf_token %}
-
+  <tr style="background-color: ">
+    <th scope="col">Project Title:</th>
+     <td><select name="projecttitle">
+         {% for i in data %}
+         <option style="background-color: #A1C2E3" value="{{ i.id }}">{{ i.projecttitle }}</option>
+         {% endfor %}
+     </select></td>
+  </tr>
 
   <tr>
-    <th scope="col">Job Title:</th>
+    <th scope="col">Description:</th>
      <td><input type="text" class="form-control" style="text-transform: capitalize" required name="textfield" id="textfield" /></td>
   </tr>
     <tr>
-    <th>Job Field:</th>
-     <td><select name="select" class="form-control">
-         <option value="Construction worker">Construction worker</option>
-         <option value="Construction inspector">Construction inspector</option>
-         <option value="Flooring installer">Flooring installer</option>
-         <option value="Surveyor">Surveyor</option>
-         <option value="Glazier">Glazier</option>
-         <option value="Tile setter">Tile setter</option>
-         <option value="Brick mason">Brick mason</option>
-         <option value="Roofer">Roofer</option>
-         <option value="Concrete finisher">Concrete finisher</option>
-         <option value="Ironworker">Ironworker</option>
-         <option value="Crane operator">Crane operator</option>
-         <option value="Plumber">Plumber</option>
-         <option value="Carpenter">Carpenter</option>
-         <option value="Painter">Painter</option>
-         <option value="Electrician">Electrician</option>
-         <option value="Pipefitter">Pipefitter</option>
-         <option value="Cost estimator">Cost estimator</option>
-         <option value="Safety manager">Safety manager</option>
-         <option value="Construction manager">Construction manager</option>
-         <option value="Civil engineer">Civil engineer</option>
-         <option value="Architect">Architect</option>
+    <th>Job title:</th>
+     <td><select  style="background-color: #b8c9f1" name="select1s" class="form-control">
+       <option value="site-clearing">Site Clearing Crew</option>
+  <option value="excavator-operator">Excavator Operator</option>
+  <option value="bulldozer-operator">Bulldozer Operator</option>
+  <option value="dump-truck-driver">Dump Truck Driver</option>
+  <option value="skid-steer-operator">Skid Steer Operator</option>
+  <option value="crane-operator">Crane Operator</option>
+  <option value="construction-laborer">Construction Laborer</option>
+  <option value="concrete-laborer">Concrete Laborer</option>
+  <option value="bricklayer">Bricklayer</option>
+  <option value="mason">Mason</option>
+  <option value="carpenter">Carpenter</option>
+  <option value="framer">Framer</option>
+  <option value="roofer">Roofer</option>
+  <option value="drywaller">Drywaller</option>
+  <option value="plasterer">Plasterer</option>
+  <option value="electrician">Electrician</option>
+  <option value="plumber">Plumber</option>
+  <option value="pipefitter">Pipefitter</option>
+  <option value="hvac-technician">HVAC Technician</option>
+  <option value="welder">Welder</option>
+  <option value="painter">Painter</option>
+  <option value="glazier">Glazier</option>
+  <option value="flooring-installer">Flooring Installer</option>
+  <option value="tile-installer">Tile Installer</option>
+  <option value="carpet-installer">Carpet Installer</option>
+  <option value="siding-installer">Siding Installer</option>
+  <option value="insulation-installer">Insulation Installer</option>
+  <option value="drywall-finisher">Drywall Finisher</option>
+  <option value="cabinetmaker">Cabinetmaker</option>
+  <option value="landscaper">Landscaper</option>
+  <option value="irrigation-specialist">Irrigation Specialist</option>
+  <option value="gardener">Gardener</option>
+  <option value="tree-surgeon">Tree Surgeon</option>
+  <option value="surveyor">Surveyor</option>
+  <option value="civil-engineer">Civil Engineer</option>
+  <option value="structural-engineer">Structural Engineer</option>
+  <option value="architect">Architect</option>
+  <option value="interior-designer">Interior Designer</option>
+  <option value="construction-manager">Construction Manager</option>
+  <option value="project-engineer">Project Engineer</option>
+  <option value="health-safety-officer">Health and Safety Officer</option>
+  <option value="quality-control-inspector">Quality Control Inspector</option>
      </select></td>
   </tr>
 {#     <tr>#}
@@ -59,9 +89,32 @@
     <th scope="col">Location:</th>
      <td><input type="text" class="form-control" style="text-transform: capitalize"  required name="textfield4" id="textfield4" /></td>
   </tr>
+
+
+     <tr>
+    <th>District:</th>
+     <td><select  style="background-color: #b8c9f1" name="select2" class="form-control">
+
+  <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+  <option value="Kollam">Kollam</option>
+  <option value="Pathanamthitta">Pathanamthitta</option>
+  <option value="Alappuzha">Alappuzha</option>
+  <option value="Kottayam">Kottayam</option>
+  <option value="Idukki">Idukki</option>
+  <option value="Ernakulam">Ernakulam</option>
+  <option value="Thrissur">Thrissur</option>
+  <option value="Palakkad">Palakkad</option>
+  <option value="Malappuram">Malappuram</option>
+  <option value="Kozhikode">Kozhikode</option>
+  <option value="Wayanad">Wayanad</option>
+  <option value="Kannur">Kannur</option>
+  <option value="Kasaragod">Kasaragod</option>
+</select></td>
+  </tr>
+
       <tr>
     <th scope="col">Start Date:</th>
-     <td><input type="date" class="form-control" required name="textfield5" id="textfield5" /></td>
+     <td><input type="date" class="form-control" value="dd-mm-yyyy" required name="textfield5" id="textfield5" /></td>
   </tr>
        <tr>
     <th scope="col">End Date:</th>
@@ -74,13 +127,17 @@
     <th scope="col">No of Vacancy:</th>
      <td><input type="text" class="form-control" required name="textfield8" id="textfield8" /></td>
   </tr>
+                <tr>
+    <th scope="col">Salary:</th>
+     <td><input type="text" class="form-control" required name="textfield13" id="textfield13" /></td>
+  </tr>
 
 
   <tr>
     <th scope="col">&nbsp;</th>
     <td><input type="submit" name="button" id="button" class="btn btn-success" value="Add" /></td>
   </tr>
-</table>
+            </table></div></div>
 </form>
 </body>
 {#</html>#}

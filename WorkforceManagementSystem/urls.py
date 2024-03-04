@@ -70,6 +70,9 @@ urlpatterns = [
     path('viewapprovedworkersmore/<id>', views.viewapprovedworkersmore),
     path('viewrejectedworkersmore/<id>', views.viewrejectedworkersmore),
     path('viewpendingworkersmore/<id>', views.viewpendingworkersmore),
+    path('newadmindash/', views.newadmindash),
+    path('demotable/', views.demotable),
+
 
 
 
@@ -104,6 +107,16 @@ urlpatterns = [
     path('editjobvacancy_POST/',views.editjobvacancy_POST),
     path('deletejobvacancy/<id>',views.deletejobvacancy),
     path('viewjobvacancyworker/',views.viewjobvacancyworker),
+    path('viewsearchedworkers/',views.viewsearchedworkers),
+    path('viewsearchedworkers_post/',views.viewsearchedworkers_post),
+    path('viewjobvacancyworkermore/',views.viewjobvacancyworkermore),
+    path('applyforjob/',views.applyforjob),
+    path('viewworkerrequests/<id>',views.viewworkerrequests),
+    path('viewworkerrequests_POST/',views.viewworkerrequests_POST),
+    path('approveworkerjobrequest/<id>',views.approveworkerjobrequest),
+    path('rejectworkerjobrequest/<id>',views.rejectworkerjobrequest),
+    # path('reviewemployer/',views.reviewemployer),
+    # path('viewreviews/',views.viewreviews),
 
 
 
