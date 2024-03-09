@@ -1,0 +1,166 @@
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{% extends "employerdashindex.html" %}
+{% block body %}
+
+<body>
+<div class="card p-4 shadow">
+
+<form action="/wForce/viewsearchedworkers_post/" method="post" enctype="multipart/form-data">
+<center>
+    <span style="color: #0a0a0a">
+        <h4 style="color: #0a0a0a; font-weight: bold; text-decoration: underline;">Worker Profile</h4>
+    </span>
+</center>
+<br><br>
+    <table class="table table-striped table-primary table-bordered">
+<div class="card p-3 shadow mb-3">
+            <div class=""><label for="textfield">Cover Photo</label><br><img src="{{ data.Photo}}" alt="" style="max-width: 250px"/></div>
+
+</div>
+  <tr >
+    <td ><label for="textfield">Worker Name </label></td>
+          <td ><label for="textfield">{{ data.Username }}</label></td>
+  </tr>
+
+         <tr >
+    <td ><label for="textfield">Email </label></td>
+          <td ><label for="textfield">{{ data.Email }}</label></td>
+         </tr>
+        <tr >
+    <td ><label for="textfield">Phone number</label></td>
+          <td ><label for="textfield">{{ data.Phone }}</label></td>
+  </tr>
+
+           <tr >
+    <td ><label for="textfield">Adharnumber</label></td>
+          <td ><label for="textfield">{{ data.Adharnumber }}</label></td>
+  </tr>
+
+           <tr >
+    <td ><label for="textfield">Jobtype</label></td>
+          <td ><label for="textfield">{{ data.Jobtype }}</label></td>
+  </tr>
+
+           <tr >
+    <td ><label for="textfield">Salary</label></td>
+          <td ><label for="textfield">{{ data.Salary }}</label></td>
+  </tr>
+
+           <tr >
+    <td ><label for="textfield">Skills</label></td>
+          <td ><label for="textfield">{{ data.Skills }}</label></td>
+  </tr>
+
+           <tr >
+    <td ><label for="textfield">Gender</label></td>
+          <td ><label for="textfield">{{ data.Gender }}</label></td>
+  </tr>
+ <tr >
+    <td ><label for="textfield">dob</label></td>
+          <td ><label for="textfield">{{ data.dob }}</label></td>
+  </tr>
+ <tr >
+    <td ><label for="textfield">Nationality</label></td>
+          <td ><label for="textfield">{{ data.Nationality }}</label></td>
+  </tr>
+ <tr >
+    <td ><label for="textfield">Qualification</label></td>
+          <td ><label for="textfield">{{ data.Qualification }}</label></td>
+  </tr>
+ <tr >
+    <td ><label for="textfield">Location</label></td>
+          <td ><label for="textfield">{{ data.Location }}</label></td>
+  </tr>
+ <tr >
+    <td ><label for="textfield">Experience</label></td>
+          <td ><label for="textfield">{{ data.Experience }}</label></td>
+  </tr>
+
+
+
+
+</table>
+
+  <div class="row">
+{#    <style>#}
+{#        .photo-container {#}
+{#            padding: 10px;#}
+{#            border-radius: 5px;#}
+{#            color: white;#}
+{#            text-align: center;#}
+{#            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow background */#}
+{#            margin-bottom: 20px; /* Add some space between div elements */#}
+{#        }#}
+{##}
+{#        .photo-container img {#}
+{#            width: 150px; /* Adjust the width of the photos */#}
+{#            height: auto; /* Maintain aspect ratio */#}
+{#        }#}
+{#    </style>#}
+    <div class="col-lg-3 photo-container"><label for="textfield">Photo 1</label><img src="{{ data.Photo1 }}" alt="" /></div>
+    <div class="col-lg-3 photo-container"><label for="textfield">Photo 2</label><img src="{{ data.Photo2 }}" alt="" /></div>
+    <div class="col-lg-3 photo-container"><label for="textfield">Photo 3</label><img src="{{ data.Photo3 }}" alt="" /></div>
+</div>
+
+
+
+    <table class="table table-striped table-primary table-bordered">
+
+
+
+         <tr >
+    <td ><label for="textfield">Post </label></td>
+          <td ><label for="textfield">{{ data.post }}</label></td>
+         </tr>
+        <tr >
+    <td ><label for="textfield">State</label></td>
+          <td ><label for="textfield">{{ data.state }}</label></td>
+  </tr>
+
+           <tr >
+    <td ><label for="textfield">District</label></td>
+          <td ><label for="textfield">{{ data.district }}</label></td>
+  </tr>
+
+               <tr >
+    <td ><label for="textfield">Pincode</label></td>
+          <td ><label for="textfield">{{ data.Pincode }} <input type="hidden" value="{{ data.LOGIN.id }}" name="lid"></label></td>
+  </tr>
+{#        <tr >#}
+{#    <td ><a href="/wForce/approve_worker/{{ data.LOGIN.id }}" class="btn btn-success">Approve</a> </td>#}
+{#          <td ><a href="/wForce/repprove_workerject_worker/{{ data.LOGIN.id }}" class="btn btn-danger">Reject</a> </td>#}
+{#  </tr>#}
+
+
+
+</table>
+
+
+
+
+
+{#    {% if check == "yes" %}#}
+{#        <table>#}
+{#        <tr>#}
+{#            <td>Fee Info</td>#}
+{#            <td>{{ Feetype }}<br>{{ Fee }}Rs/-<br>{{ Date }}<br>{{ status }}</td>#}
+{#        </tr>#}
+{#        <tr>#}
+{#    <th><input type="submit" name="button" id="button" value="Approve" /></th>#}
+{#    <td colspan="2"><input type="submit" name="button" id="button2" value="Reject" /></td>#}
+{#  </tr>#}
+{#        </table>#}
+{#    {% else %}#}
+{#      <div style="color: red">No Payment#}
+{##}
+{#      </div>#}
+{#    {% endif %}#}
+</form>
+</div>
+</body>
+{#</html>#}
+{% endblock %}

@@ -46,7 +46,7 @@
     <table class="pull-left">
   {% csrf_token %}
   <tr>
-    <th scope="col"><input type="text" name="textfield" id="textfield" class="form-control oval-search" placeholder="Search with location"/></th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <th scope="col"><input type="text" name="textfield" required id="textfield" class="form-control oval-search" placeholder="Search with location"/></th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 {#    <th scope="col">#}
 {#      <button type="submit" name="button" id="button" class="btn btn-success search-button">#}
 {#        <i class="fas fa-search"></i> <!-- Font Awesome search icon -->#}
@@ -92,8 +92,10 @@
       <td>{{i.distance}}</td>
 {#      <td><a href="/#/{{ i.latitude.id }}" ></a></td>#}
 {#      <td><a href="{{ i.longitude.id }}" ></a></td>#}
-    <td><a href="/#/{{ i.LOGIN.id }}" class="btn btn-success">view profile</a></td>
-    <td><a href="/#/{{ i.LOGIN.id }}" class="btn btn-info">Request</a></td>
+    <td><a href="/wForce/viewsearchedworkerprofile/{{ i.id }}" class="btn btn-success">view profile</a></td>
+
+
+    <td><a href="/wForce/employerrequesttoworker/{{ i.id }}" class="btn btn-info">Request</a></td>
     <td><a href="/#/{{ i.LOGIN.id }}" class="btn btn-info">Chat</a></td>
     <td><a href="/#r/{{ i.LOGIN.id }}" class="btn btn-danger" onclick="return confirm('Are You Sure?')">Reject</a></td>
   </tr>

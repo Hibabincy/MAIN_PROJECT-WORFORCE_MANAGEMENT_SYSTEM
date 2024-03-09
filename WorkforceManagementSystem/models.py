@@ -127,3 +127,8 @@ class Jobrequest(models.Model):
     date = models.CharField(max_length=100)
     status = models.CharField(max_length=100)
 
+class Workerrequest(models.Model):
+    PROJECT = models.ForeignKey(Projects, on_delete=models.CASCADE)
+    WORKER = models.ForeignKey(Worker, on_delete=models.CASCADE)
+    date = models.CharField(max_length=100)
+    status = models.CharField(max_length=100)

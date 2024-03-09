@@ -1,7 +1,7 @@
 import datetime
 
 from django.core.files.storage import FileSystemStorage
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse, request
 from django.shortcuts import render, redirect
 
 # Create your views here.
@@ -793,14 +793,15 @@ def viewsearchedworkers(request):
 def viewsearchedworkers_post(request):
     search= request.POST['textfield']
     skill= request.POST['textfield2']
-    from geopy.geocoders import Nominatim
+    from geopy.geocoders import Nominatim, Photon
 
 
-    geolocator = Nominatim(user_agent="geoapiExercises")
+    geolocator = Photon(user_agent="geoapiExercises")
+    # geolocator = Nominatim(user_agent="geoapiExercises")
     location = geolocator.geocode(search)
     lat,lon= location.latitude, location.longitude
 
-    b = Worker.objects.filter(Skills__icontains=skill,LOGIN__type='worker')
+    b = Worker.objects.filter(Skills__icontains=skill,LOGIN__Type='worker')
     l=[]
     for i in b:
         distance = geodesic((lat, lon), (float(i.lattitude), float(i.longitude))).kilometers
@@ -843,7 +844,38 @@ def viewworkerrequests(request,id):
 def viewworkerrequests_POST(request):
     return render(request, "viewworkerrequests.html")
 
+def searchproject(request):
+    q=Projects.objects.filter(EMPLOYER__LOGIN_id=request.session['lid'])
+    return render(request, "searchproject.html",{"data":q})
 
+
+def searchproject_post(request):
+    wid=request.session['wid']
+    pid=request.POST['pid']
+    if Workerrequest.objects.filter(PROJECT_id=pid,WORKER_id=wid).exists():
+     return HttpResponse('''<script>alert('Project already exist to this person ');history.back()</script>''')
+
+
+
+    a = Workerrequest()
+
+    a.PROJECT_id = pid
+    a.WORKER_id = wid
+    a.date = datetime.datetime.now().strftime('%d-%m-%Y')
+    a.status = 'Pending'
+    a.save()
+
+    return HttpResponse('''<script>alert('Requested ');window.location="/wForce/viewsearchedworkers/"</script>''')
+
+
+def employerrequesttoworker(request,id):
+    request.session['wid']=id
+    q=Projects.objects.filter(EMPLOYER__LOGIN_id=request.session['lid'])
+    return render(request, "searchproject.html",{"data":q})
+
+def employerrejectworkerrequest(request,id):
+
+    return HttpResponse('''<script>alert('Rejected ');window.location="/wForce/viewsearchedworkers/"</script>''')
 
 
 
@@ -859,6 +891,11 @@ def rejectworkerjobrequest(request,id):
     res=Jobrequest.objects.filter(id=id).update(status="rejected")
     return HttpResponse('''<script>alert('Reject Successfull');window.location="/wForce/viewjobvacancy/"</script>''')
 
+def viewsearchedworkerprofile(request,id):
+
+    v=Worker.objects.get(id=id)
+
+    return render(request, "viewsearchedworkerprofile.html", {'data': v})
 
 
 
@@ -1182,8 +1219,10 @@ def editworkerprofile(request):
     return JsonResponse({'status':'ok'})
 
 def viewjobvacancyworker(request):
+    location=request.POST["value"]
+    jobtitle=request.POST["value"]
     lid=request.POST['lid']
-    p=Jobvaccancy.objects.all()
+    p=Jobvaccancy.objects.filter(location__icontains=location)|Jobvaccancy.objects.filter(jobtitle__icontains=jobtitle)
     l=[]
     for i in p:
         s='yes'
@@ -1237,3 +1276,46 @@ def applyforjob(request):
     jobj.save()
 
     return JsonResponse({'status': 'ok'})
+
+
+def viewandsearchemployer(request):
+    Place=request.POST["value"]
+    Companyname=request.POST["value"]
+    lid=request.POST['lid']
+    p=Employer.objects.filter(Companyname__icontains=Companyname,LOGIN__Type="employer").order_by('-id')|Employer.objects.filter(Place__icontains=Place,LOGIN__Type="employer").order_by('-id')
+    l=[]
+    for i in p:
+        l.append({'id':i.id,
+                  'Company':i.Companyname,
+                  'Photo':i.Photo,
+                  'email':i.Email,
+                  'Phone':i.Phone,
+                  'Date':i.Date,
+                  'Location':i.Place,
+                  })
+    return JsonResponse({'status': 'ok',"data":l})
+
+def viewemployerprofilemore(reques):
+
+        lid =request.POST['lid']
+        i = Employer.objects.get(id=lid)
+        # if Jobrequest.objects.filter(EMPLOYER=i.id, WORKER=Worker.objects.get(LOGIN_id=lid)).exists():
+        #     s = 'no'
+        return JsonResponse({'status': 'ok', 'id': i.id,
+                             'Companyname': i.Companyname,
+                             'Email': i.Email,
+                             'Phone': i.Phone,
+                             'Photo': i.Photo,
+                             'District': i.District,
+                             'Place': i.Place,
+                             'Post': i.Post,
+                             'State': i.State,
+                             'Pincode': i.Pincode,
+                             'Photo': i.Photo,
+                             'Category': i.Category,
+                             'Website': i.Website,
+                             'Photo1': i.Photo1,
+                             'Photo2': i.Photo2,
+                             'Photo3': i.Photo3,
+                             'Aboutcompany_': i.Aboutcompany,
+                           })

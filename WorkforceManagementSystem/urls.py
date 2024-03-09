@@ -90,9 +90,11 @@ urlpatterns = [
     path('employerdash/', views.employerdash),
     path('mainhome/', views.mainhome),
     path('employerhome/',views.employerhome),
+
     path('employerviewprofile/',views.employerviewprofile),
     path('editemployerviewprofile/',views.editemployerviewprofile),
     path('editemployerviewprofile_POST/',views.editemployerviewprofile_POST),
+
     path('addproject/',views.addproject),
     path('addproject_POST/',views.addproject_POST),
     path('editproject_POST/',views.editproject_POST),
@@ -100,6 +102,7 @@ urlpatterns = [
     path('viewproject/',views.viewproject),
     path('viewproject_POST/',views.viewproject_POST),
     path('projectdelete/<id>',views.projectdelete),
+
     path('addjobvacancy/',views.addjobvacancy),
     path('addjobvacancy_POST/',views.addjobvacancy_POST),
     path('viewjobvacancy/',views.viewjobvacancy),
@@ -107,14 +110,24 @@ urlpatterns = [
     path('editjobvacancy_POST/',views.editjobvacancy_POST),
     path('deletejobvacancy/<id>',views.deletejobvacancy),
     path('viewjobvacancyworker/',views.viewjobvacancyworker),
-    path('viewsearchedworkers/',views.viewsearchedworkers),
-    path('viewsearchedworkers_post/',views.viewsearchedworkers_post),
     path('viewjobvacancyworkermore/',views.viewjobvacancyworkermore),
+
     path('applyforjob/',views.applyforjob),
     path('viewworkerrequests/<id>',views.viewworkerrequests),
     path('viewworkerrequests_POST/',views.viewworkerrequests_POST),
     path('approveworkerjobrequest/<id>',views.approveworkerjobrequest),
     path('rejectworkerjobrequest/<id>',views.rejectworkerjobrequest),
+    path('employerrequesttoworker/<id>',views.employerrequesttoworker),
+
+    path('searchproject/',views.searchproject),
+    path('searchproject_post/',views.searchproject_post),
+
+    path('viewsearchedworkers/', views.viewsearchedworkers),
+    path('viewsearchedworkers_post/', views.viewsearchedworkers_post),
+    path('viewsearchedworkerprofile/<id>',views.viewsearchedworkerprofile),
+    path('viewandsearchemployer/',views.viewandsearchemployer),
+    path('viewemployerprofilemore/',views.viewemployerprofilemore),
+
     # path('reviewemployer/',views.reviewemployer),
     # path('viewreviews/',views.viewreviews),
 
