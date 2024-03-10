@@ -695,13 +695,13 @@ def addjobvacancy(request):
 
 def addjobvacancy_POST(request):
     jobtitle= request.POST['textfield']
-    jobfield = request.POST['select']
+    jobfield = request.POST['select1s']
 
     projecttitle=request.POST['projecttitle']
     created_date= datetime.datetime.now().date()
 
     location=request.POST['textfield4']
-    district=request.POST['textfield12']
+    district=request.POST['select2']
     startdate=request.POST['textfield5']
     enddate=request.POST['textfield6']
     salary=request.POST['textfield13']
@@ -896,6 +896,66 @@ def viewsearchedworkerprofile(request,id):
     v=Worker.objects.get(id=id)
 
     return render(request, "viewsearchedworkerprofile.html", {'data': v})
+
+
+
+def viewapprovedjobrequests(request,id):
+    res=Jobrequest.objects.filter(JOBVACANCY_id=id,status='Accepted').order_by('-id')
+    return render(request, "viewapprovedjobrequests.html",{"data":res})
+
+def viewapprovedjobrequests_POST(request):
+    return render(request, "viewapprovedjobrequests.html")
+
+
+
+def chat1(request, id):
+    if request.session['lid']!='':
+        request.session["workerid"] = id
+        cid = str(request.session["workerid"])
+        request.session["new"] = cid
+        qry = Worker.objects.get(LOGIN=cid)
+
+        return render(request, "Chats.html", {'photo': qry.photo, 'name': qry.name, 'toid': cid})
+    else:
+        return HttpResponse('''<script>alert('You are not Logined');window.location='/wForce/login/'</script>''')
+
+
+def chat_view(request):
+    if request.session['lid']!='':
+        fromid = request.session["lid"]
+        toid = request.session["workerid"]
+        qry = Worker.objects.get(LOGIN=request.session["workerid"])
+        from django.db.models import Q
+
+        res = Chat.objects.filter(Q(FROMID_id=fromid, TOID_id=toid) | Q(FROMID_id=toid, TOID_id=fromid))
+        l = []
+
+        for i in res:
+            l.append({"id": i.id, "message": i.message, "to": i.TOID_id, "date": i.date, "from": i.FROMID_id})
+
+        return JsonResponse({'photo': qry.photo, "data": l, 'name': qry.name, 'toid': request.session["workerid"]})
+    else:
+        return HttpResponse('''<script>alert('You are not Logined');window.location='/wForce/login/'</script>''')
+
+
+def chat_send(request, msg):
+    if request.session['lid']!='':
+        lid = request.session["lid"]
+        toid = request.session["workerid"]
+        message = msg
+
+        import datetime
+        d = datetime.datetime.now().date()
+        chat = Chat()
+        chat.message = message
+        chat.TOID_id = toid
+        chat.FROMID_id = lid
+        chat.date = d
+        chat.save()
+    else:
+        return HttpResponse('''<script>alert('You are not Logined');window.location='/wForce/login/'</script>''')
+    return JsonResponse({"status": "ok"})
+
 
 
 
@@ -1221,8 +1281,9 @@ def editworkerprofile(request):
 def viewjobvacancyworker(request):
     location=request.POST["value"]
     jobtitle=request.POST["value"]
+    district=request.POST["value"]
     lid=request.POST['lid']
-    p=Jobvaccancy.objects.filter(location__icontains=location)|Jobvaccancy.objects.filter(jobtitle__icontains=jobtitle)
+    p=Jobvaccancy.objects.filter(location__icontains=location)|Jobvaccancy.objects.filter(jobtitle__icontains=jobtitle)|Jobvaccancy.objects.filter(district__icontains=district)
     l=[]
     for i in p:
         s='yes'
@@ -1295,10 +1356,12 @@ def viewandsearchemployer(request):
                   })
     return JsonResponse({'status': 'ok',"data":l})
 
-def viewemployerprofilemore(reques):
+def viewemployerprofilemore(request):
 
         lid =request.POST['lid']
-        i = Employer.objects.get(id=lid)
+        eid =request.POST['eid']
+        # i = Employer.objects.get(id=lid)
+        i = Employer.objects.get(id=eid)
         # if Jobrequest.objects.filter(EMPLOYER=i.id, WORKER=Worker.objects.get(LOGIN_id=lid)).exists():
         #     s = 'no'
         return JsonResponse({'status': 'ok', 'id': i.id,
@@ -1311,11 +1374,53 @@ def viewemployerprofilemore(reques):
                              'Post': i.Post,
                              'State': i.State,
                              'Pincode': i.Pincode,
-                             'Photo': i.Photo,
                              'Category': i.Category,
                              'Website': i.Website,
                              'Photo1': i.Photo1,
                              'Photo2': i.Photo2,
                              'Photo3': i.Photo3,
-                             'Aboutcompany_': i.Aboutcompany,
+                             'Aboutcompany':i.Aboutcompany,
                            })
+
+def Viewemployerrequestsworker(request):
+    lid=request.POST['lid']
+    p=Workerrequest.objects.filter(WORKER__LOGIN_id=lid).order_by('-id')
+    l=[]
+    for i in p:
+        l.append({'id':i.id,
+
+                  'Company':i.PROJECT.EMPLOYER.Companyname,
+                  'Photo':i.PROJECT.EMPLOYER.Photo,
+                  'email':i.PROJECT.EMPLOYER.Email,
+                  'projecttitle':i.PROJECT.projecttitle,
+                  'date':i.date,
+                  'Location':i.PROJECT.EMPLOYER.Place,
+                  })
+    return JsonResponse({'status': 'ok',"data":l})
+
+
+def workersendchat(request):
+    frm_id=request.POST['from_id']
+    to_id = request.POST['to_id']
+    message=request.POST['message']
+    obj=Chat()
+    obj.FROMID_id=frm_id
+    obj.TOID_id=to_id
+    obj.message=message
+    obj.date=datetime.now()
+    obj.save()
+    return JsonResponse({'status': 'ok'})
+
+def workerviewchat(request):
+    fromid = request.POST["from_id"]
+    toid = request.POST["to_id"]
+    # lmid = request.POST["lastmsgid"]
+    from django.db.models import Q
+
+    res = Chat.objects.filter(Q(FROMID_id=fromid, TOID_id=toid) | Q(FROMID_id=toid, TOID_id=fromid))
+    l = []
+
+    for i in res:
+        l.append({"id": i.id, "msg": i.message, "from": i.FROMID_id, "date": i.date, "to": i.TOID_id})
+
+    return JsonResponse({"status":"ok",'data':l})

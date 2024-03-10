@@ -14,7 +14,7 @@
 </center><br>
 
 <body>
-<form action="/wForce/addjobvacancy_POST/" method="post" style="background-color: rebeccapurple">
+<form action="/wForce/addjobvacancy_POST/" method="post" style="background-color: rebeccapurple" onsubmit="return validateDates()">
     <div class="card">
         <div class="card-body">
             <table class="table table-striped table-bordered table-sm">
@@ -114,7 +114,7 @@
 
       <tr>
     <th scope="col">Start Date:</th>
-     <td><input type="date" class="form-control" value="dd-mm-yyyy" required name="textfield5" id="textfield5" /></td>
+     <td><input type="date" class="form-control" required name="textfield5" id="textfield5" /></td>
   </tr>
        <tr>
     <th scope="col">End Date:</th>
@@ -139,6 +139,20 @@
   </tr>
             </table></div></div>
 </form>
+<script>
+  function validateDates() {
+    var startDate = document.getElementById("textfield5").value;
+    var endDate = document.getElementById("textfield6").value;
+
+    if (startDate && endDate) {
+      if (startDate > endDate) {
+        alert("End Date must be greater than Start Date");
+        return false;
+      }
+    }
+    return true;
+  }
+</script>
 </body>
 {#</html>#}
 {% endblock %}

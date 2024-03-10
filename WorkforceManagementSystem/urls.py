@@ -127,11 +127,17 @@ urlpatterns = [
     path('viewsearchedworkerprofile/<id>',views.viewsearchedworkerprofile),
     path('viewandsearchemployer/',views.viewandsearchemployer),
     path('viewemployerprofilemore/',views.viewemployerprofilemore),
+    path('viewapprovedjobrequests/<id>',views.viewapprovedjobrequests),
+    path('viewapprovedjobrequests_POST/',views.viewapprovedjobrequests),
+    path('Viewemployerrequestsworker/',views.Viewemployerrequestsworker),
 
     # path('reviewemployer/',views.reviewemployer),
     # path('viewreviews/',views.viewreviews),
 
 
+    path('chat1/<id>', views.chat1),
+    path('chat_send/<msg>', views.chat_send),
+    path('chat_view/', views.chat_view),
 
 
 
@@ -156,7 +162,10 @@ urlpatterns = [
 
     path('workerregistration_post/',views.workerregistration_post),
     path('flutterlogin/',views.flutterlogin ),
+
     path('workerprofile/',views.workerprofile ),
     path('editworkerprofile/',views.editworkerprofile ),
 
+    path('workersendchat/', views.workersendchat),
+    path('workerviewchat/', views.workerviewchat),
 ]

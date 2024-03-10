@@ -132,3 +132,10 @@ class Workerrequest(models.Model):
     WORKER = models.ForeignKey(Worker, on_delete=models.CASCADE)
     date = models.CharField(max_length=100)
     status = models.CharField(max_length=100)
+
+
+class Chat(models.Model):
+    FROMID=models.ForeignKey(Login,on_delete=models.CASCADE,related_name='frm_id')
+    TOID=models.ForeignKey(Login,on_delete=models.CASCADE,related_name='to_id')
+    message=models.CharField(max_length=1000)
+    date = models.DateField()

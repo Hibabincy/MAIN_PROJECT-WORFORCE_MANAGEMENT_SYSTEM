@@ -14,7 +14,7 @@
 </center>
 <br>
 <body>
-<form action="/wForce/editjobvacancy_POST/" method="post">
+<form action="/wForce/editjobvacancy_POST/" method="post" onsubmit="return validateDates()">
  <table class="table table-bordered table-hover">
      {% csrf_token %}
 
@@ -89,6 +89,20 @@
   </tr>
 </table>
 </form>
+<script>
+  function validateDates() {
+    var startDate = document.getElementById("textfield5").value;
+    var endDate = document.getElementById("textfield6").value;
+
+    if (startDate && endDate) {
+      if (startDate > endDate) {
+        alert("End Date must be greater than Start Date");
+        return false;
+      }
+    }
+    return true;
+  }
+</script>
 </body>
 {#</html>#}
 {% endblock %}
