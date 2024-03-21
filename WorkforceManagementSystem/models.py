@@ -139,3 +139,31 @@ class Chat(models.Model):
     TOID=models.ForeignKey(Login,on_delete=models.CASCADE,related_name='to_id')
     message=models.CharField(max_length=1000)
     date = models.DateField()
+#
+# class Notification(models.Model):
+#     message = models.CharField(max_length=10000)
+#     date = models.DateField()
+
+
+class Notifications(models.Model):
+    Notification_name = models.CharField(max_length=100)
+    Description = models.CharField(max_length=300)
+    Date = models.DateField()
+    Status = models.CharField(max_length=100, default='')
+    type = models.CharField(max_length=100)
+
+
+
+
+
+
+
+
+
+
+
+#
+# class Groupchat(models.Model):
+#     FROMID=models.ForeignKey(Login,on_delete=models.CASCADE,related_name='fr_id')
+#     message=models.CharField(max_length=1000)
+#     date = models.DateField()

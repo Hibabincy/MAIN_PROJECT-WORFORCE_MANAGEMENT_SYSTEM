@@ -1,0 +1,85 @@
+{% extends "employerdashindex.html" %}
+{% block body %}
+<br>
+<br>
+<body>
+  <center>
+    <span style="color: #0a0a0a">
+        <h4 style="color: #0a0a0a; font-weight: bold; text-decoration: underline;">Chats</h4>
+    </span>
+</center>
+<br><br>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+  .message-box {
+    width: 80%; /* Adjust the width as needed */
+    margin: 20px auto;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .message-row {
+    display: flex;
+    align-items: center;
+    height: 80px; /* Fixed height for each row */
+  }
+
+  .message-box img {
+    max-width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .message-content {
+    flex-grow: 1;
+  }
+
+  .message-content .username {
+    font-weight: bold;
+    color: #333;
+  }
+
+  .message-actions {
+    text-align: right; /* Align button to the right */
+  }
+
+  .chat-button {
+    padding: 8px 20px; /* Adjust padding as needed */
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff; /* Change button color to blue */
+    color: white;
+    cursor: pointer;
+  }
+
+  .chat-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+</style>
+
+<div class="message-box">
+  {% for i in data %}
+    <div class="message-row">
+        <img src="{{ i.Photo }}" alt="Profile Picture">
+        <div class="message-content">
+            <span class="username">{{ i.Username }}</span>
+        </div>
+        <div class="message-actions">
+            <a href="/wForce/chat1/{{ i.lid }}" class="chat-button">Chat</a>
+        </div>
+    </div>
+    {% if not forloop.last %}
+        <hr style="margin: 10px 0;">
+    {% endif %}
+  {% endfor %}
+</div>
+
+
+<br><br>
+{% endblock %}

@@ -77,6 +77,20 @@ urlpatterns = [
 
 
 
+    path('AddNotification/', views.AddNotification),
+    path('AddNotification_post/', views.AddNotification_post),
+    path('ViewNotification/', views.ViewNotification),
+    path('employerViewNotification/', views.employerViewNotification),
+    path('employerViewNotification_post/', views.employerViewNotification_post),
+    path('ViewNotification_post/', views.ViewNotification_post),
+    path('DeleteNotification/<id>', views.DeleteNotification),
+    path('EditNotification/<id>', views.EditNotification),
+    path('EditNotification_post/', views.EditNotification_post),
+    path('UpdateNotification/<id>', views.UpdateNotification),
+    path('WorkerViewNotification/', views.WorkerViewNotification),
+
+
+
 
 
 
@@ -90,6 +104,10 @@ urlpatterns = [
     path('employerdash/', views.employerdash),
     path('mainhome/', views.mainhome),
     path('employerhome/',views.employerhome),
+    # path('viewnotification/',views.viewnotification),
+    # path('addnotifications/',views.addnotifications),
+    # path('sendnotification/',views.sendnotification),
+
 
     path('employerviewprofile/',views.employerviewprofile),
     path('editemployerviewprofile/',views.editemployerviewprofile),
@@ -130,14 +148,30 @@ urlpatterns = [
     path('viewapprovedjobrequests/<id>',views.viewapprovedjobrequests),
     path('viewapprovedjobrequests_POST/',views.viewapprovedjobrequests),
     path('Viewemployerrequestsworker/',views.Viewemployerrequestsworker),
+    # path('chatm/',views.chatm),
 
     # path('reviewemployer/',views.reviewemployer),
     # path('viewreviews/',views.viewreviews),
 
 
+
     path('chat1/<id>', views.chat1),
     path('chat_send/<msg>', views.chat_send),
     path('chat_view/', views.chat_view),
+    path('employerallchats/', views.employerallchats),
+    path('employerallchatview/', views.employerallchatview),
+    path('employerallchatsend/<msg>', views.employerallchatsend),
+    path('Viewemployerrequestsworkermore/', views.Viewemployerrequestsworkermore),
+    path('acceptrprojectrequest/', views.acceptrprojectrequest),
+    path('rejectprojectrequest/', views.rejectprojectrequest),
+    path('viewacceptedprojectrequests/', views.viewacceptedprojectrequests),
+    path('viewacceptedprojectrequests_POST/', views.viewacceptedprojectrequests_POST),
+
+
+
+
+    path('viewemployerprofilemorejb/', views.viewemployerprofilemorejb),
+    path('viewallworkerchats/', views.viewallworkerchats),
 
 
 

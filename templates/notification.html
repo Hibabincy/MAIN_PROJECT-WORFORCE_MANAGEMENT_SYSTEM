@@ -1,0 +1,107 @@
+{% extends "admindashinbox.html" %}
+
+{% block body %}
+<style>
+    body {
+        background-color: #f8f9fa;
+        padding-top: 50px; /* Added space before content starts */
+        padding-bottom: 50px; /* Added space after content ends */
+    }
+
+    .container {
+        margin-top: 30px;
+    }
+
+    .search-form {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .notification-list {
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+    }
+
+    .add-button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 15px 30px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+
+    .add-button:hover {
+        background-color: #0056b3;
+    }
+
+    .delete-button {
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 20px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+
+    .delete-button:hover {
+        background-color: #c82333;
+    }
+
+    .table th,
+    .table td {
+        vertical-align: middle;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="search-form">
+                <h2 class="mb-4">Search Notifications</h2>
+                <form id="form1" name="form1" method="post" action="searchnot">
+                    <div class="form-group">
+                        <label for="date">Date:</label>
+                        <input type="date" id="date" name="textfield" class="form-control" placeholder="Enter Date">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">SEARCH</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="notification-list">
+                <h2 class="mb-4">Notification List</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Message</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for notification in notifications %}
+                        <tr>
+                            <td>{{ notification.message }}</td>
+                            <td>{{ notification.date }}</td>
+                            <td><a href="deletenot/{{ notification.id }}" class="btn btn-danger delete-button">Delete</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <div class="text-right mt-4">
+                    <a href="/wForce/addnotifications/" class="btn btn-primary btn-lg">Add Notification</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

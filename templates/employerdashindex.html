@@ -92,6 +92,9 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                 <li>
 									<a href="#">Assign Workers to Project</a>
 								</li>
+                                 <li>
+									<a href="/wForce/viewacceptedprojectrequests/{{ m.id }}">Accepted workers</a>
+								</li>
 {#								<li>#}
 {#									<a href="/wForce/viewfee">View </a>#}
 {#								</li>#}
@@ -140,11 +143,16 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 							<!-- //nav-second-level -->
                         </li>
                         <li>
-							<a href="#"><i class="fa fa-bell nav_icon"></i> Request Status</a>
+							<a href="/wForce/employerViewNotification/"><i class="fa fa-bell nav_icon"></i> Notifications</a>
 
                         </li>
-                        <li>
-							<a href="/wForce/chat1/"><i class="fa fa-comments nav_icon"></i> Chat management</a>
+
+{#                        <li>#}
+{#                            <a href="/wForce/employerallchats/"><i class="fa fa-comments nav_icon"></i>Chat management</a>#}
+{##}
+{#                        </li>#}
+                            <li>
+                            <a href="/wForce/viewallworkerchats/"><i class="fa fa-comments nav_icon"></i>Chat management</a>
 
                         </li>
                     </ul>

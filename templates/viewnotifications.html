@@ -1,0 +1,57 @@
+{% extends "admindashinbox.html" %}
+{% block body %}
+<body><form action="/wForce/ViewNotification_post/" method="post">
+<h1 align="center"><center><b>NOTIFICATIONS</b></center></h1>
+<br><br>
+{% csrf_token%}
+ <table class="px pull-left">
+  <tr>
+    <th>From date &nbsp;</th>&nbsp;&nbsp;&nbsp;
+    <td><input type="Date" name="textfield" id="textfield" /></td>&nbsp;&nbsp;
+    <th>&nbsp;&nbsp;&nbsp;To</th>
+    <td><input type="Date" name="textfield2" id="textfield2" /></td>
+    <td><input type="submit" name="button" id="button" value="Search" class=" btn btn-info"/></td>
+
+  </tr>
+
+ </table>
+ <table class="table table-bordered">
+
+  <tr>
+      <br><br><br><br>
+    <th scope="row">Sl no</th>
+    <th>Notification title</th>
+    <th>Description</th>
+    <th>Date</th>
+    <td>&nbsp;</td>
+      <td></td>
+      <td></td>
+
+  </tr>
+
+     {% for i in data %}
+  <tr>
+    <td>&nbsp;{{ forloop.counter}}</td>
+    <td>&nbsp;{{ i.Notification_name }}</td>
+    <td>&nbsp;{{ i.Description }}</td>
+      <td>&nbsp;{{ i.Date }}</td>
+         <td><a href="/wForce/EditNotification/{{ i.id }}" class="btn btn-success">Edit</a><br></td>
+         <td><a href="/wForce/DeleteNotification/{{ i.id }}" class="btn btn-danger">Delete</a><br></td>
+
+         <td>
+         {% if i.Status == "pending" %}
+
+             <a href="/wForce/UpdateNotification/{{ i.id }}" class="btn btn-info">Update</a><br>
+         {% else %}
+         {% endif %}
+
+         </td>
+
+    {% endfor %}
+
+  </tr>
+ </table>
+ <br><br><br><br><br><br><br> <br><br><br><br><br><br><br> <br><br><br><br><br><br><br>
+</form>
+</body>
+{% endblock %}

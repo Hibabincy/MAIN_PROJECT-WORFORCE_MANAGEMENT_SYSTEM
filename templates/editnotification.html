@@ -1,0 +1,29 @@
+{% extends "admindashinbox.html" %}
+{% block body %}
+
+
+
+<body>
+<form action="/wForce/EditNotification_post/" method="post">
+    <h1 align="center"><center><b>EDIT NOTIFICATION</b></center></h1>
+    <br><br><br><br>
+     {% csrf_token%}
+  <table class="table table-bordered">
+    <input type="hidden" name="id1" value="{{ data.id }}">
+  <tr>
+      <th scope="row">Notification name</th>
+      <td><input type="text" name="textfield" id="textfield" value= "{{ data.Notification_name }}"  required/></td>
+    </tr>
+    <tr>
+      <th scope="row">Description</th>
+      <td><input type="text" name="textfield2" id="textfield2"  value= "{{ data.Description }}" required/></td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;</th>
+      <td><input type="submit" name="button" id="button" value="Submit" class="btn btn-success" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+
+{% endblock %}

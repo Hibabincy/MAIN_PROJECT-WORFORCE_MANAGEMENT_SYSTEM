@@ -67,6 +67,119 @@ def login_post(request):
 def mainhome(request):
     return render(request, "mainhome1index.html")
 
+# def viewnotification(request):
+#     ob=Notification.objects.all()
+#     return render(request, "notification.html",{"VAL":ob})
+# def addnotifications(request):
+#     return render(request,"sendnotification.html")
+#
+# def sendnotification(request):
+#     notification=request.POST['textfield2']
+#     type=request.POST['select']
+#
+#     ob=viewnotification()
+#     ob.message=notification
+#     ob.type=type
+#     ob.date=datetime.now().date()
+#     ob.save()
+#     return HttpResponse('''<script>alert("Notification Sent successfully");window.location="/wForce/addnotifications/"</script>''')
+#
+# def deletenot(request,id):
+#     ob=viewnotification.objects.get(id=id)
+#     ob.delete()
+#     return HttpResponse('''<script>alert("Deleted Successfully");window.location="/wForce/viewnotification/"</script>''')
+
+def AddNotification(request):
+    return render(request,"addnotificationnew.html")
+
+def AddNotification_post(request):
+    Notification_name = request.POST["textfield"]
+    Description=request.POST["textfield2"]
+    obj=Notifications()
+    obj.Notification_name=Notification_name
+    obj.Description=Description
+    obj.Date=datetime.date.today()
+    obj.Status='pending'
+    obj.save()
+    return HttpResponse("<script>alert('Notification Added successfully');window.location='/wForce/ViewNotification/'</script>")
+
+def ViewNotification(request):
+    res=Notifications.objects.all().order_by('-id')
+
+    return render(request,"viewnotifications.html",{'data':res})
+
+def ViewNotification_post(request):
+    date_from=request.POST['textfield']
+    date_to=request.POST['textfield2']
+
+    res=Notifications.objects.filter(Date__range=(date_from,date_to))
+    return render(request,"viewnotifications.html",{'data':res})
+
+def employerViewNotification(request):
+    res=Notifications.objects.all().order_by('-id')
+
+    return render(request,"employerviewnotifications.html",{'data':res})
+
+def employerViewNotification_post(request):
+    date_from=request.POST['textfield']
+    date_to=request.POST['textfield2']
+
+    res=Notifications.objects.filter(Date__range=(date_from,date_to))
+    return render(request,"employerviewnotifications.html",{'data':res})
+
+
+#
+# def ViewNotification_post(request):
+#     date_from=request.POST['textfield']
+#     date_to=request.POST['textfield2']
+#
+#     res=Notifications.objects.filter(Date__range=(date_from,date_to))
+#     return render(request,"wForce/viewnotifications.html",{'data':res})
+
+def DeleteNotification(request,id):
+    res=Notifications.objects.get(id=id).delete()
+    return HttpResponse("<script>alert('Delete successfully');window.location='/wForce/ViewNotification/'</script>")
+
+def EditNotification(request,id):
+    res=Notifications.objects.get(id=id)
+    return render(request,"editnotification.html",{'data':res})
+
+def EditNotification_post(request):
+    did=request.POST['id1']
+    Notification_name=request.POST["textfield"]
+    Description = request.POST["textfield2"]
+    obj=Notifications.objects.get(id=did)
+    obj.Notification_name=Notification_name
+    obj.Description = Description
+    obj.save()
+
+
+    return HttpResponse("<script>alert('Updated successfully');window.location='/wForce/ViewNotification/'</script>")
+
+
+def UpdateNotification(request,id):
+    res=Notifications.objects.filter(id=id).update(Status='update')
+    return HttpResponse("<script>alert('Notification Removed');window.location='/wForce/ViewNotification/'</script>")
+
+
+
+def WorkerViewNotification(request):
+    n=Notifications.objects.filter(Status='pending')
+    no=[]
+    for i in n:
+        no.append({'id':i.id,'Notification':i.Notification_name,
+                   'Notificationdate':i.Date,'Description':i.Description})
+    return JsonResponse({'status':'ok','data':no})
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -191,6 +304,10 @@ def viewapprovedemployers(request):
     t=Employer.objects.filter(LOGIN__Type="employer").order_by('-id')
     return render(request, "viewapprovedemployers.html", {'data': t})
 
+def viewapprovedemployersmore(request,id):
+    u=Employer.objects.get(LOGIN=id)
+    return render(request, "viewapprovedemployersmore.html", {'data': u})
+
 def viewrejectedemployers(request):
 
     t1=Employer.objects.filter(LOGIN__Type="rejected").order_by('-id')
@@ -201,9 +318,6 @@ def viewpendingemployers(request):
     t=Employer.objects.filter(LOGIN__Type="pending").order_by('-id')
     return render(request, "viewpendingemployers.html", {'data': t})
 
-def viewapprovedemployersmore(request,id):
-    u=Employer.objects.get(LOGIN=id)
-    return render(request, "viewapprovedemployersmore.html", {'data': u})
 
 def viewarejectedemployersmore(request,id):
 
@@ -535,12 +649,7 @@ def viewproject(request):
 
 
 def viewproject_POST(request):
-    projecttitle= request.POST['textfield']
-    projectdescription = request.POST['textarea']
-    projectlocation = request.POST['textfield1']
-    created_date= datetime.datetime.now().date()
-    duration = request.POST['textfield2']
-    no_of_workers = request.POST['textfield3']
+
     search = request.POST['textfield']
     b = Projects.objects.filter(Type__icontains=search)
 
@@ -817,7 +926,8 @@ def viewsearchedworkers_post(request):
         'latitude':i.lattitude,
         'longitude':i.longitude,
         'registration_date':i.registration_date,
-        'distance':distance
+        'distance':distance,
+        'lid':i.LOGIN.id,
         })
 
 
@@ -905,17 +1015,98 @@ def viewapprovedjobrequests(request,id):
 
 def viewapprovedjobrequests_POST(request):
     return render(request, "viewapprovedjobrequests.html")
+#
+# def chatm(request):
+#     request.session["wid"] = id
+#     cid = str(request.session["wid"])
+#     request.session["new"] = cid
+#     qry = Worker.objects.get(LOGIN=cid)
+#     return render(request, "Chats.html", {'Photo': qry.Photo, 'Username': qry.Username, 'toid': cid})
 
+# def chat(request, id):
+#     if request.session['lid']!='':
+#         request.session["wid"] = id
+#         cid = str(request.session["wid"])
+#         request.session["new"] = cid
+#         qry = Worker.objects.get(LOGIN=cid)
+#
+#         return render(request, "chats.html", {'Photo': qry.Photo, 'Username': qry.Username, 'toid': cid})
+#     else:
+#         return HttpResponse('''<script>alert('You are not Logined');window.location='/wForce/login/'</script>''')
+#
+#
+# def chat_view(request):
+#     if request.session['lid']!='':
+#         fromid = request.session["lid"]
+#         toid = request.session["wid"]
+#         qry = Worker.objects.get(LOGIN=request.session["wid"])
+#         from django.db.models import Q
+#
+#         res = Chat.objects.filter(Q(FROMID_id=fromid, TOID_id=toid) | Q(FROMID_id=toid, TOID_id=fromid))
+#         l = []
+#
+#         for i in res:
+#             l.append({"id": i.id, "message": i.message, "to": i.TOID_id, "date": i.date, "from": i.FROMID_id})
+#
+#         return JsonResponse({'Photo': qry.Photo, "data": l, 'Username': qry.Username, 'toid': request.session["wid"]})
+#     else:
+#         return HttpResponse('''<script>alert('You are not Logined');window.location='/wForce/login/'</script>''')
+#
+#
+# def chat_send(request, msg):
+#     if request.session['lid']!='':
+#         lid = request.session["lid"]
+#         toid = request.session["wid"]
+#         message = msg
+#
+#         import datetime
+#         d = datetime.datetime.now().date()
+#         chat = Chat()
+#         chat.message = message
+#         chat.TOID_id = toid
+#         chat.FROMID_id = lid
+#         chat.date = d
+#         chat.save()
+#     else:
+#         return HttpResponse('''<script>alert('You are not Logined');window.location='/wForce/login/'</script>''')
+#     return JsonResponse({"status": "ok"})
+#
+#
+#
+#
+#
+# def view_diary(request,id):
+#     s = Diary.objects.filter(USER_id=id)
+#
+#     return render(request, 'mentor/view_diaryemotions.html', {"data": res})
+#
+# def view_diary_post(request):
+#    s= Diary.objects.filter()
+#    return render(request, 'mentor/view_diaryemotions.html', {"data": s})
+#
+# def andLoin(request):
+#     uname = request.POST['name']
+#     password = request.POST['password']
+#     res = Login.objects.filter(username=uname, password=password)
+#     if res.exists():
+#         ress = Login.objects.get(username=uname, password=password)
+#         lid = ress.id
+#         if ress.type == "user":
+#             return JsonResponse({"status":'ok','lid':str(lid),'type':'user'})
+#         else:
+#             return JsonResponse({"status":'no'})
+#     else:
+#         return JsonResponse({"status": 'no'})
 
 
 def chat1(request, id):
     if request.session['lid']!='':
-        request.session["workerid"] = id
-        cid = str(request.session["workerid"])
+        request.session["userid"] = id
+        cid = str(request.session["userid"])
         request.session["new"] = cid
         qry = Worker.objects.get(LOGIN=cid)
 
-        return render(request, "Chats.html", {'photo': qry.photo, 'name': qry.name, 'toid': cid})
+        return render(request, "chats.html", {'photo': qry.Photo, 'name': qry.Username, 'toid': cid})
     else:
         return HttpResponse('''<script>alert('You are not Logined');window.location='/wForce/login/'</script>''')
 
@@ -923,8 +1114,8 @@ def chat1(request, id):
 def chat_view(request):
     if request.session['lid']!='':
         fromid = request.session["lid"]
-        toid = request.session["workerid"]
-        qry = Worker.objects.get(LOGIN=request.session["workerid"])
+        toid = request.session["userid"]
+        qry = Worker.objects.get(LOGIN=request.session["userid"])
         from django.db.models import Q
 
         res = Chat.objects.filter(Q(FROMID_id=fromid, TOID_id=toid) | Q(FROMID_id=toid, TOID_id=fromid))
@@ -933,7 +1124,7 @@ def chat_view(request):
         for i in res:
             l.append({"id": i.id, "message": i.message, "to": i.TOID_id, "date": i.date, "from": i.FROMID_id})
 
-        return JsonResponse({'photo': qry.photo, "data": l, 'name': qry.name, 'toid': request.session["workerid"]})
+        return JsonResponse({'photo': qry.Photo, "data": l, 'name': qry.Username, 'toid': request.session["userid"]})
     else:
         return HttpResponse('''<script>alert('You are not Logined');window.location='/wForce/login/'</script>''')
 
@@ -941,7 +1132,7 @@ def chat_view(request):
 def chat_send(request, msg):
     if request.session['lid']!='':
         lid = request.session["lid"]
-        toid = request.session["workerid"]
+        toid = request.session["userid"]
         message = msg
 
         import datetime
@@ -954,17 +1145,64 @@ def chat_send(request, msg):
         chat.save()
     else:
         return HttpResponse('''<script>alert('You are not Logined');window.location='/wForce/login/'</script>''')
+
+
     return JsonResponse({"status": "ok"})
 
 
+def Groupchat(request):
+    if request.session['lid']!='':
+        return render(request, "chats.html", {'photo': "", 'name': "", 'toid': ""})
+    else:
+        return HttpResponse('''<script>alert('You are not Logined');window.location='/wForce/login/'</script>''')
 
+def employerallchats(request):
+    if request.session['lid'] != '':
+        # request.session["userid"] = id
+        # cid = str(request.session["userid"])
+        # request.session["new"] = cid
+        # qry = Worker.objects.get(LOGIN=cid)
 
+        return render(request, "allchats.html")
+    else:
+        return HttpResponse('''<script>alert('You are not Logined');window.location='/wForce/login/'</script>''')
 
+def employerallchatview(request):
+    if request.session['lid'] != '':
+        fromid = request.session["lid"]
+        toid = request.session["userid"]
+        qry = Worker.objects.get(LOGIN=request.session["userid"])
+        from django.db.models import Q
 
+        res = Chat.objects.filter(Q(FROMID_id=fromid, TOID_id=toid) | Q(FROMID_id=toid, TOID_id=fromid))
+        l = []
 
+        for i in res:
+            l.append({"id": i.id, "message": i.message, "to": i.TOID_id, "date": i.date, "from": i.FROMID_id})
 
+        return JsonResponse(
+            {'photo': qry.Photo, "data": l, 'name': qry.Username, 'toid': request.session["userid"]})
+    else:
+        return HttpResponse('''<script>alert('You are not Logined');window.location='/wForce/login/'</script>''')
 
+def employerallchatsend(request, msg):
+    if request.session['lid'] != '':
+        lid = request.session["lid"]
+        toid = request.session["userid"]
+        message = msg
 
+        import datetime
+        d = datetime.datetime.now().date()
+        chat = Chat()
+        chat.message = message
+        chat.TOID_id = toid
+        chat.FROMID_id = lid
+        chat.date = d
+        chat.save()
+    else:
+        return HttpResponse('''<script>alert('You are not Logined');window.location='/wForce/login/'</script>''')
+
+    return JsonResponse({"status": "ok"})
 
 
 
@@ -1340,10 +1578,10 @@ def applyforjob(request):
 
 
 def viewandsearchemployer(request):
-    Place=request.POST["value"]
+    District=request.POST["value"]
     Companyname=request.POST["value"]
     lid=request.POST['lid']
-    p=Employer.objects.filter(Companyname__icontains=Companyname,LOGIN__Type="employer").order_by('-id')|Employer.objects.filter(Place__icontains=Place,LOGIN__Type="employer").order_by('-id')
+    p=Employer.objects.filter(Companyname__icontains=Companyname,LOGIN__Type="employer").order_by('-id')|Employer.objects.filter(District__icontains=District,LOGIN__Type="employer").order_by('-id')
     l=[]
     for i in p:
         l.append({'id':i.id,
@@ -1357,6 +1595,33 @@ def viewandsearchemployer(request):
     return JsonResponse({'status': 'ok',"data":l})
 
 def viewemployerprofilemore(request):
+
+        lid =request.POST['lid']
+        eid =request.POST['eid']
+        # i = Employer.objects.get(id=lid)
+        i = Employer.objects.get(id=eid)
+        # if Jobrequest.objects.filter(EMPLOYER=i.id, WORKER=Worker.objects.get(LOGIN_id=lid)).exists():
+        #     s = 'no'
+        return JsonResponse({'status': 'ok', 'id': i.LOGIN.id,
+                             'Companyname': i.Companyname,
+                             'Email': i.Email,
+                             'Phone': i.Phone,
+                             'Photo': i.Photo,
+                             'District': i.District,
+                             'Place': i.Place,
+                             'Post': i.Post,
+                             'State': i.State,
+                             'Pincode': i.Pincode,
+                             'Category': i.Category,
+                             'Website': i.Website,
+                             'Photo1': i.Photo1,
+                             'Photo2': i.Photo2,
+                             'Photo3': i.Photo3,
+                             'Aboutcompany':i.Aboutcompany,
+                           })
+
+
+def viewemployerprofilemorejb(request):
 
         lid =request.POST['lid']
         eid =request.POST['eid']
@@ -1381,7 +1646,6 @@ def viewemployerprofilemore(request):
                              'Photo3': i.Photo3,
                              'Aboutcompany':i.Aboutcompany,
                            })
-
 def Viewemployerrequestsworker(request):
     lid=request.POST['lid']
     p=Workerrequest.objects.filter(WORKER__LOGIN_id=lid).order_by('-id')
@@ -1395,21 +1659,45 @@ def Viewemployerrequestsworker(request):
                   'projecttitle':i.PROJECT.projecttitle,
                   'date':i.date,
                   'Location':i.PROJECT.EMPLOYER.Place,
+                  'status':i.status,
+                  })
+        print(l,"lllllllllllllllll")
+    return JsonResponse({'status': 'ok',"data":l})
+
+def Viewemployerrequestsworkermore(request):
+    lid=request.POST['lid']
+    p=Workerrequest.objects.filter(WORKER__LOGIN_id=lid).order_by('-id')
+    l=[]
+    for i in p:
+        l.append({'id':i.id,
+'projectid':i.PROJECT.id,
+                  'Company':i.PROJECT.EMPLOYER.Companyname,
+                  'Photo':i.PROJECT.EMPLOYER.Photo,
+                  'email':i.PROJECT.EMPLOYER.Email,
+                  'projecttitle':i.PROJECT.projecttitle,
+                  'date':i.date,
+                  'Location':i.PROJECT.EMPLOYER.Place,
+                  'projectdescription':i.PROJECT.EMPLOYER.projectdescription,
+                  'projectlocation':i.PROJECT.EMPLOYER.projectlocation,
+                  'duration':i.PROJECT.EMPLOYER.duration,
+                  'no_of_workers':i.PROJECT.EMPLOYER.no_of_workers,
+
                   })
     return JsonResponse({'status': 'ok',"data":l})
 
 
 def workersendchat(request):
-    frm_id=request.POST['from_id']
+    frm_id = request.POST['from_id']
     to_id = request.POST['to_id']
-    message=request.POST['message']
-    obj=Chat()
-    obj.FROMID_id=frm_id
-    obj.TOID_id=to_id
-    obj.message=message
-    obj.date=datetime.now()
+    message = request.POST['message']
+    obj = Chat()
+    obj.FROMID_id = frm_id
+    obj.TOID_id = to_id
+    obj.message = message
+    obj.date = datetime.datetime.now().date()
     obj.save()
     return JsonResponse({'status': 'ok'})
+
 
 def workerviewchat(request):
     fromid = request.POST["from_id"]
@@ -1424,3 +1712,60 @@ def workerviewchat(request):
         l.append({"id": i.id, "msg": i.message, "from": i.FROMID_id, "date": i.date, "to": i.TOID_id})
 
     return JsonResponse({"status":"ok",'data':l})
+
+
+
+
+def user_sendchat(request):
+    frm_id=request.POST['from_id']
+    to_id = request.POST['to_id']
+    message=request.POST['message']
+    obj=Chat()
+    obj.FROMID_id=frm_id
+    obj.TOID_id=to_id
+    obj.message=message
+    obj.date=datetime.now()
+    obj.save()
+    return JsonResponse({'status': 'ok'})
+
+def user_viewchat(request):
+    fromid = request.POST["from_id"]
+    toid = request.POST["to_id"]
+    # lmid = request.POST["lastmsgid"]
+    from django.db.models import Q
+
+    res = Chat.objects.filter(Q(FROMID_id=fromid, TOID_id=toid) | Q(FROMID_id=toid, TOID_id=fromid))
+    l = []
+
+    for i in res:
+        l.append({"id": i.id, "msg": i.message, "from": i.FROMID_id, "date": i.date, "to": i.TOID_id})
+
+    return JsonResponse({"status":"ok",'data':l})
+
+
+
+def acceptrprojectrequest(request):
+    id=request.POST['id']
+    res=Workerrequest.objects.filter(id=id).update(status="Accepted")
+    return JsonResponse({"status": "ok",})
+
+def rejectprojectrequest(request):
+    id = request.POST['id']
+    res=Workerrequest.objects.filter(id=id).update(status="rejected")
+    return JsonResponse({"status": "ok", })
+
+
+def viewacceptedprojectrequests(request):
+    res=Workerrequest.objects.filter(PROJECT__EMPLOYER__LOGIN_id=request.session['lid'],status='Accepted').order_by('-id')
+    return render(request, "viewacceptedprojectworkers.html",{"data":res})
+
+def viewacceptedprojectrequests_POST(request):
+    return render(request, "viewacceptedprojectworkers.html")
+
+# ===========================================================================================================================================
+
+
+def viewallworkerchats(request):
+    s=Worker.objects.filter(LOGIN__Type="worker").order_by('-id')
+    return render(request, "allworkerchats.html", {'data': s})
+

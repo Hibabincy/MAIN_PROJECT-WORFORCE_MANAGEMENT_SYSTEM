@@ -1,0 +1,103 @@
+{#{% extends 'employerdashindex.html' %}#}
+{#{% block body %}#}
+{#<body><form action="/wForce/ViewNotification_post/" method="post">#}
+{#<h1 align="center"><center><b>NOTIFICATIONS</b></center></h1>#}
+{#<br><br>#}
+{#{% csrf_token%}#}
+{# <table class="px pull-left">#}
+{#  <tr>#}
+{#    <th>From date &nbsp;</th>&nbsp;&nbsp;&nbsp;#}
+{#    <td><input type="Date" name="textfield" id="textfield" /></td>&nbsp;&nbsp;#}
+{#    <th>&nbsp;&nbsp;&nbsp;To</th>#}
+{#    <td><input type="Date" name="textfield2" id="textfield2" /></td>#}
+{#    <td><input type="submit" name="button" id="button" value="Search" class=" btn btn-info"/></td>#}
+{##}
+{#  </tr>#}
+{##}
+{# </table>#}
+
+
+
+{% extends 'employerdashindex.html' %}
+{% block body %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notifications</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .notification-table {
+      display: table;
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .notification-row {
+      display: table-row;
+    }
+
+    .notification-cell {
+      display: table-cell;
+      border: 1px solid #ddd;
+      padding: 12px;
+    }
+
+    .header-row {
+      font-weight: bold;
+      background-color: #f0f0f0;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .mb-4 {
+      margin-bottom: 1.5rem !important;
+    }
+
+    .btn-info {
+      background-color: #17a2b8;
+      border-color: #17a2b8;
+    }
+
+    .btn-info:hover {
+      background-color: #138496;
+      border-color: #117a8b;
+    }
+  </style>
+</head>
+<body>
+  <div class="container"><br><br>
+    <h1 class="text-center mb-4"><b>NOTIFICATIONS</b></h1><br><br>
+    <form action="/wForce/employerViewNotification_post/" method="post">
+      {% csrf_token %}
+      <table class="px pull-left">
+  <tr>
+    <th>From date &nbsp;</th>&nbsp;&nbsp;&nbsp;
+    <td><input type="Date" name="textfield" id="textfield" /></td>&nbsp;&nbsp;
+    <th>&nbsp;&nbsp;&nbsp;To</th>
+    <td><input type="Date" name="textfield2" id="textfield2" /></td>
+    <td><input type="submit" name="button" id="button" value="Search" class=" btn btn-info"/></td>
+
+  </tr>
+
+ </table>
+    </form><br><br><br><br>
+
+    <div class="notification-table">
+      <div class="notification-row header-row">
+        <div class="notification-cell notification-title">Notification Title</div>
+        <div class="notification-cell">Description</div>
+        <div class="notification-cell">Date</div>
+      </div>
+      {% for i in data %}
+      <div class="notification-row">
+        <div class="notification-cell notification-title">{{ i.Notification_name }}</div>
+        <div class="notification-cell">{{ i.Description }}</div>
+        <div class="notification-cell">{{ i.Date }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+{% endblock %}

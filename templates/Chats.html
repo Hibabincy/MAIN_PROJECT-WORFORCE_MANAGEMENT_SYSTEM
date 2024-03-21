@@ -1,3 +1,4 @@
+
 <!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
 <link href="/static/chat_style/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>-->
@@ -167,7 +168,7 @@ content: "";
     	body,html{
 			height: 100%;
 			margin: 0;
-			background-image: url(" ");
+			background-image: url("https://images.unsplash.com/photo-1536895058696-a69b1c7ba34f?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
             background-position: center;
             background-size: cover;
 		}
@@ -179,7 +180,7 @@ content: "";
 		.card{
 			height: 500px;
 			border-radius: 15px !important;
-			background-color: rgba(0,0,0,0.4) !important;
+			background-color: dimgrey !important;
 		}
 		.contacts_body{
 			padding:  0.75rem 0 !important;
@@ -398,7 +399,7 @@ content: "";
 //});
 repeatEverySecond();
 $.ajax({
-            url: "/myapp/chat_view/",
+            url: "/wForce/chat_view/",
             type: "GET",
             data: {
 
@@ -467,7 +468,7 @@ $.ajax({
 
 
 $.ajax({
-            url: "/myapp/chat_view/",
+            url: "/wForce/chat_view/",
             type: "GET",
             data: {
 
@@ -544,7 +545,7 @@ $.ajax({
 
 
   $.ajax({
-            url: "/myapp/chat_send/"+msg,
+            url: "/wForce/chat_send/"+msg,
             type: "GET",
             data: {
 
@@ -580,3 +581,6 @@ function repeatEverySecond() {
 }
 
 </script>
+
+
+

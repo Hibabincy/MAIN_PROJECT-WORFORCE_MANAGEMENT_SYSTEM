@@ -38,3 +38,42 @@
 </form>
 </body>
 {% endblock %}
+
+
+{##}
+{##}
+{#{% extends "employerdashindex.html" %}#}
+{#{% block body %}#}
+{#<br>#}
+{#    <br>#}
+{#<body>#}
+{#   <center>#}
+{#    <span style="color: #0a0a0a">#}
+{#        <h4 style="color: #0a0a0a; font-weight: bold; text-decoration: underline;">View Accepted job vacancy Requests</h4>#}
+{#    </span>#}
+{#</center>#}
+{#<br><br>#}
+{#<div class="container">#}
+{#    <div class="row">#}
+{#        {% for request in data %}#}
+{#        <div class="col-md-4 mb-4">#}
+{#            <div class="card rounded shadow-sm border-0" style="background-color: #f3f4f6;">#}
+{#                <div class="card-body">#}
+{#                    <h5 class="card-title" style="color: #343a40;">Worker Info</h5>#}
+{#                      <p class="card-text"><strong>Name:</strong> {{ request.WORKER.Username }}</p>#}
+{#                    <p class="card-text"><strong>Email:</strong> <a href="mailto:{{ request.WORKER.Email }}" style="color: #007bff;">{{ request.WORKER.Email }}</a></p>#}
+{#                    <p class="card-text"><strong>Date:</strong> {{ request.date }}</p>#}
+{#                    <div class="d-flex justify-content-between align-items-center">#}
+{#                        <div class="btn-group">#}
+{#                            <a href="/wForce/viewsearchedworkerprofile/{{ request.WORKER.id }}" class="btn btn-sm btn-outline-primary">View Profile</a>#}
+{#                            <a href="/#/{{ request.id }}" class="btn btn-sm btn-outline-success">Assign to Project</a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#        {% endfor %}#}
+{#    </div>#}
+{#</div>#}
+{#</body>#}
+{#{% endblock %}#}
