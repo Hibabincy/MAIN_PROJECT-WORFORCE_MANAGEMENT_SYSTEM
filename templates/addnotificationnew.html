@@ -1,29 +1,73 @@
 {% extends "admindashinbox.html" %}
 
 {% block body %}
-<body class="mb-5">
-  <div class="mt-5 pt-5">
-    <h1 class="text-center mb-4">Add Notification</h1>
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <div class="card">
-          <div class="card-body">
-            <form action="/wForce/AddNotification_post/" method="post">
-              {% csrf_token %}
-              <div class="form-group">
-                <label for="notification_name">Notification Name:</label>
-                <input type="text" name="textfield" id="notification_name" class="form-control" required>
-              </div>
-              <div class="form-group">
-                <label for="description">Description:</label>
-                <textarea name="textfield2" id="description" rows="5" class="form-control" required></textarea>
-              </div>
-              <div class="text-center">
-                <button type="submit" class="btn btn-primary">Add Notification</button>
-              </div>
-            </form>
-          </div>
-        </div>
+    <div class="custom-card" style="background-color: lightblue">
+<body class="mb-5"  style="background-color: lightblue"> <!-- Change the background color here -->
+  <div class="mt-5 pt-5" style="background-color: lightblue">
+{#    <h1 class="text-center mb-4">Add Notification</h1>#}
+    <div class="row justify-content-center"style="background-color: lightblue">
+      <div class="col-md-8" style="background-color: lightblue">
+<div class="card custom-card">
+    <div class="card-body">
+        <h5 class="card-title text-center mb-4 custom-title">Add Notification</h5>
+        <form action="/wForce/AddNotification_post/" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="notification_name" class="custom-label">Notification Name:</label>
+                <input type="text" name="textfield" id="notification_name" class="form-control custom-input" required>
+            </div>
+            <div class="form-group">
+                <label for="description" class="custom-label">Description:</label>
+                <textarea name="textfield2" id="description" rows="5" class="form-control custom-input" required></textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary custom-button">Add Notification</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+.custom-card {
+    background-color: lightsteelblue;
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.custom-title {
+    color: #333; /* Title color */
+    font-family: 'Arial', sans-serif; /* Custom font family */
+}
+
+.custom-label {
+    font-weight: bold; /* Bold label */
+    color: #555; /* Label color */
+}
+
+.custom-input {
+    border: 1px solid #ccc; /* Input border */
+    border-radius: 8px; /* Rounded input */
+    font-family: 'Arial', sans-serif; /* Custom font family */
+}
+
+.custom-input:focus {
+    border-color: #007bff; /* Input border color on focus */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Input focus effect */
+}
+
+.custom-button {
+    background-color: #007bff; /* Button background color */
+    border-color: #007bff; /* Button border color */
+    border-radius: 8px; /* Rounded button */
+    font-family: 'Arial', sans-serif; /* Custom font family */
+}
+
+.custom-button:hover {
+    background-color: #0056b3; /* Button background color on hover */
+    border-color: #0056b3; /* Button border color on hover */
+}
+</style>
       </div>
     </div>
   </div>
@@ -57,5 +101,9 @@
 {#      </table>#}
 {#    </div>#}
 {#  </div>#}
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+</div>
 </body>
 {% endblock %}

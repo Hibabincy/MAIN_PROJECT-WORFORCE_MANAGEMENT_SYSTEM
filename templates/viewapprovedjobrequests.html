@@ -16,7 +16,8 @@
   <tr style="background-color: pink">
     <th scope="row">Sl.No</th>
     <th scope="row">Worker Info</th>
-    <th scope="row">Date</th>
+    <th scope="row">Project</th>
+    <th scope="row">&nbspDate</th>
     <th scope="row">&nbsp;</th>
     <th scope="row">&nbsp;</th>
   </tr>
@@ -24,18 +25,19 @@
   <tr>
     <td>&nbsp;{{ forloop.counter }}</td>
       <td><a href="" >{{ i.WORKER.Email }}</a></td>
+      <td><b>{{ i.JOBVACANCY.PROJECT.projecttitle }}</b><br>{{ i.JOBVACANCY.PROJECT.projectlocation  }}<br></td>
     <td>{{ i.date }}&nbsp;</td>
 
     <td><a href="/wForce/viewsearchedworkerprofile/{{ i.WORKER.id }}" class="btn btn-success">View profile</a></td>
-    <td><a href="/#/{{ i.id }}" class="btn btn-info">
+    <td>{% if i.status == 'Accepted' %}<a href="/wForce/assigntoproject/{{ i.WORKER.id }}" class="btn btn-info">
 
-        Assign to Project</a></td>
+        Assign to Project</a>{% else %}{{ i.status }}{% endif %}</td>
 {#    <td><a href="/wForce/rejectworkerjobrequest/{{ i.id }}" class="btn btn-danger" >Reject</a></td>#}
   </tr>
     {% endfor %}
 </table>
         </div></div>
-</form>
+</form><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 {% endblock %}
 

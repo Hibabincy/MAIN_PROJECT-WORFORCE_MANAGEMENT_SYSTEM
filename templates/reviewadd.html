@@ -1,0 +1,111 @@
+{% extends "employerdashindex.html" %}
+
+{% block body %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Reviews</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .review {
+      margin-bottom: 20px;
+    }
+
+    .rating {
+      color: #FFD700;
+    }
+
+    .checked {
+      color: #FFD700;
+    }
+
+    .review-title {
+      margin-top: 10px;
+    }
+
+    .review-author {
+      margin-top: 10px;
+      font-style: italic;
+      color: #6c757d;
+    }
+
+    .rating input {
+      display: none;
+    }
+
+    .rating label {
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    .rating label:hover,
+    .rating label:hover ~ label {
+      color: orange;
+    }
+
+    .rating input:checked ~ label {
+      color: orange;
+    }
+
+    .rating .fa-star {
+      margin-right: 5px;
+    }
+
+    .rating .fa-star:last-child {
+      margin-right: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      <h3 class="text-center">Give Reviews</h3>
+    </div>
+    <div class="card-body">
+      <div class="review">
+        <div class="rating">
+          <input type="radio" id="star5" name="rating" value="5">
+          <label for="star5" class="fa fa-star"></label>
+          <input type="radio" id="star4" name="rating" value="4">
+          <label for="star4" class="fa fa-star"></label>
+          <input type="radio" id="star3" name="rating" value="3">
+          <label for="star3" class="fa fa-star"></label>
+          <input type="radio" id="star2" name="rating" value="2">
+          <label for="star2" class="fa fa-star"></label>
+          <input type="radio" id="star1" name="rating" value="1">
+          <label for="star1" class="fa fa-star"></label>
+        </div>
+        <h4 class="review-title">Excellent Product</h4>
+        <p class="review-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida leo sit amet nisi viverra, id placerat quam varius.</p>
+        <p class="review-author">- John Doe</p>
+      </div>
+      <div class="review">
+        <div class="rating">
+          <input type="radio" id="star10" name="rating2" value="5">
+          <label for="star10" class="fa fa-star"></label>
+          <input type="radio" id="star9" name="rating2" value="4">
+          <label for="star9" class="fa fa-star"></label>
+          <input type="radio" id="star8" name="rating2" value="3">
+          <label for="star8" class="fa fa-star"></label>
+          <input type="radio" id="star7" name="rating2" value="2">
+          <label for="star7" class="fa fa-star"></label>
+          <input type="radio" id="star6" name="rating2" value="1">
+          <label for="star6" class="fa fa-star"></label>
+        </div>
+        <h4 class="review-title">Good Product</h4>
+        <p class="review-content">Nulla facilisi. Donec bibendum magna sed augue feugiat, vitae congue ligula mattis.</p>
+        <p class="review-author">- Jane Smith</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+{% endblock %}
+
+
+
+
+

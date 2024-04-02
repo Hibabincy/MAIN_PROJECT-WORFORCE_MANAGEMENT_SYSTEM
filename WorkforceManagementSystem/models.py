@@ -99,9 +99,6 @@ class Worker(models.Model):
     registration_date=models.CharField(max_length=100,default="")
     lattitude=models.CharField(max_length=100,default=0)
     longitude=models.CharField(max_length=100,default=0)
-
-
-
     LOGIN = models.ForeignKey(Login, on_delete=models.CASCADE)
 
 class Previousworks(models.Model):
@@ -125,7 +122,15 @@ class Jobrequest(models.Model):
     JOBVACANCY = models.ForeignKey(Jobvaccancy, on_delete=models.CASCADE)
     WORKER = models.ForeignKey(Worker, on_delete=models.CASCADE)
     date = models.CharField(max_length=100)
+    assigneddate = models.CharField(max_length=100,default=" ")
     status = models.CharField(max_length=100)
+
+class Assignproject(models.Model):
+    PROJECT = models.ForeignKey(Projects, on_delete=models.CASCADE)
+    JOBREQUEST = models.ForeignKey(Jobrequest, on_delete=models.CASCADE)
+    date = models.CharField(max_length=100)
+    status = models.CharField(max_length=100)
+
 
 class Workerrequest(models.Model):
     PROJECT = models.ForeignKey(Projects, on_delete=models.CASCADE)
@@ -139,6 +144,7 @@ class Chat(models.Model):
     TOID=models.ForeignKey(Login,on_delete=models.CASCADE,related_name='to_id')
     message=models.CharField(max_length=1000)
     date = models.DateField()
+    time=models.CharField(max_length=100,default=0)
 #
 # class Notification(models.Model):
 #     message = models.CharField(max_length=10000)
@@ -154,6 +160,13 @@ class Notifications(models.Model):
 
 
 
+class Review(models.Model):
+    EMPLOYER = models.ForeignKey(Employer, on_delete=models.CASCADE, related_name='from_id')
+    WORKER = models.ForeignKey(Worker, on_delete=models.CASCADE, related_name='toid')
+    review = models.CharField(max_length=1000)
+    rating = models.CharField(max_length=1000)
+    date = models.DateField()
+    time = models.CharField(max_length=100)
 
 
 
@@ -161,8 +174,7 @@ class Notifications(models.Model):
 
 
 
-
-#
+        #
 # class Groupchat(models.Model):
 #     FROMID=models.ForeignKey(Login,on_delete=models.CASCADE,related_name='fr_id')
 #     message=models.CharField(max_length=1000)

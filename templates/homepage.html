@@ -1,36 +1,62 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Add your custom styles here */
+        body {
+            background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Replace 'background_image.jpg' with your image path */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+        .sidebar {
+            background-color: rgba(0, 0, 0, 0.5); /* Add opacity to sidebar */
+            color: #fff;
+            height: 100vh;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 10px 20px;
+            border-bottom: 1px solid #4e545b;
+        }
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .content {
+            padding: 20px;
+        }
+    </style>
 </head>
+<body>
 
-<body><form action="" method="post"><table width="200" border="1">
-  <tr>
-{#    <td>Home</td>#}
-      <a href="/wForce/addfee/">add fees</a> <br>
-      <a href="/wForce/viewfee">view fees</a> <br>
-      <a href="/">View worker and approve</a> <br>
-      <a href="/">View employer and approve</a> <br>
-      <a href="/">View Registered employers</a> <br>
-      <a href="/">View Registered workers</a> <br>
-      <a href="/">View add notification</a> <br>
-      <a href="/">View view notification</a> <br>
-      <a href="/">Block/Unblock</a> <br>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <ul>
+            <li><a href="/wForce/adminhome/"><i class="fas fa-tachometer-alt mr-2"></i>move to Dashboard</a></li>
+            <li><a href="/wForce/mainhome/"><i class="fas fa-chart-line mr-2"></i>Logout</a></li>
+           <!-- Link to sample page -->
+        </ul>
+    </div>
 
+    <!-- Page Content -->
+    <div class="content">
+        <h2>Welcome to the Admin Dashboard</h2>
+        <p>This is where you can manage your website or application.</p>
+        <!-- Add your dashboard components here (e.g., charts, tables, forms) -->
+    </div>
 
-
-{#      <a href="/">Edit Profile</a> <br>#}
-{#      <a href="/">Add project</a> <br>#}
-{#      <a href="/">Edit project</a> <br>#}
-{#      <a href="/">Add job vacancy</a> <br>#}
-{#      <a href="/">Edit job vacancy</a> <br>#}
-{#      <a href="/">Give request</a> <br>#}
-{#      <a href="/"> request</a> <br>#}
-
-
-  
-</table>
-</form>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

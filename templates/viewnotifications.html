@@ -1,57 +1,47 @@
 {% extends "admindashinbox.html" %}
 {% block body %}
-<body><form action="/wForce/ViewNotification_post/" method="post">
-<h1 align="center"><center><b>NOTIFICATIONS</b></center></h1>
-<br><br>
-{% csrf_token%}
- <table class="px pull-left">
-  <tr>
-    <th>From date &nbsp;</th>&nbsp;&nbsp;&nbsp;
-    <td><input type="Date" name="textfield" id="textfield" /></td>&nbsp;&nbsp;
-    <th>&nbsp;&nbsp;&nbsp;To</th>
-    <td><input type="Date" name="textfield2" id="textfield2" /></td>
-    <td><input type="submit" name="button" id="button" value="Search" class=" btn btn-info"/></td>
-
-  </tr>
-
- </table>
- <table class="table table-bordered">
-
-  <tr>
-      <br><br><br><br>
-    <th scope="row">Sl no</th>
-    <th>Notification title</th>
-    <th>Description</th>
-    <th>Date</th>
-    <td>&nbsp;</td>
-      <td></td>
-      <td></td>
-
-  </tr>
-
-     {% for i in data %}
-  <tr>
-    <td>&nbsp;{{ forloop.counter}}</td>
-    <td>&nbsp;{{ i.Notification_name }}</td>
-    <td>&nbsp;{{ i.Description }}</td>
-      <td>&nbsp;{{ i.Date }}</td>
-         <td><a href="/wForce/EditNotification/{{ i.id }}" class="btn btn-success">Edit</a><br></td>
-         <td><a href="/wForce/DeleteNotification/{{ i.id }}" class="btn btn-danger">Delete</a><br></td>
-
-         <td>
-         {% if i.Status == "pending" %}
-
-             <a href="/wForce/UpdateNotification/{{ i.id }}" class="btn btn-info">Update</a><br>
-         {% else %}
-         {% endif %}
-
-         </td>
-
-    {% endfor %}
-
-  </tr>
- </table>
- <br><br><br><br><br><br><br> <br><br><br><br><br><br><br> <br><br><br><br><br><br><br>
+<body>
+<form action="/wForce/ViewNotification_post/" method="post">
+    <br><br>
+    <h1 align="center" style="font-family: Arial, sans-serif; font-weight: normal; font-size: 24px; color: white; background-color: #629aa9;"><b>NOTIFICATIONS</b></h1>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <br><br>
+    <a href="/wForce/AddNotification/" class="btn btn-primary"><i class="fas fa-plus fa-2x"></i> Add </a>
+    <br><br>
+    {% csrf_token%}
+ <div class="card">
+        <div class="card-body">
+    <div class="table-responsive">
+        <table class="table" style="font-family: Arial, sans-serif; font-size: 14px;">
+            <thead>
+                <tr>
+                    <th style="background-color: #b8c9f1; font-size: 14px;">Sl no</th>
+                    <th style="background-color: #b8c9f1; font-size: 14px;">Notification title</th>
+                    <th style="background-color: #b8c9f1; font-size: 14px;">Description</th>
+                    <th style="background-color: #b8c9f1; font-size: 14px;">Date</th>
+                    <th style="background-color: #b8c9f1; font-size: 14px;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for notification in data %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ notification.Notification_name }}</td>
+                    <td>{{ notification.Description }}</td>
+                    <td>{{ notification.Date }}</td>
+                    <td>
+                        <a href="/wForce/EditNotification/{{ notification.id }}" class="btn btn-danger">Edit</a>
+                        {% if notification.Status == "pending" %}
+                        <a href="/wForce/UpdateNotification/{{ notification.id }}" class="btn btn-primary">Hide</a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </div> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </form>
 </body>
 {% endblock %}

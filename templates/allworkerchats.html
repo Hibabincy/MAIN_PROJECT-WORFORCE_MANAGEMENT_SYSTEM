@@ -66,12 +66,15 @@
 <div class="message-box">
   {% for i in data %}
     <div class="message-row">
-        <img src="{{ i.Photo }}" alt="Profile Picture">
+        <img src="{{ i.photo }}" alt="Profile Picture">
         <div class="message-content">
-            <span class="username">{{ i.Username }}</span>
+{#            <span class="username">{{ i.FROMID.Username }}</span>#}
+            <span class="username">{{ i.name }}</span>
         </div>
         <div class="message-actions">
-            <a href="/wForce/chat1/{{ i.lid }}" class="chat-button">Chat</a>
+            <a href="/wForce/chat1/{{ i.LOGIN }}" class="chat-button">Chat</a>
+{#                <td><a href="/wForce/chat1/{{ i.FROMID.id }}" class="btn btn-info">Chat</a></td>#}
+
         </div>
     </div>
     {% if not forloop.last %}
@@ -81,5 +84,5 @@
 </div>
 
 
-<br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 {% endblock %}

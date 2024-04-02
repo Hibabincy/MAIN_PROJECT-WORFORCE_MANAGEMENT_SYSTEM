@@ -1,72 +1,88 @@
 {% extends "employerdashindex.html" %}
 {% block body %}
 <br>
-    <br>
-<body><form action="/wForce/viewjobvacancy/" method="post">
-   <center>
-    <span style="color: #0a0a0a">
-          <h2 style="color: #fd5800 ; font-weight: bold;">View Job vacancies</h2>
-    </span>
-</center>
-<br><br>
-{% for i in data %}
-   <h3 style="font-family: Arial, sans-serif; font-weight: bold; color: #7a67bb;">{{ i.project.projecttitle }}</h3>
+<br>
+<body>
+<form action="/wForce/viewjobvacancy/" method="post">
+    <center>
+        <span style="color: #0a0a0a">
+            <h2 style="color: #fd5800; font-weight: bold; font-size: 24px;">View Job vacancies</h2>
+        </span>
+    </center>
+    <br><br>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <a href="/wForce/addjobvacancy/" class="btn btn-danger btn-sm"><i class="fas fa-plus fa-fw"></i> Add Job Vacancy</a>
+    <br><br>
+    {% for i in data %}<br><br>
+    <h3 style="font-family: Arial, sans-serif; font-weight: bold; color: #7a67bb;background-color: #b8c9f1; font-size: 18px;">{{ i.project.projecttitle }}<br></h3>
 
     <br>
-    <div class="table">
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-sm" style="font-size: 14px;">
+            {% csrf_token %}
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Sl.No</th>
+                <th scope="col">Job Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Location</th>
+                <th scope="col">District</th>
+                <th scope="col" style="width: 80px;">Start Date</th>
 
-            <table class="table table-striped table-bordered table-sm">
-    {% csrf_token %}
-  <tr style="background-color: #A2CCC7">
-    <th scope="row"; style="color: white ">Sl.No</th>
-      <th scope="row" width="10%"; style="color: white">Job Title</th>
-    <th scope="row"; style="color: white">Description</th>
-
-    <th scope="row"; style="color: white">Location</th>
-    <th scope="row"; style="color: white">District</th>
-    <th scope="row" width="8%"; style="color: white">Start Date</th>
-    <th scope="row" width="8%"; style="color: white">End Date</th>
-    <th scope="row"; style="color: white">Skills</th>
-    <th scope="row"; style="color: white">Salary</th>
-    <th scope="row"; style="color: white">No of Vacancy</th>
-    <th scope="row" width="8%" ; style="color: white">Created date</th>
-    <th scope="row">&nbsp;</th>
-    <th scope="row">&nbsp;</th>
-    <th scope="row">&nbsp;</th>
-    <th scope="row">&nbsp;</th>
-  </tr>
-    {% for m in i.job %}
-  <tr>
-      <td>&nbsp;{{ forloop.counter }}</td>
-      <td>{{ m.jobfield }}&nbsp;</td>
-      <td>{{ m.jobtitle}}&nbsp;</td>
-
-      <td>{{ m.location }}&nbsp;</td>
-      <td>{{ m.district }}&nbsp;</td>
-      <td>{{ m.startdate  }}</td>
-      <td>{{ m.enddate }}&nbsp;</td>
-      <td>{{ m.skills}}</td>
-      <td>{{ m.salary}}</td>
-      <td>{{ m.eno_of_vaccancy}}</td>
-
-      <td>{{ m.created_date }}&nbsp;</td>
-
-    <td><a href="/wForce/editjobvacancy/{{ m.id }}" class="btn btn-info">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-</svg></a></td>
-    <td><a href="/wForce/deletejobvacancy/{{ m.id }}" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-trash-fill" viewBox="0 0 16 16">
-  <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
-</svg></a></td>
-   <td><a href="/wForce/viewworkerrequests/{{ m.id }}" style="color: blue" >
-       View Job Requests</a></td>
-    <td><a href="/wForce/viewapprovedjobrequests/{{ m.id }}" style="color: green" >
-       View Approved Job Requests</a></td>
-  </tr>
+                <th scope="col" style="width: 80px;">End Date</th>
+                <th scope="col">Skills</th>
+                <th scope="col">Salary</th>
+                <th scope="col">No of Vacancy</th>
+                <th scope="col" style="width: 80px;">Created date</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+                <th scope="col">View Job Requests</th>
+                <th scope="col">View Approved Job Requests</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for m in i.job %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ m.jobfield }}</td>
+                <td>{{ m.jobtitle }}</td>
+                <td>{{ m.location }}</td>
+                <td>{{ m.district }}</td>
+                <td>{{ m.startdate }}</td>
+                <td>{{ m.enddate }}</td>
+                <td>{{ m.skills }}</td>
+                <td>{{ m.salary }}</td>
+                <td>{{ m.eno_of_vaccancy }}</td>
+                <td>{{ m.created_date }}</td>
+                <td>
+                    <a href="/wForce/editjobvacancy/{{ m.id }}" class="btn btn-info btn-sm" title="Edit Job">
+                        <i class="fas fa-pencil-alt"></i>
+                    </a>
+                </td>
+                <td>
+                    <a href="/wForce/deletejobvacancy/{{ m.id }}" class="btn btn-danger btn-sm" title="Delete Job">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                </td>
+                <td>
+                    <a href="/wForce/viewworkerrequests/{{ m.id }}" class="btn btn-primary btn-sm" title="View Job Requests">
+                        <i class="fas fa-eye"></i>
+                    </a>
+                </td>
+                <td>
+                    <a href="/wForce/viewapprovedjobrequests/{{ m.id }}" class="btn btn-success btn-sm" title="View Approved Job Requests">
+                        <i class="fas fa-check"></i>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
     {% endfor %}
-            </table></div>
-{% endfor %}
 </form>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 {% endblock %}

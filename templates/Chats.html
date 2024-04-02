@@ -412,10 +412,10 @@ $.ajax({
 
 
 
-                  var data=dat["data"];
+                    var data=dat["data"];
                  var name=dat["name"];var photo=dat["photo"];
                  var user_lid=dat["toid"];
- $("#iiim").text("")
+                $("#iiim").text("")
                 $("#nnnm").text("")
                 $("#iiim").append("<img src="+photo+" class='rounded-circle user_img'>")
                 $("#nnnm").append("<span>Chat with "+name+"</span>")
@@ -431,7 +431,7 @@ $.ajax({
                     var sendid = data[i]['date'];
 
                     if (type !=user_lid ) {
-//                        $("#send1").append("<div align='center'><table id=tb1'' style='width:300px;'<tr border=0><td><div align='right'><div  class='container darker'><div>" + mesg + "</div></td></tr></table></div>")
+{#                      $("#send1").append("<div align='center'><table id=tb1'' style='width:300px;'<tr border=0><td><div align='right'><div  class='container darker'><div>" + mesg + "</div></td></tr></table></div>")#}
 
                     $("#send1").append("<div class='d-flex justify-content-end mb-4'><div class='msg_cotainer_send'>"+mesg+"</div></div></div>")
                     }
@@ -497,16 +497,32 @@ $.ajax({
                     var type = data[i]['from']
                     var mesg = data[i]['message'];
                     var sendid = data[i]['date'];
+                    var sendt = data[i]['time'];
 
                     if (type !=user_lid ) {
-//                        $("#send1").append("<div align='center'><table id=tb1'' style='width:300px;'<tr border=0><td><div align='right'><div  class='container darker'><div>" + mesg + "</div></td></tr></table></div>")
-                    $("#send1").append("<div class='d-flex justify-content-end mb-4'><div class='msg_cotainer_send'>"+mesg+"</div></div></div>")
+{#                     $("#send1").append("<div align='center'><table id=tb1'' style='width:300px;'<tr border=0><td><div align='right'><div  class='container darker'><div>" + mesg + "</div></td></tr></table></div>")#}
+                    $("#send1").append("<div class='d-flex justify-content-end mb-4'>" +
+                        "<div class='msg_cotainer_send'>"
+                        + ""+mesg+"" +
+                            "<div style='font-size: 8px;'>"
+                        + ""+sendid+"" +"  <br>"+sendt+""+
+                            "</div>"+
+
+                        "</div>" +
+                        "</div>" +
+                        "</div>")
 
                     }
                     else  {
 
-                    $("#send1").append("<div class='d-flex justify-content-start mb-4'><div class=img_cont_msg'></div><div class='msg_cotainer'>"+mesg+"</div></div>")
-//                        $("#send1").append("<div align='center'><table id=tb1'' style='width:300px;'<tr border=0><td><div align='left'><div><div class='container darker'>" + mesg + "</div></td></tr></table></div>")
+                    $("#send1").append("<div class='d-flex justify-content-start mb-4'><div class=img_cont_msg'></div><div class='msg_cotainer'>"
+                         + ""+mesg+"" +
+                            "<div style='font-size: 8px;'>"
+                        + ""+sendid+"" +"  <br>"+sendt+""+
+                            "</div>"+
+
+                        "</div></div>")
+{#                       $("#send1").append("<div align='center'><table id=tb1'' style='width:300px;'<tr border=0><td><div align='left'><div><div class='container darker'>" + mesg + "</div></td></tr></table></div>")#}
 
 
 

@@ -1,11 +1,14 @@
 {% extends "admindashinbox.html" %}
 {% block body %}
-<br>
-    <br>
-<body><form action="/wForce/approvalofregistrationworker_POST/#about" method="post">
+<body style="background-color:white">
+ <center>
+    <span style="color: #0a0a0a">
+        <h4 style="color: #0a0a0a; font-weight: bold; text-decoration: underline;">Rejected workers</h4>
+    </span>
+</center><!-- White background -->
+<form action="/wForce/approvalofregistrationworker_POST/#about" method="post">
   <center>
     <span style="color: #0a0a0a">
-        <h4 style="color: #0a0a0a; font-weight: bold; text-decoration: underline;">Rejected Workers</h4>
     </span>
 </center>
 <br><br>
@@ -17,7 +20,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <style>
   .oval-search {
-    width: 300px; /* Adjust the width as needed */
+    width: 100%; /* Adjust the width as needed */
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 20px; /* Adjust the value to make it oval */
@@ -40,10 +43,58 @@
   .search-button:hover {
     background-color: #1e7e34; /* Darker green on hover */
   }
+
+  /* Adjust card styles */
+  .card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 100%; /* Increase width */
+    height: auto; /* Increase height */
+  }
+
+  .card-header {
+    background-color: white;
+    color: white;
+    font-weight: bold;
+  }
+
+  .card-body {
+    padding: 15px;
+  }
+.oval-search {
+    width: 300px; /* Adjust the width as needed */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 20px; /* Adjust the value to make it oval */
+    box-sizing: border-box;
+  }
+
+  .search-button {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: #218838; /* Change button color to green */
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center; /* Center icon vertically */
+    justify-content: center; /* Center icon horizontally */
+  }
+  .card-body {
+    background-color: white;
+      width: 100%;
+}
+
+  .search-button:hover {
+    background-color: #1e7e34; /* Darker green on hover */
+  }
 </style>
 </head>
-<body>
-
+<br>
 <table class="pull-left">
   {% csrf_token %}
   <tr>
@@ -56,38 +107,45 @@
   </tr>
 </table>
 
-</body><br><br><br>
+</body><br><br>
+<div class="container">
+<div class="card">
+  <div class="card-body">
+    <table class="table table-striped">
+      {% csrf_token %}
+      <tr>
+        <th> </th>
+        <th style="color: darkred">Photo</th>
+        <th style="color: darkred">Worker</th>
+          <th style="color: darkred">Job Type</th>
+        <th style="color: darkred">Email</th>
+        <th style="color: darkred">Phone</th>
+        <th style="color: darkred">Address</th>
 
-<table class="table  table-striped table-boardered">
-{% csrf_token %}
-  <tr style="background-color: lightseagreen">
-    <th scope="col"> </th>
-    <th style="color: white" scope="col">Worker </th>
-       <th style="color: white"  scope="col">Email</th>
-    <th style="color: white"  scope="col">district</th>
-    <th style="color: white" scope="col">jobtype</th>
-    <th style="color: white" scope="col">Registration date</th>
+        <th style="color: darkred">Registration Date</th>
+        <th style="color: darkred">&nbsp;</th>
+      </tr>
+      {% for i in data %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+           <td><img src="{{ i.Photo }}" style="max-width: 50px; border-radius: 50%;">
+        </td>
+        <td style="max-width: 100px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+            {{ i.Username }}</td>
 
-    <th scope="col">&nbsp;</th>
-{#    <th scope="col">&nbsp;</th>#}
-{#    <th scope="col">&nbsp;</th>#}
-  </tr>
-    {% for i in data %}
-  <tr>
-    <td>&nbsp;{{ forloop.counter }}</td>
-    <td>&nbsp;{{ i.Username }}<br> &nbsp; <img src="{{ i.Photo }}" style="max-width: 100px"> </td>
-      <td>{{i.Email}}</td>
-      <td>{{ i.district}}</td>
-    <td>{{ i.Jobtype }}</td>
-      <td>{{i.registration_date}}</td>
+          <td>{{ i.Jobtype }}</td>
+        <td style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ i.Email }}</td>
+        <td style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ i.Phone }}</td>
+        <td>{{ i.district }},{{ i.post }}, {{ i.state }}, {{ i.Pincode }}</td>
 
-    <td><a href="/wForce/viewrejectedworkersmore/{{ i.LOGIN.id }}" class="btn btn-success">view profile</a></td>
-{#    <td><a href="/wForce/approve_worker/{{ i.LOGIN.id }}" class="btn btn-info">Approval</a></td>#}
-{#    <td><a href="/wForce/reject_worker/{{ i.LOGIN.id }}" class="btn btn-danger" onclick="return confirm('Are You Sure?')">Reject</a></td>#}
-  </tr>
-    {% endfor  %}
-</table>
-<br><br>
+        <td>{{ i.registration_date }}</td>
+        <td><a href="/wForce/viewrejectedworkersmore/{{ i.LOGIN.id }}" class="btn btn-success">view profile</a></td>
+      </tr>
+      {% endfor %}
+    </table><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </form>
 </body>
 {% endblock %}

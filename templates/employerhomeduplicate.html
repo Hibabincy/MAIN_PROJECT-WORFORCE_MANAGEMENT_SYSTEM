@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARCOME - Dashboard</title>
+    <style>
+        /* Custom CSS for header */
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: #ff0;
+        }
+
+        .logout-btn {
+            background-color: #ff0;
+            color: #333;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background-color: #ffc107;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <!-- ARCOME Logo -->
+        <div class="logo">ARCOME</div>
+
+        <!-- Navigation Links -->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/wForce/employerhome/">Home</a></li>
+                <li><a href="/wForce/employerviewprofile/">About Us</a></li>
+                <li><a href="/wForce/viewjobvacancy/">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <!-- Logout Button -->
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </header>
+<div class="pager">
+
+
+
+
+
+
+</div>
+    <!-- Page Body -->
+    <div class="container">
+        <!-- Blank page body. Content will be loaded dynamically. -->
+    </div>
+
+    <!-- JavaScript for Logout Button -->
+    <script>
+        function logout() {
+            // Implement logout functionality here
+            alert('Logout button clicked!');
+        }
+    </script>
+</body>
+
+</html>

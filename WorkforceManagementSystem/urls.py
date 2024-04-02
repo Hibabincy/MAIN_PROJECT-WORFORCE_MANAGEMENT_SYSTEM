@@ -31,6 +31,7 @@ urlpatterns = [
     path('login/', views.login),
     path('logout/', views.logout),
     path('login_post/', views.login_post),
+    path('adminhom/', views.adminhom),
 
     # path('employerprofile_post/', views.employerprofile_post),
     path('addfee/', views.addfee),
@@ -97,6 +98,8 @@ urlpatterns = [
 # //////////////////////// Employer ////////////////////////////////////////////
 
 
+    path('employergivereview_POST/', views.employergivereview_POST),
+    path('employerviewreviews/', views.employerviewreviews),
     path('employerRegistration/', views.employerRegistration),
     path('employerRegistration_post/', views.employerregistration_post),
     path('employerprofile/', views.employersignup),
@@ -136,6 +139,10 @@ urlpatterns = [
     path('approveworkerjobrequest/<id>',views.approveworkerjobrequest),
     path('rejectworkerjobrequest/<id>',views.rejectworkerjobrequest),
     path('employerrequesttoworker/<id>',views.employerrequesttoworker),
+    path('assigningtoproject/<id>',views.assigningtoproject),
+    path('assigningtoproject_post/',views.assigningtoproject_post),
+    path('viewassigedworks/',views.viewassigedworks),
+    path('viewprojectworkers/',views.viewprojectworkers),
 
     path('searchproject/',views.searchproject),
     path('searchproject_post/',views.searchproject_post),
@@ -156,6 +163,7 @@ urlpatterns = [
 
 
     path('chat1/<id>', views.chat1),
+    path('allchatscompany/', views.allchatscompany),
     path('chat_send/<msg>', views.chat_send),
     path('chat_view/', views.chat_view),
     path('employerallchats/', views.employerallchats),
@@ -166,12 +174,25 @@ urlpatterns = [
     path('rejectprojectrequest/', views.rejectprojectrequest),
     path('viewacceptedprojectrequests/', views.viewacceptedprojectrequests),
     path('viewacceptedprojectrequests_POST/', views.viewacceptedprojectrequests_POST),
+    path('assigntoproject/<id>', views.assigntoproject),
 
 
 
 
     path('viewemployerprofilemorejb/', views.viewemployerprofilemorejb),
     path('viewallworkerchats/', views.viewallworkerchats),
+
+
+
+
+
+
+    path('employergivereview/', views.employergivereview),
+    path('workersendreview/', views.workersendreview),
+
+
+
+    path('assignedworkerprofile/<id>', views.assignedworkerprofile),
 
 
 
