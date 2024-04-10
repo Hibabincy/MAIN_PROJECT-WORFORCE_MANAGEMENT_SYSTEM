@@ -1,4 +1,4 @@
-{% extends 'employerdashindex.html' %}
+{% extends 'employerdashindexduplicate.html' %}
 {% block body %}
 <head>
   <head>
@@ -104,7 +104,7 @@
   </tr>
   <tr align="left">
     <th scope="row"><label for="textfield5">Founded date</label>
-      <input type="date" name="textfield5" max="{{ dt }}" id="dagtepicker" readonly class="form-control" value="{{data.Date }}" /></th>
+        <input type="text" name="textfield5" max="{{ dt }}" id="dagtepicker" readonly class="form-control" value="{{ data.Date }}" /><label><h6>Cant Edit Founded date</h6></label></th>
 {#    <td colspan="2"><label for="textfield6">Company Size</label>#}
 {#      <input type="text" name="textfield6" id="textfield6" class="form-control"/></td>#}
   </tr>

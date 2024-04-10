@@ -32,6 +32,7 @@ urlpatterns = [
     path('logout/', views.logout),
     path('login_post/', views.login_post),
     path('adminhom/', views.adminhom),
+    path('admindashduplicate/', views.admindashduplicate),
 
     # path('employerprofile_post/', views.employerprofile_post),
     path('addfee/', views.addfee),
@@ -89,6 +90,7 @@ urlpatterns = [
     path('EditNotification_post/', views.EditNotification_post),
     path('UpdateNotification/<id>', views.UpdateNotification),
     path('WorkerViewNotification/', views.WorkerViewNotification),
+    path('blockedusers/', views.blockedusers),
 
 
 
@@ -107,6 +109,8 @@ urlpatterns = [
     path('employerdash/', views.employerdash),
     path('mainhome/', views.mainhome),
     path('employerhome/',views.employerhome),
+    path('companyhome/',views.companyhome),
+    path('employerdashduplicate/',views.employerdashduplicate),
     # path('viewnotification/',views.viewnotification),
     # path('addnotifications/',views.addnotifications),
     # path('sendnotification/',views.sendnotification),
@@ -142,7 +146,7 @@ urlpatterns = [
     path('assigningtoproject/<id>',views.assigningtoproject),
     path('assigningtoproject_post/',views.assigningtoproject_post),
     path('viewassigedworks/',views.viewassigedworks),
-    path('viewprojectworkers/',views.viewprojectworkers),
+    path('viewprojectworkers/<id>',views.viewprojectworkers),
 
     path('searchproject/',views.searchproject),
     path('searchproject_post/',views.searchproject_post),
@@ -193,6 +197,8 @@ urlpatterns = [
 
 
     path('assignedworkerprofile/<id>', views.assignedworkerprofile),
+    path('viewmyprojectmoreworker/', views.viewmyprojectmoreworker),
+    path('blockemployer/<id>', views.blockemployer),
 
 
 
@@ -223,4 +229,14 @@ urlpatterns = [
 
     path('workersendchat/', views.workersendchat),
     path('workerviewchat/', views.workerviewchat),
+    path('blockworker/<id>', views.blockworker),
+    path('workerviewreviews/', views.workerviewreviews),
+    path('delete_reviews/', views.delete_reviews),
+
+
+
+
+    path('viewemployerprofilemorejobvacancy/', views.viewemployerprofilemorejobvacancy),
+    path('viewmyreviewworker/', views.viewmyreviewworker),
+
 ]

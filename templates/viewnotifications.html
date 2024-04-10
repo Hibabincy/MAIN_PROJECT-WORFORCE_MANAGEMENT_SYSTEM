@@ -1,4 +1,4 @@
-{% extends "admindashinbox.html" %}
+{% extends "admindashinboxduplicate.html" %}
 {% block body %}
 <body>
 <form action="/wForce/ViewNotification_post/" method="post">
@@ -9,8 +9,8 @@
     <a href="/wForce/AddNotification/" class="btn btn-primary"><i class="fas fa-plus fa-2x"></i> Add </a>
     <br><br>
     {% csrf_token%}
- <div class="card">
-        <div class="card-body">
+{# <div class="card">#}
+{#        <div class="card-body">#}
     <div class="table-responsive">
         <table class="table" style="font-family: Arial, sans-serif; font-size: 14px;">
             <thead>
@@ -38,10 +38,9 @@
                 </tr>
                 {% endfor %}
             </tbody>
-        </table> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    </div> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        </div> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </table>
+{#    </div>#}
+{#        </div>#}
 </form>
 </body>
 {% endblock %}

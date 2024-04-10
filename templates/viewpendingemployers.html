@@ -1,5 +1,9 @@
-{% extends "admindashinbox.html" %}
+{% extends "admindashinboxduplicate.html" %}
 {% block body %}
+      {% if data == 0 %}
+
+    <h3 align="center" style="color: red">No pending employers found</h3>
+    {% else %}
 <body><form action="/wForce/approvalofregistrationemployer_POST/#about" method="post">
   <center>
     <span style="color: #0a0a0a">
@@ -86,4 +90,5 @@
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </form>
 </body>
+      {% endif %}
 {% endblock %}

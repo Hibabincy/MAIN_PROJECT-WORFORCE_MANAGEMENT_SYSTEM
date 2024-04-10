@@ -1,5 +1,9 @@
-{% extends "admindashinbox.html" %}
+{% extends "admindashinboxduplicate.html" %}
 {% block body %}
+     {% if len.data == 0 %}
+
+    <h3>No data </h3>
+    {% else %}
 <body><form action="/wForce/approvalofregistrationworker_POST/#about" method="post">
   <center>
     <span style="color: #0a0a0a">
@@ -85,4 +89,6 @@
 <br><br>
 </form>
 </body>
+        {% endif %}
+
 {% endblock %}

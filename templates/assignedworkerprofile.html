@@ -3,7 +3,7 @@
 {#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
 {#<title>Untitled Document</title>#}
 {#</head>#}
-{% extends "employerdashindex.html" %}
+{% extends "employerdashindexduplicate.html" %}
 {% block body %}
 
 <body>
@@ -12,7 +12,7 @@
 {#<form action="/wForce/viewsearchedworkers_post/" method="post" enctype="multipart/form-data">#}
 <form action="/wForce/employergivereview_POST/" method="post" enctype="multipart/form-data">
 
-    <input type="hidden" name="toid" value="{{ data.id }}">
+    <input type="hidden" name="toid" value="{{ data.LOGIN.id }}">
 <center>
     <span style="color: #0a0a0a">
         <h4 style="color: #0a0a0a; font-weight: bold; text-decoration: underline;">Worker Profile</h4>
@@ -184,7 +184,7 @@
                        <tr>
                           <td>{{ i.review }}</td>
                             <td>{{ i.rating }}</td>
-                            <td> {{ i.EMPLOYER.Companyname }}</td>
+                            <td> {{ i.ename }}</td>
                             <td> {{ i.date }}</td>
                             <td> {{ i.time }}</td>
                        </tr>

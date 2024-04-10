@@ -3,7 +3,7 @@
 {#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
 {#<title>Untitled Document</title>#}
 {#</head>#}
-{% extends "employerdashindex.html" %}
+{% extends "employerdashindexduplicate.html" %}
 {% block body %}
 
 <body>
@@ -142,32 +142,32 @@
 
 </table>
 
- <div class="mt-4">
-                <h4>Reviews and Ratings</h4>
-                <!-- Add review and rating form -->
+{# <div class="mt-4">#}
+{#                <h4>Reviews and Ratings</h4>#}
+{#                <!-- Add review and rating form -->#}
 {#                <div class="mb-3">#}
 {#                    <label for="rating">Rating:</label>#}
 {#                    <input type="number" class="form-control" id="rating" name="rating" min="1" max="5">#}
 {#                </div>#}
-
-      <div class="rate">
-        <input type="radio" name="rating" id="star5" value="5">
-        <label for="star5"></label>
-        <input type="radio" name="rating" id="star4" value="4">
-        <label for="star4"></label>
-        <input type="radio" name="rating" id="star3" value="3">
-        <label for="star3"></label>
-        <input type="radio" name="rating" id="star2" value="2">
-        <label for="star2"></label>
-        <input type="radio" name="rating" id="star1" value="1">
-        <label for="star1"></label>
-    </div><br>
-
-                <div class="mb-3">
+{##}
+{#      <div class="rate">#}
+{#        <input type="radio" name="rating" id="star5" value="5">#}
+{#        <label for="star5"></label>#}
+{#        <input type="radio" name="rating" id="star4" value="4">#}
+{#        <label for="star4"></label>#}
+{#        <input type="radio" name="rating" id="star3" value="3">#}
+{#        <label for="star3"></label>#}
+{#        <input type="radio" name="rating" id="star2" value="2">#}
+{#        <label for="star2"></label>#}
+{#        <input type="radio" name="rating" id="star1" value="1">#}
+{#        <label for="star1"></label>#}
+{#    </div><br>#}
+{##}
+{#                <div class="mb-3">#}
 {#                    <label for="review">Review:</label>#}
-                    <textarea class="form-control" id="review" name="review" rows="3" placeholder="review"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit Review</button>
+{#                    <textarea class="form-control" id="review" name="review" rows="3" placeholder="review"></textarea>#}
+{#                </div>#}
+{#                <button type="submit" class="btn btn-primary">Submit Review</button>#}
                 <!-- Display reviews and ratings -->
                 <div class="mt-4">
                     <h5>Recent Reviews:</h5>
@@ -184,7 +184,7 @@
                        <tr>
                           <td>{{ i.review }}</td>
                             <td>{{ i.rating }}</td>
-                            <td> {{ i.EMPLOYER.Companyname }}</td>
+                            <td> {{ i.ename }}</td>
                             <td> {{ i.date }}</td>
                             <td> {{ i.time }}</td>
                        </tr>
@@ -236,7 +236,6 @@
                 </div>
 {#            </div>#}
         </form>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </div>
  <style>
         * {

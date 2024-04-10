@@ -1,4 +1,4 @@
-{% extends 'employerdashindex.html' %}
+{% extends 'companyhome.html' %}
 {% block body %}
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +35,7 @@
         .profile-header img {
             width: 150px;
             height: 150px;
-            border-radius: 50%;
+            border-radius: 0%;
             border: 2px solid #fff;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         }
@@ -82,53 +82,58 @@
 
     </style>
 </head>
+
 <body   >
-<br><br>
+
 {#    <div class="profile-container">#}
+<style>
+    .form-container {
+        border-radius: 8px; /* Optional: add rounded corners */
+        border: 2px solid transparent; /* Border to maintain space for shadow */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow border */
+        padding: 20px; /* Adjust padding as needed */
+    }
+</style>
 
-<a href="/wForce/editemployerviewprofile/" class="edit-link">
-  <span>Edit</span>
-  <i class="fa fa-pencil"></i>
-</a>
-        <div class="profile-header">
-            <div class="profile-photos">
-                 <h1>{{ data.Companyname }}</h1>
-
-            </div>
-
-            <img src="{{ data.Photo }}" alt="User Photo">
-            <p> {{ data.Email }}</p>
-            <p> {{  data.Place }}</p>
-            <p>{{ data.Phone }}</p>
-
+<div class="form-container" style="background-color: white">
+    <a href="/wForce/editemployerviewprofile/" class="edit-link">
+        <span>Edit</span>
+        <i class="fa fa-pencil"></i>
+    </a>
+    <div class="profile-header">
+        <div class="profile-photos">
+            <h1><b style="color: darkred">{{ data.Companyname }}</b></h1>
         </div>
         <br>
-
-        <div class="profile-details">
-            <h2 style="background-color: #A1C2E3">Profile Details</h2>
-
-            <ul>
-                <li><strong>Category:</strong> {{ data.Category }}</li>
-                <li><strong>Founded Date:</strong> {{  data.Date }}</li>
-                <li><strong>Website:</strong> {{  data.Website}}</li>
-
-                <li><strong>About Us:</strong> {{ data.Aboutcompany }}</li>
-                <li><strong>Address:</strong>  {{ data.Post }}, {{ data.Pincode }}, {{ data.District }}, {{ data.State }}</li>
-            </ul>
-        </div>
+        <img src="{{ data.Photo }}" alt="User Photo">
+        <p>{{ data.Email }}</p>
+        <p>{{ data.Place }}</p>
+        <p>{{ data.Phone }}</p>
+    </div>
+    <div class="profile-details">
+        <h2 style="background-color: darkred; color: white">Profile Details</h2>
+        <ul>
+            <li><strong>Category:</strong> {{ data.Category }}</li>
+            <li><strong>Founded Date:</strong> {{ data.Date }}</li>
+            <li><strong>Website:</strong> {{ data.Website }}</li>
+            <li><strong>About Us:</strong> {{ data.Aboutcompany }}</li>
+            <li><strong>Address:</strong> {{ data.Post }}, {{ data.Pincode }}, {{ data.District }}, {{ data.State }}</li>
+        </ul>
+    </div>
     <br><br>
-        <!-- ScrollView starts here -->
-        <div class="card", style="background-color: #fff">
-            <h4 style="background-color: #A1C2E3;color: black;">Previous Works</h4>
-            <div class="previous-works">
-                <div class="col-md-4"> <img src="{{ data.Photo1 }}" style="height: 170px"></div>
-                <div class="col-md-4"> <img src="{{ data.Photo2 }}" style="height: 170px"></div>
-                <div class="col-md-4"> <img src="{{ data.Photo3 }}" style="height: 170px"></div>
-            </div>
+    <!-- ScrollView starts here -->
+    <div class="card" style="background-color: #fff">
+        <h4 style="background-color: darkred; color: white">Previous Works</h4>
+        <div class="previous-works">
+            <div class="col-md-4"> <img src="{{ data.Photo1 }}" style="height: 170px"></div>
+            <div class="col-md-4"> <img src="{{ data.Photo2 }}" style="height: 170px"></div>
+            <div class="col-md-4"> <img src="{{ data.Photo3 }}" style="height: 170px"></div>
+        </div>
         <br>
         <br>
-        </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+</div>
+
         <!-- ScrollView ends here -->
-{#    </div>#}
+{#    </div>#}</body>
 {% endblock %}
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

@@ -50,7 +50,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				<div class="w3l-date">
 					<label class="head">Founded Date<span class="w3l-star">  </span></label>
 						<div class="styled-input">
-							<input class="date" name="textfield5" placeholder="mm/dd/yyyy" type="text" id="datepicker" readonly required="">
+							<input class="date" name="textfield5" placeholder="mm/dd/yyyy"   type="text" id="datepicker" readonly required="">
 						</div>
 					</div>
 			<div class="clear"></div>
@@ -106,8 +106,9 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 			<div class="w3l-sym">
 					<label class="head">Website<span class="w3l-star">  </span></label>
-					<input type="text" name="textfield4"  placeholder="enter your website (eg:http://)" pattern="http(s?)(:\/\/)((www.)?)(([^.]+)\.)?([a-zA-z0-9\-_]+)(.com|.net|.gov|.org|.in)(\/[^\s]*)?" required="">
-			</div>
+					<input type="text" name="textfield4"  placeholder="https://example.com" pattern="https://.*" size="30"  required="">
+{#			pattern="http(s?)(:\/\/)((www.)?)(([^.]+)\.)?([a-zA-z0-9\-_]+)(.com|.net|.gov|.org|.in)(\/[^\s]*)?"#}
+            </div>
 			<div class="clear"></div>
 
 			<div class="w3l-lef1">

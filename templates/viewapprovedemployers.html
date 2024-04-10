@@ -1,11 +1,15 @@
-{% extends "admindashinbox.html" %}
+{% extends "admindashinboxduplicate.html" %}
 {% block body %}
+{% if data == 0 %}
+
+    <h3 align="center" style="color: red">No Approved employers found</h3>
+    {% else %}
 <body>
 <form action="/wForce/approvalofregistrationemployer_POST/#about" method="post">
-    <br><br>
-    <h4 align="center" style="color: #0a0a0a; font-weight: bold; text-decoration: underline;">Approved Employers</h4>
+
+    <h4 align="center" style="color: #0a0a0a; font-weight: bold; text-decoration: underline;"><b>APPROVED EMPLOYERS</b></h4>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <br><br>
+
    <div class="row">
             <div class="col-md-6">
                 <input type="text" class="form-control rounded-pill" placeholder="Search..." name="search_query">
@@ -15,31 +19,31 @@
             </div>
         </div>
     <br>
-
-   <div class="container">
-    <div class="card border-0 shadow">
-        <div class="card-body">
+{##}
+{#   <div class="container">#}
+{#    <div class="card border-0 shadow">#}
+{#        <div class="card-body">#}
             <div class="row row-cols-1 row-cols-md-4">
                 {% for i in data %}
                 <div class="col mb-4">
                     <div class="card h-100 border-0 shadow">
-                        <img src="{{ i.Photo }}" class="card-img-top" alt="..." style="height: 200px;">
+                       <center> <img src="{{ i.Photo }}" class="card-img-top" alt="..." style="height: 120px;width: 120px;"></center>
                         <div class="card-body d-flex flex-column">
                             <h6 class="card-title" style="font-size: 14px;">{{ i.Companyname }}</h6>
                             <p class="card-text flex-grow-1" style="font-size: 12px;"><strong>Address:</strong> {{ i.Place }}, {{ i.Post }}, {{ i.District }}, {{ i.State }}, {{ i.Pincode }}</p>
-                            <p class="card-text" style="font-size: 12px;"><strong>Phone:</strong> {{ i.Phone }}</p>
-                            <p class="card-text" style="font-size: 12px;"><strong>Email:</strong> {{ i.Email }}</p>
-                            <p class="card-text" style="font-size: 12px;"><strong>Registered Date:</strong> {{ i.registration_date }}</p>
+{#                            <p class="card-text" style="font-size: 12px;"><strong>Phone:</strong> {{ i.Phone }}</p>#}
+{#                            <p class="card-text" style="font-size: 12px;"><strong>Email:</strong> {{ i.Email }}</p>#}
+{#                            <p class="card-text" style="font-size: 12px;"><strong>Registered Date:</strong> {{ i.registration_date }}</p>#}
                             <a href="/wForce/viewapprovedemployersmore/{{ i.LOGIN.id }}" class="btn btn-success btn-sm mt-auto">View Profile</a>
+                          <br>  <a href="/wForce/blockemployer/{{ i.LOGIN.id }}" class="btn btn-danger btn-sm mt-auto">Block</a>
                         </div>
                     </div>
                 </div>
                 {% endfor %}
-            </div>
-        </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{#            </div>#}
+{#</div>#}
 
 </form>
 </body>
+     {% endif %}
 {% endblock %}

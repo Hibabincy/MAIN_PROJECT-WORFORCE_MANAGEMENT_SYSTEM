@@ -1,5 +1,9 @@
-{% extends "admindashinbox.html" %}
+{% extends "admindashinboxduplicate.html" %}
 {% block body %}
+      {% if data == 0 %}
+
+    <h3 align="center">No Data</h3>
+    {% else %}
 <body style="background-color:white">
  <center>
     <span style="color: #0a0a0a">
@@ -142,10 +146,11 @@
         <td><a href="/wForce/viewrejectedworkersmore/{{ i.LOGIN.id }}" class="btn btn-success">view profile</a></td>
       </tr>
       {% endfor %}
-    </table><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </table>
+  </div>
+</div>
+</div>
 </form>
 </body>
+      {% endif %}
 {% endblock %}

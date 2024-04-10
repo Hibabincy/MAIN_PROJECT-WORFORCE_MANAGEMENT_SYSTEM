@@ -54,7 +54,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
 
 
-				<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1" style="background-color: rgba(96,96,96,0.85)">
+<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1" style="background-image: url('/static/employdash/images/bgimage.jpg');">
 {#				 style="background-image: url('https://tse1.mm.bing.net/th?id=OIP.7uEO-UDjQJ2Y57NUQhdEQAHaEo&pid=Api&P=0&h=180');"#}
 						<ul class="nav" id="side-menu">
 						<li>
@@ -71,11 +71,11 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 {#									<a href="/wForce/employerprofile/">Edit Profile</a>#}
 {#								</li>#}
 								<li>
-									<a href="/wForce/employerviewprofile/">View Profile</a>
+									<a href="/wForce/employerviewprofile/">My Profile</a>
 								</li>
-                                <li>
-									<a href="/wForce/viewsearchedworkers/">Search Workers</a>
-								</li>
+{#                                <li>#}
+{#									<a href="/wForce/viewsearchedworkers/">Search Workers</a>#}
+{#								</li>#}
 							</ul>
 							<!-- /nav-second-level -->
 						</li>
@@ -207,6 +207,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 				</nav>
 			</div>
 		</div>
+
 		<!--left-fixed -navigation-->
 		<!-- header-starts -->
 		<div class="sticky-header header-section ">
@@ -215,21 +216,27 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 				<button id="showLeftPush"><i class="fa fa-bars"></i></button>
 				<!--toggle button end-->
 				<!--logo -->
-				<div class="logo" style="background-color: #EA6565">
+				<div class="logo" style="background-color: darkred">
 					<a href="/wForce/employerdash/">
 						<h1>ARCOME </h1>
 						<span>EmplrPanel</span>
 
 					</a>
 				</div>
-                <div style="padding-left: 40px"><center><img src="{{ sp }}" style="border-radius: 150%;height: 30px ;width: 30px">
-                           <br>{{ sn }}</center></div>
+                <div style="padding-left: 40px"><img src="{{ request.session.photo }}" style="border-radius: 150%;height: 80px ;width: 100px">{{ request.session.name }}</center></div>
                         </a></h1
 			<div class="clearfix"> </div>
 </div>
 <div class="clearfix"></div>
 
+
 </div>
+
+
+
+
+
+
 {#			<div class="header-right">#}
 {#				<div class="profile_details_left"><!--notifications of menu start -->#}
 {#					<ul class="nofitications-dropdown">#}
@@ -402,8 +409,18 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<!-- //header-ends -->
 		<!-- main content start-->
-	<div style="background-image: url('https://images.unsplash.com/photo-1595853035070-59a39fe84de3?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center;" id="page-wrapper">
+
+	<div style="background-image: url('https://images.unsplash.com/photo-1534320309096-17ce1f77021d?q=80&w=1808&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center;" id="page-wrapper">
+
+
+{#  	<div style="background-image: url('{{ request.session.photo }}'); background-size: cover; background-position: center;" id="page-wrapper">#}
+{##}
+
+
     <div  class="main-page" style="background-size: cover; background-color: white">
+
+
+
 {#				<h3 class="title1">Inbox</h3>#}
 				<div class="inbox-page">
 
@@ -468,6 +485,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 {#							</div>#}
 {#						</div>#}
 					</div>
+
 {#					<div class="inbox-row widget-shadow" id="accordion1" role="tablist" aria-multiselectable="true">#}
 {#						<div class="mail "> <input type="checkbox" class="checkbox"> </div>#}
 {#						<div class="mail"><img src="/static/admindash1/images/i2.png" alt=""/></div>#}
@@ -1259,6 +1277,78 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
 {#				</div>#}
 			</div>
+
+
+{#<div class="container" style="max-width: 800px; margin: 20px auto; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">#}
+
+{#<div class="container" style="max-width: 800px; margin: 20px auto; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">#}
+
+<style>
+    .text-3d {
+        font-size: 38px;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: black; /* Midnight Blue */
+        text-shadow: 2px 2px 0 white, 4px 4px 0 #4d780d; /* Belize Hole, Alizarin */
+    }
+    .search-button {
+  margin-top: 20px;
+  padding: 10px 30px;
+  border: 2px solid white; /* Green border */
+  background-color: rgba(17, 102, 88, 0.39);
+
+        width:700px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 25px; /* Rounded corners */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  border-color: #4CAF50;
+}
+
+</style>
+<br><br>
+<h2 class="text-3d">
+    Welcome to <br>
+    Arcome Employer Panel
+</h2>
+
+
+<br><br><br><br><br><br><br><br>
+
+<center>
+  <a href="/wForce/viewsearchedworkers/">
+    <button class="search-button">Search Workers</button>
+  </a>
+</center>
+
+<br><br><br>
+            <p style="font-size: 18px; color: #84b57b ;line-height: 1.6; margin-bottom: 10px;"><b>Manage your workforce efficiently and effectively with our Workforce Management System. Find and recruit talented workers for your projects, monitor their progress in real-time, and generate insightful reports to analyze workforce performance.</b></p>
+
+      <br><br><br><br>
+
+
+{#    <p style="font-size: 18px; line-height: 1.6; margin-bottom: 10px;">Get started by exploring the following features:</p>#}
+{##}
+{#    <ul style="list-style-type: none; padding: 0; margin-bottom: 20px;">#}
+{#        <li style="margin-bottom: 10px;"><strong style="color: #FF4500;">Manage Projects:</strong> Organize and oversee all your ongoing projects.</li>#}
+{#        <li style="margin-bottom: 10px;"><strong style="color: #FF4500;">Hire Workers:</strong> Find and recruit skilled workers with the expertise you need.</li>#}
+{#        <li style="margin-bottom: 10px;"><strong style="color: #FF4500;">Track Progress:</strong> Monitor the progress of your projects and workforce in real-time.</li>#}
+{#        <li style="margin-bottom: 10px;"><strong style="color: #FF4500;">Generate Reports:</strong> Generate detailed reports to analyze workforce performance and project metrics.</li>#}
+{#    </ul>#}
+
+{#    <p style="font-size: 18px; line-height: 1.6; margin-bottom: 10px;">Have questions or need assistance? Contact our support team for help.</p>#}
+
+{#    <a href="#" class="contact-button" style="display: inline-block; background-color: #FF4500; color: #fff; padding: 10px 20px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease;">Contact Support</a>#}
+{#</div>#}
+
 {#    <style>#}
 {#    /* Define animation */#}
 {#    @keyframes slide {#}

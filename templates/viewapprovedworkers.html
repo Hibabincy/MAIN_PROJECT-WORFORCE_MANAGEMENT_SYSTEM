@@ -1,5 +1,10 @@
-{% extends "admindashinbox.html" %}
+{% extends "admindashinboxduplicate.html" %}
 {% block body %}
+
+    {% if len.data == 0 %}
+
+    <h3>No approved workers found</h3>
+    {% else %}
 
 <body xmlns="http://www.w3.org/1999/html">
     <form action="/wForce/approvalofregistrationworker_POST/#about" method="post">
@@ -22,11 +27,11 @@
 <br><br>
 
     <div class="container">
-    <div class="card border-0 shadow-sm" style="background-color: #f8f9fa; padding: 20px;"> <!-- Adjusted background color and padding for parent card -->
+{#    <div class="card border-0 shadow-sm" style="background-color: #f8f9fa; padding: 20px;"> <!-- Adjusted background color and padding for parent card -->#}
         <div class="row row-cols-1 row-cols-md-5">
             {% for i in data %}
             <div class="col mb-4">
-                <div class="card border-0 shadow-sm" style="width: 150px; background-color: white; min-height: 250px;"> <!-- Adjusted width and background color for individual cards, minimum height -->
+                <div class="card border-0 shadow-sm" style="width: 200px; background-color: white; min-height: 250px;"> <!-- Adjusted width and background color for individual cards, minimum height -->
                     <img src="{{ i.Photo }}" class="card-img-top" alt="..." style="height: 120px;">
                     <div class="card-body d-flex flex-column"> <!-- Added flex-column class -->
                         <h6 class="card-title" style="font-size: 16px; font-weight: bold; color:darkgreen;">{{ i.Username }}</h6>
@@ -35,14 +40,15 @@
                         <p class="card-text" style="font-size: 12px;"><strong>Job Type:</strong> {{ i.Jobtype }}</p>
                         <p class="card-text" style="font-size: 12px;color:#a2a2a2;"><strong>Registration Date:</strong> {{ i.registration_date }}</p> <!-- Added registration date -->
                         <div class="mt-auto"></div> <!-- Added spacer to push content to the top -->
-                        <a href="/wForce/viewapprovedworkersmore/{{ i.LOGIN.id }}" class="btn btn-primary btn-sm mt-auto">View Profile</a> <!-- Adjusted button position -->
+                        <a href="/wForce/viewapprovedworkersmore/{{ i.LOGIN.id }}" class="btn btn-success btn-sm mt-auto">View Profile</a><br> <!-- Adjusted button position -->
+                        <a href="/wForce/blockworker/{{ i.LOGIN.id }}" class="btn btn-danger btn-sm mt-auto">Block</a> <!-- Adjusted button position -->
                     </div>
                 </div>
             </div>
             {% endfor %}
         </div>
-    </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+</div>
 
 
 {#    <div class="container">#}
@@ -71,4 +77,6 @@
 
     </form>
 </body>
+    {% endif %}
 {% endblock %}
+

@@ -161,8 +161,8 @@ class Notifications(models.Model):
 
 
 class Review(models.Model):
-    EMPLOYER = models.ForeignKey(Employer, on_delete=models.CASCADE, related_name='from_id')
-    WORKER = models.ForeignKey(Worker, on_delete=models.CASCADE, related_name='toid')
+    FROMID = models.ForeignKey(Login, on_delete=models.CASCADE, related_name='from_id',default=1)
+    TOID = models.ForeignKey(Login, on_delete=models.CASCADE, related_name='toid',default=2)
     review = models.CharField(max_length=1000)
     rating = models.CharField(max_length=1000)
     date = models.DateField()

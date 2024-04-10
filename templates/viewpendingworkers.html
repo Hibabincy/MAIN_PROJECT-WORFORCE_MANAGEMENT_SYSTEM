@@ -1,6 +1,10 @@
-{% extends "admindashinbox.html" %}
+{% extends "admindashinboxduplicate.html" %}
 <html>
 {% block body %}
+     {% if data == 0 %}
+
+    <h3 align="center" style="color: red">No pending workers found</h3>
+    {% else %}
 <body>
   <form action="/wForce/approvalofregistrationworker_POST/#about" method="post">
     <center>
@@ -78,12 +82,11 @@
               <td><a href="/wForce/viewpendingworkersmore/{{ i.LOGIN.id }}" class="btn btn-success">view profile</a></td>
             </tr>
             {% endfor %}
-          </table> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br>
-        </div> <br><br> <br><br> <br><br> <br><br> <br><br>
-      </div> <br><br> <br><br> <br><br> <br><br> <br><br>
-      <br><br> <br><br> <br><br> <br><br> <br><br> <br><br>
+          </table>
+s        </div>
+      </div>
     </form>
   </body>
-
+  {% endif %}
 {% endblock %}
 </html>
