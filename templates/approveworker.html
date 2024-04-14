@@ -1,10 +1,16 @@
 {% extends "admindashinboxduplicate.html" %}
 {% block body %}
-     {% if len.data == 0 %}
+     {% if l == 0%}
 
-    <h3>No data </h3>
+      <h3 align="center" style="color: red">No workers found</h3>
     {% else %}
-<body><form action="/wForce/approvalofregistrationworker_POST/#about" method="post">
+<body style="background-color: #629aa9">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <a href="/wForce/approvalofregistrationworker/" class="btn btn-secondary" style="background-color: darkseagreen">
+  <i class="fas fa-arrow-left" style="color: white"></i> <!-- Font Awesome back arrow icon -->
+</a>
+<form action="/wForce/approvalofregistrationworker_POST/#about" method="post">
   <center>
     <span style="color: #0a0a0a">
         <h4 style="color: darkred; ;font-weight: bold; text-decoration: underline;">Worker Verification</h4>
@@ -58,7 +64,7 @@
 
 </body>
     <br><br><br>
-
+{% if data %}
 <table class="table  table-striped table-boardered" style="background-color: white;">
 {% csrf_token %}
   <tr >
@@ -76,7 +82,7 @@
   <tr>
     <td>&nbsp;{{ forloop.counter }}</td>
     <td>&nbsp;{{ i.Username }}<br> &nbsp; <img src="{{ i.Photo }}" style="max-width: 100px"> </td>
-      <td>{{ i.Place}}<br>{{ i.post}}<br>{{ i.district}}<br>&nbsp;{{ i.state}}<br>{{ i.Pincode}}</td>
+      <td>{{ i.place}} {{ i.post}} (po), {{ i.district}}, {{ i.state}}, {{ i.Pincode}}</td>
     <td>{{ i.Phone }}</td>
     <td>{{i.Email}}</td>
       <td>{{i.registration_date}}</td>
@@ -86,7 +92,9 @@
   </tr>
     {% endfor  %}
 </table>
-<br><br>
+{% else %}
+        <p >No workers found :(</p>
+    {% endif %}
 </form>
 </body>
         {% endif %}

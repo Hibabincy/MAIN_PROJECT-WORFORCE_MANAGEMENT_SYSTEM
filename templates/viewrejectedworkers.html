@@ -4,13 +4,18 @@
 
     <h3 align="center">No Data</h3>
     {% else %}
-<body style="background-color:white">
+<body style="background-color: darkseagreen">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <a href="/wForce/viewrejectedworkers/" class="btn btn-secondary" style="background-color: darkseagreen">
+  <i class="fas fa-arrow-left" style="color: white"></i> <!-- Font Awesome back arrow icon -->
+</a>
  <center>
     <span style="color: #0a0a0a">
         <h4 style="color: #0a0a0a; font-weight: bold; text-decoration: underline;">Rejected workers</h4>
     </span>
 </center><!-- White background -->
-<form action="/wForce/approvalofregistrationworker_POST/#about" method="post">
+<form action="/wForce/viewrejectedworkers_POST/#about" method="post">
   <center>
     <span style="color: #0a0a0a">
     </span>
@@ -102,7 +107,7 @@
 <table class="pull-left">
   {% csrf_token %}
   <tr>
-    <th scope="col"><input type="text" name="textfield" id="textfield" class="form-control oval-search" placeholder="Search with name"/></th>
+    <th scope="col"><input type="text" name="textfield" id="textfield" class="form-control oval-search" placeholder="Search with name or district..."/></th>
     <th scope="col">
       <button type="submit" name="button" id="button" class="btn btn-success search-button">
         <i class="fas fa-search"></i> <!-- Font Awesome search icon -->
@@ -111,20 +116,18 @@
   </tr>
 </table>
 
-</body><br><br>
-<div class="container">
-<div class="card">
-  <div class="card-body">
-    <table class="table table-striped">
+</body><br><br><br>
+{% if data %}
+    <table class="table table card-body" style="background-color: white">
       {% csrf_token %}
       <tr>
         <th> </th>
         <th style="color: darkred">Photo</th>
         <th style="color: darkred">Worker</th>
           <th style="color: darkred">Job Type</th>
-        <th style="color: darkred">Email</th>
-        <th style="color: darkred">Phone</th>
-        <th style="color: darkred">Address</th>
+{#        <th style="color: darkred">Email</th>#}
+{#        <th style="color: darkred">Phone</th>#}
+{#        <th style="color: darkred">Address</th>#}
 
         <th style="color: darkred">Registration Date</th>
         <th style="color: darkred">&nbsp;</th>
@@ -138,19 +141,20 @@
             {{ i.Username }}</td>
 
           <td>{{ i.Jobtype }}</td>
-        <td style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ i.Email }}</td>
-        <td style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ i.Phone }}</td>
-        <td>{{ i.district }},{{ i.post }}, {{ i.state }}, {{ i.Pincode }}</td>
+{#        <td style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ i.Email }}</td>#}
+{#        <td style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ i.Phone }}</td>#}
+{#        <td>{{ i.district }},{{ i.post }}, {{ i.state }}, {{ i.Pincode }}</td>#}
 
         <td>{{ i.registration_date }}</td>
         <td><a href="/wForce/viewrejectedworkersmore/{{ i.LOGIN.id }}" class="btn btn-success">view profile</a></td>
       </tr>
       {% endfor %}
     </table>
-  </div>
-</div>
-</div>
+
 </form>
+    {% else %}
+   <br>     <p >No workers found :(</p>
+    {% endif %}
 </body>
       {% endif %}
 {% endblock %}

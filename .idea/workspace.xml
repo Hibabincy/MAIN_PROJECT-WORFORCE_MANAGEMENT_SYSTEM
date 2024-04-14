@@ -1,64 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/templates/viewrejectedemployers.html" description="&lt;th&gt;&lt;/th&gt;" line="70" />
-    <bookmark url="file://$PROJECT_DIR$/templates/Approval_of_Registration.html" description="&lt;table class=&quot;color-table&quot;&gt;" line="98" />
+    <bookmark url="file://$PROJECT_DIR$/templates/viewrejectedemployers.html" description="&lt;th&gt;&lt;/th&gt;" line="75" />
+    <bookmark url="file://$PROJECT_DIR$/templates/Approval_of_Registration.html" description="&lt;table class=&quot;color-table&quot;&gt;" line="107" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e5471f5-c7e6-4e8f-b67b-c233b152cdf5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WorkforceManagementSystem/static/admindash1/images/bgadmin.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WorkforceManagementSystem/static/employdash/images/bgimage.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WorkforceManagementSystem/static/employerdash/images/menubg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/admindashinboxduplicate.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/blockedusers.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/companyhome.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/employerdashindexduplicate.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/viewallreviewsadmin.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/viewmyreviews.html" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/WorkforceManagementSystem/migrations/0001_initial.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WorkforceManagementSystem/migrations/0002_worker_lattitude_worker_longitude.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WorkforceManagementSystem/migrations/0003_jobvaccancy_district_jobvaccancy_salary.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WorkforceManagementSystem/migrations/0004_jobrequest.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WorkforceManagementSystem/migrations/0005_workerrequest.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WorkforceManagementSystem/migrations/0006_remove_workerrequest_employer_workerrequest_project.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WorkforceManagementSystem/migrations/0007_chat.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WorkforceManagementSystem/migrations/0008_groupchat.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WorkforceManagementSystem/migrations/0009_delete_groupchat.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WorkforceManagementSystem/migrations/0010_notification.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WorkforceManagementSystem/migrations/0011_notifications_delete_notification.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WorkforceManagementSystem/migrations/0012_chat_time.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WorkforceManagementSystem/migrations/0013_assignproject.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WorkforceManagementSystem/migrations/0014_jobrequest_assigneddate.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WorkforceManagementSystem/migrations/0015_review.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WorkforceManagementSystem/migrations/0016_remove_review_from_id_remove_review_to_id_and_more.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WorkforceManagementSystem/models.py" afterPath="$PROJECT_DIR$/WorkforceManagementSystem/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WorkforceManagementSystem/static/empsignup/css/style.css" afterPath="$PROJECT_DIR$/WorkforceManagementSystem/static/empsignup/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WorkforceManagementSystem/urls.py" afterPath="$PROJECT_DIR$/WorkforceManagementSystem/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WorkforceManagementSystem/views.py" afterPath="$PROJECT_DIR$/WorkforceManagementSystem/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Approval_of_Registration.html" afterPath="$PROJECT_DIR$/templates/Approval_of_Registration.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Chats.html" afterPath="$PROJECT_DIR$/templates/Chats.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/EmployerViewProfile.html" afterPath="$PROJECT_DIR$/templates/EmployerViewProfile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Manage fee Add.html" afterPath="$PROJECT_DIR$/templates/Manage fee Add.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Managefee_view.html" afterPath="$PROJECT_DIR$/templates/Managefee_view.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/addjobvaccancy.html" afterPath="$PROJECT_DIR$/templates/addjobvaccancy.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/addnotificationnew.html" afterPath="$PROJECT_DIR$/templates/addnotificationnew.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/addproject.html" afterPath="$PROJECT_DIR$/templates/addproject.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admindashinbox.html" afterPath="$PROJECT_DIR$/templates/admindashinbox.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/allworkerchats.html" afterPath="$PROJECT_DIR$/templates/allworkerchats.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admindashinboxduplicate.html" afterPath="$PROJECT_DIR$/templates/admindashinboxduplicate.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/approveworker.html" afterPath="$PROJECT_DIR$/templates/approveworker.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/assignedworkerprofile.html" afterPath="$PROJECT_DIR$/templates/assignedworkerprofile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/blockedusers.html" afterPath="$PROJECT_DIR$/templates/blockedusers.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/editemployerprofile.html" afterPath="$PROJECT_DIR$/templates/editemployerprofile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/editfee.html" afterPath="$PROJECT_DIR$/templates/editfee.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/editjobvacancy.html" afterPath="$PROJECT_DIR$/templates/editjobvacancy.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/editnotification.html" afterPath="$PROJECT_DIR$/templates/editnotification.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/editproject.html" afterPath="$PROJECT_DIR$/templates/editproject.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/employerdashindex.html" afterPath="$PROJECT_DIR$/templates/employerdashindex.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/employerdashindexduplicate.html" afterPath="$PROJECT_DIR$/templates/employerdashindexduplicate.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/employerviewnotifications.html" afterPath="$PROJECT_DIR$/templates/employerviewnotifications.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/employsignupindex.html" afterPath="$PROJECT_DIR$/templates/employsignupindex.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/notification.html" afterPath="$PROJECT_DIR$/templates/notification.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/projectlisttoassign.html" afterPath="$PROJECT_DIR$/templates/projectlisttoassign.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/reviewadd.html" afterPath="$PROJECT_DIR$/templates/reviewadd.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/searchproject.html" afterPath="$PROJECT_DIR$/templates/searchproject.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/sendnotification.html" afterPath="$PROJECT_DIR$/templates/sendnotification.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/view_employer.html" afterPath="$PROJECT_DIR$/templates/view_employer.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/view_worker.html" afterPath="$PROJECT_DIR$/templates/view_worker.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/viewacceptedprojectworkers.html" afterPath="$PROJECT_DIR$/templates/viewacceptedprojectworkers.html" />
@@ -79,7 +50,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/viewrejectedemployersmore.html" afterPath="$PROJECT_DIR$/templates/viewrejectedemployersmore.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/viewrejectedworkers.html" afterPath="$PROJECT_DIR$/templates/viewrejectedworkers.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/viewrejectedworkersmore.html" afterPath="$PROJECT_DIR$/templates/viewrejectedworkersmore.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/viewsearchedworkerprofile.html" afterPath="$PROJECT_DIR$/templates/viewsearchedworkerprofile.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/viewsearchedworkers.html" afterPath="$PROJECT_DIR$/templates/viewsearchedworkers.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/viewworkerrequests.html" afterPath="$PROJECT_DIR$/templates/viewworkerrequests.html" />
     </list>
@@ -103,21 +73,12 @@
       <file leaf-file-name="viewrejectedemployers.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/viewrejectedemployers.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="6" selection-end-column="14" />
+            <state relative-caret-position="498">
+              <caret line="74" column="33" lean-forward="false" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
               <folding>
-                <element signature="n#style#0;n#h3#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#form#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#0;n#table#0;n#form#0;n#body#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WorkforceManagementSystem/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="233" column="48" lean-forward="false" selection-start-line="233" selection-start-column="48" selection-end-line="233" selection-end-column="48" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -125,50 +86,35 @@
       <file leaf-file-name="viewapprovedworkers.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/viewapprovedworkers.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="582">
-              <caret line="79" column="9" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Approval_of_Registration.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/Approval_of_Registration.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="582">
-              <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="approveworker.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/approveworker.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WorkforceManagementSystem/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="14" column="6" lean-forward="false" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/WorkforceManagementSystem/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="2216" column="7" lean-forward="false" selection-start-line="2216" selection-start-column="4" selection-end-line="2216" selection-end-column="7" />
+            <state relative-caret-position="168">
+              <caret line="8" column="74" lean-forward="false" selection-start-line="8" selection-start-column="74" selection-end-line="8" selection-end-column="74" />
               <folding>
-                <element signature="e#0#15#0" expanded="true" />
+                <element signature="n#style#0;n#body#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="viewapprovedworkersmore.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/viewapprovedworkersmore.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1407">
+              <caret line="8" column="38" lean-forward="false" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+              <folding>
+                <element signature="e#251#284#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admindashinbox.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/admindashinbox.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="64" column="60" lean-forward="false" selection-start-line="64" selection-start-column="60" selection-end-line="64" selection-end-column="60" />
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1713110542830" expanded="false" signature="41638:41691" ph="..." />
               </folding>
             </state>
           </provider>
@@ -177,21 +123,69 @@
       <file leaf-file-name="viewapprovedemployers.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/viewapprovedemployers.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" column="53" lean-forward="false" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
+            <state relative-caret-position="126">
+              <caret line="6" column="38" lean-forward="false" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
               <folding>
-                <element signature="n#style#0;n#h3#0;n#!!top" expanded="true" />
-                <marker date="1712761580942" expanded="false" signature="1725:1741" ph="..." />
+                <element signature="n#style#0;n#body#0;n#!!top" expanded="true" />
+                <marker date="1713110222238" expanded="false" signature="2147:2163" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blockedusers.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/blockedusers.html">
+      <file leaf-file-name="viewapprovedemployersmore.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/viewapprovedemployersmore.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="778">
-              <caret line="75" column="35" lean-forward="false" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
+            <state relative-caret-position="168">
+              <caret line="8" column="38" lean-forward="false" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+              <folding>
+                <element signature="e#251#284#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view_worker.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/view_worker.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="8" column="38" lean-forward="false" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+              <folding>
+                <element signature="e#251#284#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WorkforceManagementSystem/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="249">
+              <caret line="324" column="32" lean-forward="false" selection-start-line="324" selection-start-column="4" selection-end-line="324" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="approveworker.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/approveworker.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-189">
+              <caret line="6" column="38" lean-forward="false" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+              <folding>
+                <element signature="n#style#0;n#body#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view_employer.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/view_employer.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -201,36 +195,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>employersi</find>
-      <find>background-ima</find>
-      <find>employerdash</find>
-      <find>images/</find>
-      <find>margin</find>
-      <find>margin-</find>
-      <find>profile</find>
-      <find>whit</find>
-      <find>white</find>
-      <find>box</find>
-      <find>blue</find>
-      <find>br</find>
-      <find>photo</find>
-      <find>logo</find>
-      <find>search workers</find>
-      <find>manage you</find>
-      <find>logout</find>
-      <find>welcome</find>
-      <find>background-color</find>
-      <find>arco</find>
-      <find>&lt;div class=&quot;lo</find>
-      <find>backgroun</find>
-      <find>background-image</find>
+      <find>viewproject</find>
+      <find>chat wit</find>
+      <find>viewprojectworkers</find>
+      <find>background-colo</find>
+      <find>assignedworkerprofile</find>
+      <find>approvalofregistrationemployer_more</find>
+      <find>approvalofregistrationworker_more</find>
+      <find>viewapprovedworkersmore</find>
+      <find>approvalofregistrationworker_POST</find>
+      <find>viewapprovedemployers</find>
+      <find>viewapprovedemployersmore</find>
+      <find>approvalofregistrationemployer</find>
       <find>viewapprovedworkers</find>
+      <find>django</find>
+      <find>from django.db.models import Q</find>
+      <find>from django</find>
+      <find>viewrejectedemployers_POST</find>
+      <find>viewrejectedworkers</find>
+      <find>viewrejectedworkersmore</find>
+      <find>viewrejectedemployersmore</find>
+      <find>viewpendingemployersmore</find>
+      <find>viewpendingemployers</find>
+      <find>viewrejectedemployers</find>
+      <find>pendingworkers</find>
+      <find>pendingworkersmore</find>
+      <find>EditNotification</find>
       <find>ViewNotification</find>
-      <find>viewjobvacancyworkermore</find>
-      <find>viewemployerprofilemore</find>
-      <find>viewemployerprofilemorejobvacancy</find>
-      <find>viewrejectedwork</find>
-      <find>approvalof</find>
+      <find>AddNotification</find>
+      <find>blockedusers</find>
+      <find>approvalofregistrationworker</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -239,57 +233,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/editproject.html" />
-        <option value="$PROJECT_DIR$/templates/employerviewnotifications.html" />
-        <option value="$PROJECT_DIR$/templates/projectlisttoassign.html" />
-        <option value="$PROJECT_DIR$/templates/reviewadd.html" />
-        <option value="$PROJECT_DIR$/templates/searchproject.html" />
-        <option value="$PROJECT_DIR$/templates/viewacceptedprojectworkers.html" />
-        <option value="$PROJECT_DIR$/templates/viewapprovedjobrequests.html" />
-        <option value="$PROJECT_DIR$/templates/viewprojectworkers.html" />
-        <option value="$PROJECT_DIR$/templates/viewworkerrequests.html" />
-        <option value="$PROJECT_DIR$/templates/addproject.html" />
-        <option value="$PROJECT_DIR$/templates/viewsearchedworkers.html" />
-        <option value="$PROJECT_DIR$/templates/Chats.html" />
-        <option value="$PROJECT_DIR$/templates/viewsearchedworkerprofile.html" />
-        <option value="$PROJECT_DIR$/templates/viewjobvacancy.html" />
-        <option value="$PROJECT_DIR$/templates/employerdashindexduplicate.html" />
-        <option value="$PROJECT_DIR$/templates/viewproject.html" />
-        <option value="$PROJECT_DIR$/templates/EmployerViewProfile.html" />
-        <option value="$PROJECT_DIR$/templates/addjobvaccancy.html" />
-        <option value="$PROJECT_DIR$/templates/allworkerchats.html" />
-        <option value="$PROJECT_DIR$/templates/employerdashindex.html" />
-        <option value="$PROJECT_DIR$/templates/companyhome.html" />
-        <option value="$PROJECT_DIR$/templates/addnotificationnew.html" />
         <option value="$PROJECT_DIR$/templates/editfee.html" />
-        <option value="$PROJECT_DIR$/templates/editnotification.html" />
         <option value="$PROJECT_DIR$/templates/Manage fee Add.html" />
         <option value="$PROJECT_DIR$/templates/Managefee_view.html" />
         <option value="$PROJECT_DIR$/templates/notification.html" />
         <option value="$PROJECT_DIR$/templates/sendnotification.html" />
-        <option value="$PROJECT_DIR$/templates/view_employer.html" />
-        <option value="$PROJECT_DIR$/templates/view_worker.html" />
-        <option value="$PROJECT_DIR$/templates/viewapprovedemployersmore.html" />
-        <option value="$PROJECT_DIR$/templates/viewpendingemployersmore.html" />
-        <option value="$PROJECT_DIR$/templates/viewpendingworkersmore.html" />
-        <option value="$PROJECT_DIR$/templates/viewrejectedemployersmore.html" />
-        <option value="$PROJECT_DIR$/templates/viewrejectedworkersmore.html" />
-        <option value="$PROJECT_DIR$/templates/viewnotifications.html" />
-        <option value="$PROJECT_DIR$/templates/admindashinboxduplicate.html" />
-        <option value="$PROJECT_DIR$/templates/admindashinbox.html" />
         <option value="$PROJECT_DIR$/templates/employsignupindex.html" />
-        <option value="$PROJECT_DIR$/templates/viewapprovedworkersmore.html" />
-        <option value="$PROJECT_DIR$/templates/blockedusers.html" />
+        <option value="$PROJECT_DIR$/templates/addproject.html" />
+        <option value="$PROJECT_DIR$/templates/editproject.html" />
+        <option value="$PROJECT_DIR$/WorkforceManagementSystem/models.py" />
+        <option value="$PROJECT_DIR$/templates/viewmyreviews.html" />
+        <option value="$PROJECT_DIR$/templates/viewjobvacancy.html" />
+        <option value="$PROJECT_DIR$/templates/viewacceptedprojectworkers.html" />
+        <option value="$PROJECT_DIR$/templates/employerdashindexduplicate.html" />
+        <option value="$PROJECT_DIR$/templates/employerdashindex.html" />
+        <option value="$PROJECT_DIR$/templates/employerviewnotifications.html" />
+        <option value="$PROJECT_DIR$/templates/editjobvacancy.html" />
+        <option value="$PROJECT_DIR$/templates/viewworkerrequests.html" />
+        <option value="$PROJECT_DIR$/templates/viewapprovedjobrequests.html" />
+        <option value="$PROJECT_DIR$/templates/viewallreviewsadmin.html" />
+        <option value="$PROJECT_DIR$/templates/admindashinboxduplicate.html" />
+        <option value="$PROJECT_DIR$/templates/viewsearchedworkerprofile.html" />
+        <option value="$PROJECT_DIR$/templates/viewsearchedworkers.html" />
+        <option value="$PROJECT_DIR$/templates/EmployerViewProfile.html" />
+        <option value="$PROJECT_DIR$/templates/editemployerprofile.html" />
+        <option value="$PROJECT_DIR$/templates/viewproject.html" />
+        <option value="$PROJECT_DIR$/templates/viewprojectworkers.html" />
+        <option value="$PROJECT_DIR$/templates/Chats.html" />
+        <option value="$PROJECT_DIR$/templates/assignedworkerprofile.html" />
+        <option value="$PROJECT_DIR$/templates/viewrejectedemployersmore.html" />
+        <option value="$PROJECT_DIR$/templates/Approval_of_Registration.html" />
         <option value="$PROJECT_DIR$/templates/viewrejectedworkers.html" />
+        <option value="$PROJECT_DIR$/templates/viewrejectedworkersmore.html" />
+        <option value="$PROJECT_DIR$/WorkforceManagementSystem/views.py" />
         <option value="$PROJECT_DIR$/WorkforceManagementSystem/urls.py" />
+        <option value="$PROJECT_DIR$/templates/editnotification.html" />
+        <option value="$PROJECT_DIR$/templates/viewnotifications.html" />
+        <option value="$PROJECT_DIR$/templates/addnotificationnew.html" />
+        <option value="$PROJECT_DIR$/templates/blockedusers.html" />
+        <option value="$PROJECT_DIR$/templates/viewpendingworkersmore.html" />
         <option value="$PROJECT_DIR$/templates/viewpendingworkers.html" />
+        <option value="$PROJECT_DIR$/templates/viewpendingemployersmore.html" />
         <option value="$PROJECT_DIR$/templates/viewpendingemployers.html" />
         <option value="$PROJECT_DIR$/templates/viewrejectedemployers.html" />
-        <option value="$PROJECT_DIR$/templates/viewapprovedemployers.html" />
         <option value="$PROJECT_DIR$/templates/viewapprovedworkers.html" />
+        <option value="$PROJECT_DIR$/templates/viewapprovedworkersmore.html" />
+        <option value="$PROJECT_DIR$/templates/viewapprovedemployers.html" />
+        <option value="$PROJECT_DIR$/templates/viewapprovedemployersmore.html" />
+        <option value="$PROJECT_DIR$/templates/view_employer.html" />
+        <option value="$PROJECT_DIR$/templates/view_worker.html" />
         <option value="$PROJECT_DIR$/templates/approveworker.html" />
-        <option value="$PROJECT_DIR$/templates/Approval_of_Registration.html" />
-        <option value="$PROJECT_DIR$/WorkforceManagementSystem/views.py" />
+        <option value="$PROJECT_DIR$/templates/admindashinbox.html" />
       </list>
     </option>
   </component>
@@ -320,7 +314,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -423,6 +417,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="WorkforceManagementSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MAIN_PROJECT-WORFORCE_MANAGEMENT_SYSTEM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MAIN_PROJECT-WORFORCE_MANAGEMENT_SYSTEM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="untitled" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -443,7 +455,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -453,18 +465,18 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hibab\OneDrive\Desktop\MAIN_PROJECT-WORFORCE_MANAGEMENT_SYSTEM\templates" />
+      <recent name="C:\Users\hibab\OneDrive\Desktop\MAIN_PROJECT-WORFORCE_MANAGEMENT_SYSTEM\WorkforceManagementSystem\static\admindash1\images" />
+      <recent name="C:\Users\hibab\OneDrive\Desktop\MAIN_PROJECT-WORFORCE_MANAGEMENT_SYSTEM\WorkforceManagementSystem\static\employdash\images" />
+      <recent name="C:\Users\hibab\OneDrive\Desktop\MAIN_PROJECT-WORFORCE_MANAGEMENT_SYSTEM\WorkforceManagementSystem\static\employerdash\images" />
+      <recent name="C:\Users\hibab\OneDrive\Desktop\MAIN_PROJECT-WORFORCE_MANAGEMENT_SYSTEM\WorkforceManagementSystem\static\chats" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\hibab\OneDrive\Desktop\MAIN_PROJECT-WORFORCE_MANAGEMENT_SYSTEM\WorkforceManagementSystem\static" />
       <recent name="C:\Users\hibab\OneDrive\Desktop\MAIN_PROJECT-WORFORCE_MANAGEMENT_SYSTEM\WorkforceManagementSystem\static\loginpage\images" />
       <recent name="C:\Users\hibab\PycharmProjects\untitled\WorkforceManagementSystem\static" />
       <recent name="C:\Users\hibab\PycharmProjects\untitled\WorkforceManagementSystem\static\login\images" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\hibab\OneDrive\Desktop\MAIN_PROJECT-WORFORCE_MANAGEMENT_SYSTEM\WorkforceManagementSystem\static\admindash1\images" />
-      <recent name="C:\Users\hibab\OneDrive\Desktop\MAIN_PROJECT-WORFORCE_MANAGEMENT_SYSTEM\templates" />
-      <recent name="C:\Users\hibab\OneDrive\Desktop\MAIN_PROJECT-WORFORCE_MANAGEMENT_SYSTEM\WorkforceManagementSystem\static\employdash\images" />
-      <recent name="C:\Users\hibab\OneDrive\Desktop\MAIN_PROJECT-WORFORCE_MANAGEMENT_SYSTEM\WorkforceManagementSystem\static\employerdash\images" />
-      <recent name="C:\Users\hibab\OneDrive\Desktop\MAIN_PROJECT-WORFORCE_MANAGEMENT_SYSTEM\WorkforceManagementSystem\static\chats" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -777,13 +789,13 @@
     <frame x="1" y="1" width="1918" height="1018" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2709012" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29153094" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31418523" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24972856" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27901524" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -807,9 +819,9 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31418523" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27901524" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2709012" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29153094" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -832,13 +844,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/WorkforceManagementSystem/views.py</url>
-          <line>2110</line>
+          <line>2329</line>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/WorkforceManagementSystem/views.py</url>
-          <line>1017</line>
-          <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/WorkforceManagementSystem/views.py</url>
@@ -847,416 +854,514 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/WorkforceManagementSystem/views.py</url>
-          <line>2190</line>
+          <line>2409</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/WorkforceManagementSystem/views.py</url>
+          <line>2027</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/WorkforceManagementSystem/views.py</url>
+          <line>384</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/WorkforceManagementSystem/views.py</url>
+          <line>291</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/WorkforceManagementSystem/views.py</url>
+          <line>451</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="9" />
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/loginindex.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/loginnewindex.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/mainhome1index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/mainhomeduplicate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/mainindex.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Manage fee Add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="35" lean-forward="false" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Managefee_view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="35" lean-forward="false" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/newadminindex.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/notification.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-126">
-          <caret line="0" column="35" lean-forward="false" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/projectlisttoassign.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/RegistrationE.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/registrationindex.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/reviewadd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/reviewemployer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/searchproject.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sendnotification.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="35" lean-forward="false" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/view_employer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/view_worker.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/viewacceptedprojectworkers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/viewapprovedemployersmore.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/viewapprovedjobrequests.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/viewjobvacancy.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/viewpendingemployersmore.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/viewpendingworkersmore.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/viewproject.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/viewprojectworkers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/viewsearchedworkerprofile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/viewsearchedworkers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/viewworkerrequests.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/viewreviews.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/viewrejectedworkersmore.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/employerdashindexduplicate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1176">
-          <caret line="56" column="102" lean-forward="false" selection-start-line="56" selection-start-column="86" selection-end-line="56" selection-end-column="102" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WorkforceManagementSystem/static/admindash1/images/bgadmin.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admindashinboxduplicate.html">
+    <entry file="file://$PROJECT_DIR$/templates/addjobvaccancy.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5544">
-          <caret line="264" column="23" lean-forward="false" selection-start-line="264" selection-start-column="14" selection-end-line="264" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admindashinbox.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19215">
-          <caret line="915" column="97" lean-forward="false" selection-start-line="915" selection-start-column="97" selection-end-line="915" selection-end-column="97" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/employsignupindex.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="108" column="122" lean-forward="false" selection-start-line="108" selection-start-column="122" selection-end-line="108" selection-end-column="122" />
+        <state relative-caret-position="3234">
+          <caret line="154" column="18" lean-forward="false" selection-start-line="154" selection-start-column="18" selection-end-line="154" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/viewapprovedworkersmore.html">
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python311/site-packages/django/db/models/manager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="58" lean-forward="false" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
+        <state relative-caret-position="3402">
+          <caret line="167" column="0" lean-forward="false" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python311/site-packages/django/template/defaulttags.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="169" column="0" lean-forward="false" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/addproject.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="36" column="4" lean-forward="false" selection-start-line="36" selection-start-column="4" selection-end-line="39" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/editproject.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="36" column="122" lean-forward="false" selection-start-line="36" selection-start-column="122" selection-end-line="36" selection-end-column="122" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/viewreviews.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="30" lean-forward="false" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/viewmyreviews.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="60" column="84" lean-forward="false" selection-start-line="60" selection-start-column="84" selection-end-line="60" selection-end-column="84" />
           <folding>
-            <element signature="e#674#713#0#HTML" expanded="true" />
-            <element signature="e#808#832#0#HTML" expanded="true" />
+            <element signature="e#1055#1086#0#HTML" expanded="false" />
+            <element signature="e#1116#1135#0#HTML" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/viewacceptedprojectworkers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-210">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/employerdashindex.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="142" column="32" lean-forward="false" selection-start-line="142" selection-start-column="32" selection-end-line="144" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/employerviewnotifications.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="70" column="7" lean-forward="false" selection-start-line="70" selection-start-column="7" selection-end-line="70" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/editjobvacancy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="48" lean-forward="false" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/viewworkerrequests.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="8" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/viewapprovedjobrequests.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/viewsearchedworkerprofile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="23" column="129" lean-forward="true" selection-start-line="23" selection-start-column="129" selection-end-line="23" selection-end-column="129" />
+          <folding>
+            <element signature="e#818#892#0#HTML" expanded="false" />
+            <element signature="e#1000#1024#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/viewsearchedworkers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="8" selection-end-column="4" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#i#0;n#a#0;n#body#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/EmployerViewProfile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="103" column="32" lean-forward="false" selection-start-line="103" selection-start-column="32" selection-end-line="103" selection-end-column="32" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#i#0;n#a#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/editemployerprofile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="74" column="52" lean-forward="false" selection-start-line="74" selection-start-column="52" selection-end-line="74" selection-end-column="52" />
+          <folding>
+            <element signature="e#2185#2219#0#HTML" expanded="true" />
+            <element signature="e#2252#2274#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/employerdashindexduplicate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="410" column="33" lean-forward="false" selection-start-line="410" selection-start-column="33" selection-end-line="410" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Chats.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="492" column="41" lean-forward="false" selection-start-line="492" selection-start-column="41" selection-end-line="492" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/viewproject.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="8" selection-end-column="4" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#i#0;n#a#0;n#body#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/viewprojectworkers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="2" lean-forward="false" selection-start-line="5" selection-start-column="2" selection-end-line="9" selection-end-column="4" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#a#0;n#body#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admindashinboxduplicate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="263" column="46" lean-forward="false" selection-start-line="263" selection-start-column="34" selection-end-line="263" selection-end-column="46" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/viewjobvacancy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1764">
+          <caret line="84" column="9" lean-forward="true" selection-start-line="84" selection-start-column="9" selection-end-line="89" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/viewallreviewsadmin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="75" column="53" lean-forward="false" selection-start-line="75" selection-start-column="53" selection-end-line="75" selection-end-column="182" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/assignedworkerprofile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2831">
+          <caret line="191" column="46" lean-forward="false" selection-start-line="191" selection-start-column="46" selection-end-line="191" selection-end-column="46" />
+          <folding>
+            <element signature="e#6558#6596#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Approval_of_Registration.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="11" selection-end-column="4" />
+          <folding>
+            <element signature="e#389#427#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/viewrejectedworkersmore.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="32" column="143" lean-forward="false" selection-start-line="32" selection-start-column="143" selection-end-line="32" selection-end-column="143" />
+          <folding>
+            <element signature="e#961#1000#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WorkforceManagementSystem/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="211" column="66" lean-forward="false" selection-start-line="211" selection-start-column="66" selection-end-line="211" selection-end-column="66" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/viewnotifications.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="34" column="59" lean-forward="false" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="59" />
+        <state relative-caret-position="42">
+          <caret line="2" column="38" lean-forward="false" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#form#0;n#body#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/editnotification.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="8" selection-end-column="4" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#i#0;n#a#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h1#0;n#form#0;n#body#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/addnotificationnew.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="35" column="30" lean-forward="false" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#a#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#i#0;n#a#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h5#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/viewrejectedemployersmore.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-870">
+          <caret line="26" column="8" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="106" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WorkforceManagementSystem/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="6" lean-forward="false" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WorkforceManagementSystem/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="233" column="48" lean-forward="false" selection-start-line="233" selection-start-column="48" selection-end-line="233" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/viewrejectedemployersmore.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/viewpendingworkers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="89" column="0" lean-forward="true" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/viewpendingemployers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="642">
-          <caret line="92" column="17" lean-forward="false" selection-start-line="92" selection-start-column="17" selection-end-line="92" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/viewrejectedworkers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="154" column="4" lean-forward="false" selection-start-line="154" selection-start-column="4" selection-end-line="154" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/viewrejectedemployers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="6" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#h3#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/viewapprovedemployers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="53" lean-forward="false" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
-          <folding>
-            <element signature="n#style#0;n#h3#0;n#!!top" expanded="true" />
-            <marker date="1712761580942" expanded="false" signature="1725:1741" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/viewapprovedworkers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="79" column="9" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/approveworker.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Approval_of_Registration.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+        <state relative-caret-position="504">
+          <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/blockedusers.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="778">
-          <caret line="75" column="35" lean-forward="false" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
+        <state relative-caret-position="645">
+          <caret line="101" column="12" lean-forward="false" selection-start-line="101" selection-start-column="12" selection-end-line="101" selection-end-column="12" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#form#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#0;n#form#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#1;n#form#0;n#body#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/viewpendingworkersmore.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="38" lean-forward="false" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+          <folding>
+            <element signature="e#251#284#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/viewpendingworkers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1092">
+          <caret line="52" column="10" lean-forward="false" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/viewpendingemployersmore.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="38" lean-forward="false" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+          <folding>
+            <element signature="e#251#284#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/viewpendingemployers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="67" column="4" lean-forward="false" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="4" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tr#0;n#table#0;n#form#0;n#body#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/viewrejectedworkers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="11" selection-end-column="4" />
+          <folding>
+            <marker date="1713105589728" expanded="false" signature="3744:3758" ph="..." />
+            <marker date="1713105589728" expanded="false" signature="3794:3808" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/viewrejectedemployers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="74" column="33" lean-forward="false" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#form#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#table#0;n#form#0;n#body#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/viewapprovedworkers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="74" lean-forward="false" selection-start-line="8" selection-start-column="74" selection-end-line="8" selection-end-column="74" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/viewapprovedworkersmore.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1407">
+          <caret line="8" column="38" lean-forward="false" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+          <folding>
+            <element signature="e#251#284#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/viewapprovedemployers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="38" lean-forward="false" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#!!top" expanded="true" />
+            <marker date="1713110222238" expanded="false" signature="2147:2163" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/viewapprovedemployersmore.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="38" lean-forward="false" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+          <folding>
+            <element signature="e#251#284#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/view_employer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/view_worker.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="38" lean-forward="false" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+          <folding>
+            <element signature="e#251#284#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WorkforceManagementSystem/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="2216" column="7" lean-forward="false" selection-start-line="2216" selection-start-column="4" selection-end-line="2216" selection-end-column="7" />
+        <state relative-caret-position="249">
+          <caret line="324" column="32" lean-forward="false" selection-start-line="324" selection-start-column="4" selection-end-line="324" selection-end-column="32" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/approveworker.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-189">
+          <caret line="6" column="38" lean-forward="false" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admindashinbox.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="64" column="60" lean-forward="false" selection-start-line="64" selection-start-column="60" selection-end-line="64" selection-end-column="60" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1713110542830" expanded="false" signature="41638:41691" ph="..." />
           </folding>
         </state>
       </provider>

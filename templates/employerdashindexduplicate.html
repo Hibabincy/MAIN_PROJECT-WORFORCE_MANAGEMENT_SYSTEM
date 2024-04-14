@@ -96,9 +96,9 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 {#                                <li>#}
 {#									<a href="#">Edit Project</a>#}
 {#								</li>#}
-                                <li>
-									<a href="#">Assign Workers to Project</a>
-								</li>
+{#                                <li>#}
+{#									<a href="#">Assign Workers to Project</a>#}
+{#								</li>#}
                                  <li>
 									<a href="/wForce/viewacceptedprojectrequests/{{ m.id }}">Accepted workers</a>
 								</li>
@@ -140,11 +140,9 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 							<a href="#"><i class="fa fa-star nav_icon"></i>Review Management
                             <span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level collapse">
+
 								<li>
-									<a href="#">Give Reviews</a>
-								</li>
-								<li>
-									<a href="#">View Reviews</a>
+									<a href="/wForce/myreviewsemployer/">View Reviews</a>
 								</li>
 							</ul>
 							<!-- //nav-second-level -->
@@ -218,12 +216,12 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 				<!--logo -->
 				<div class="logo" style="background-color: darkred">
 					<a href="/wForce/employerdash/">
-						<h1>ARCOME </h1>
+						<h2>ARCOME </h2>
 						<span>EmplrPanel</span>
 
 					</a>
 				</div>
-                <div style="padding-left: 40px"><img src="{{ request.session.photo }}" style="border-radius: 150%;height: 80px ;width: 100px">{{ request.session.name }}</center></div>
+                <div style="padding-left: 40px"><img src="{{ request.session.photo }}" style="border-radius: 150%;height: 60px ;width: 80px">{{ request.session.name }}</center></div>
                         </a></h1
 			<div class="clearfix"> </div>
 </div>

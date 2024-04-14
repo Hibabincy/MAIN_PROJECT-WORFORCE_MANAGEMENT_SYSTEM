@@ -1,0 +1,178 @@
+
+{% extends "employerdashindexduplicate.html" %}
+{% block body %}
+
+<body>
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>View Reviews</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: cadetblue;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .reviews {
+    padding-top: 20px;
+  }
+
+  .review {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .review p {
+    margin: 0;
+    color: #333;
+  }
+</style>
+</head>
+<body>
+   <div class="mt-4">
+                    <h5>Recent Reviews:</h5>
+<br>
+                    <table class="table table-hover " style="background-color: white">
+                        <tr style="color: blue">
+                            <td>Reviews</td>
+                            <td>Ratings</td>
+                            <td>Given By</td>
+                            <td> Date</td>
+                            <td> time</td>
+                       </tr>
+                    {% for i in data %}
+                       <tr>
+                          <td>{{ i.review }}</td>
+                            <td>{{ i.rating }}</td>
+                            <td> {{ i.FROMID.Username }}</td>
+                            <td> {{ i.date }}</td>
+                            <td> {{ i.time }}</td>
+                       </tr>
+                    {% endfor %}
+                    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- Loop through and display recent reviews and ratings -->
+                    <!-- Example: -->
+{#                    <!-- <div class="card">#}
+{#                        <div class="card-body">#}
+{#                            <p class="card-text">A great worker, very skilled and efficient!</p>#}
+{#                            <p class="card-text"><small class="text-muted">Rating: 4</small></p>#}
+{#                            <p class="card-text"><small class="text-muted">Posted by: Employer X</small></p>#}
+{#                        </div>#}
+{#    <table class="table table-striped table-primary table-bordered">#}
+{#    {% csrf_token %}#}
+{#                       <tr>#}
+{#                            <td>Reviews</td>#}
+{#                            <td>Ratings</td>#}
+{#                            <td>Given By</td>#}
+{#                            <td> Date</td>#}
+{#                            <td> time</td>#}
+{#                       </tr>#}
+{#    {% for i in data %}#}
+{#                       <tr>#}
+{#                          <td>{{ i.review }}</td>#}
+{#                            <td>{{ i.rating }}</td>#}
+{#                            <td> {{ i.EMPLOYER.Companyname }}</td>#}
+{#                            <td> {{ i.date }}</td>#}
+{#                            <td> {{ i.time }}</td>#}
+{#                       </tr>#}
+{#  {% endfor %}#}
+{#                   </table>#}
+
+                    </div>
+                </div>
+{#            </div>#}
+        </form>
+    </div>
+ <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .rate {
+            float: left;
+            height: 46px;
+            padding: 0 10px;
+        }
+
+        .rate:not(:checked) > input {
+            position: absolute;
+            top: -9999px;
+        }
+
+        .rate:not(:checked) > label {
+            float: right;
+            width: 1em;
+            overflow: hidden;
+            white-space: nowrap;
+            cursor: pointer;
+            font-size: 30px;
+            color: #ccc;
+        }
+
+        .rate:not(:checked) > label:before {
+            content: '★ ';
+        }
+
+        .rate > input:checked ~ label {
+            color: #ffc700;
+        }
+
+        .rate:not(:checked) > label:hover,
+        .rate:not(:checked) > label:hover ~ label {
+            color: #deb217;
+        }
+
+        .rate > input:checked + label:hover,
+        .rate > input:checked + label:hover ~ label,
+        .rate > input:checked ~ label:hover,
+        .rate > input:checked ~ label:hover ~ label,
+        .rate > label:hover ~ input:checked ~ label {
+            color: #c59b08;
+        }
+    </style>
+
+</body>
+</body>
+</html>
+{% endblock %}

@@ -74,6 +74,8 @@ urlpatterns = [
     path('viewpendingworkersmore/<id>', views.viewpendingworkersmore),
     path('newadmindash/', views.newadmindash),
     path('demotable/', views.demotable),
+    path('allreviewsadmin/', views.allreviewsadmin),
+    path('actionblockuser/<id>', views.actionblockuser),
 
 
 
@@ -89,6 +91,7 @@ urlpatterns = [
     path('EditNotification/<id>', views.EditNotification),
     path('EditNotification_post/', views.EditNotification_post),
     path('UpdateNotification/<id>', views.UpdateNotification),
+    path('UpdateNotification1/<id>', views.UpdateNotification1),
     path('WorkerViewNotification/', views.WorkerViewNotification),
     path('blockedusers/', views.blockedusers),
 
@@ -199,6 +202,15 @@ urlpatterns = [
     path('assignedworkerprofile/<id>', views.assignedworkerprofile),
     path('viewmyprojectmoreworker/', views.viewmyprojectmoreworker),
     path('blockemployer/<id>', views.blockemployer),
+    path('startproj/<id>', views.startproj),
+    path('completedproject/<id>', views.completedproject),
+    path('myreviewsemployer/', views.myreviewsemployer),
+    path('viewapprovedemployers_POST/', views.viewapprovedemployers_POST),
+    path('viewapprovedworkers_POST/', views.viewapprovedworkers_POST),
+    path('viewrejectedemployers_POST/', views.viewrejectedemployers_POST),
+    path('viewrejectedworkers_POST/', views.viewrejectedworkers_POST),
+    path('viewpendingworkers_POST/', views.viewpendingworkers_POST),
+    path('viewpendingemployers_POST/', views.viewpendingemployers_POST),
 
 
 

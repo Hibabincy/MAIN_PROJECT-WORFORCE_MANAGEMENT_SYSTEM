@@ -1,14 +1,19 @@
 {% extends "admindashinboxduplicate.html" %}
 {% block body %}
 
-<body>
+<body style="background-color: #629aa9">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <a href="/wForce/ViewNotification/" class="btn btn-secondary" style="background-color: darkseagreen">
+  <i class="fas fa-arrow-left" style="color: darkred"></i> <!-- Font Awesome back arrow icon -->
+</a>
 {#<style>#}
 {#body {#}
 {#    background-color: indianred; /* Set your desired background color here */#}
 {#}#}
 {#</style>#}
     <form action="/wForce/EditNotification_post/" method="post">
-<h1 align="center" style="font-family: Arial, sans-serif; font-weight: normal; font-size: 24px; color: white; background-color: #629aa9;"><b>Edit notification </b></h1>        <br><br><br><br>
+<h1 align="center" style="font-family: Arial, sans-serif; font-weight: normal; font-size: 24px; color: white; "><b>Edit notification </b></h1>        <br><br>
         {% csrf_token %}
         <div class="card">
         <div class="card-body">
@@ -26,9 +31,9 @@
                 <th scope="row">&nbsp;</th>
                 <td><input type="submit" name="button" id="button" value="Submit" class="btn btn-primary" /></td>
             </tr>
-        </table></div> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    </form> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </table></div>
+         </div>
+    </form>
 </body>
 
 {% endblock %}

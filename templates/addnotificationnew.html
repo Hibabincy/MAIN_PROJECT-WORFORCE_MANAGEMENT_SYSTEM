@@ -1,15 +1,19 @@
 {% extends "admindashinboxduplicate.html" %}
 
 {% block body %}
-    <div class="custom-card" style="background-color: white">
-<body class="mb-5"  style="background-color: lightblue"> <!-- Change the background color here -->
-  <div class="mt-5 pt-5" style="background-color: white">
+
+<body class="mb-5"  style="background-color: #629aa9"> <!-- Change the background color here -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <a href="/wForce/ViewNotification/" class="btn btn-secondary" style="background-color: darkseagreen">
+  <i class="fas fa-arrow-left" style="color: darkred"></i> <!-- Font Awesome back arrow icon -->
+</a>
 {#    <h1 class="text-center mb-4">Add Notification</h1>#}
-    <div class="row justify-content-center"style="background-color: white">
-      <div class="col-md-8" style="background-color: white">
+
+
 <div class="card custom-card">
     <div class="card-body">
-        <h5 class="card-title text-center mb-4 custom-title">Add Notification</h5>
+        <h5 class="card-title text-center mb-4 custom-title" style="color: blue">Add Notification</h5>
         <form action="/wForce/AddNotification_post/" method="post">
             {% csrf_token %}
             <div class="form-group">
@@ -24,12 +28,12 @@
                 <button type="submit" class="btn btn-primary custom-button">Add Notification</button>
             </div>
         </form>
-    </div>
-</div>
+
+
 
 <style>
 .custom-card {
-    background-color: lightsteelblue;
+    background-color: #ceded7;
     border: 1px solid #ccc; /* Border color */
     border-radius: 12px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
@@ -70,39 +74,7 @@
 </style>
       </div>
     </div>
-  </div>
-{##}
-{#  <div class="mt-5">#}
-{#    <h1 class="text-center mb-4">View Notifications</h1>#}
-{#    <div class="table-responsive">#}
-{#      <table class="table table-striped">#}
-{#        <thead>#}
-{#          <tr>#}
-{#            <th scope="col">Notification Name</th>#}
-{#            <th scope="col">Description</th>#}
-{#            <th scope="col">Date</th>#}
-{#            <th scope="col">Actions</th>#}
-{#          </tr>#}
-{#        </thead>#}
-{#        <tbody>#}
-{#          <!-- Add table rows dynamically using Django template -->#}
-{#          {% for notification in notifications %}#}
-{#          <tr>#}
-{#            <td>{{ notification.Notification_name }}</td>#}
-{#            <td>{{ notification.Description }}</td>#}
-{#            <td>{{ notification.Date }}</td>#}
-{#            <td>#}
-{#              <a href="#" class="btn btn-sm btn-info">Edit</a>#}
-{#              <a href="#" class="btn btn-sm btn-danger">Delete</a>#}
-{#            </td>#}
-{#          </tr>#}
-{#          {% endfor %}#}
-{#        </tbody>#}
-{#      </table>#}
-{#    </div>#}
-{#  </div>#}
 
-<br><br><br><br><br><br><br><br><br><br><br><br>
 
 </div>
 </body>

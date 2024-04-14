@@ -6,13 +6,24 @@
 {% extends "admindashinboxduplicate.html" %}
 {% block body %}
 
-<body>
+<body style="background-color: #629aa9">
+<style>.custom-font {
+    font-family: Arial, sans-serif; /* Specify the desired font family */
+    font-size: 28px; /* Adjust the font size as needed */
+    /* Add any other custom styles you want */
+}
+</style>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <a href="/wForce/approvalofregistrationworker/" class="btn btn-secondary" style="background-color: darkseagreen">
+  <i class="fas fa-arrow-left" style="color: darkred"></i> <!-- Font Awesome back arrow icon -->
+</a>
 <div class="card p-4 shadow">
 
 <form action="/wForce/employerprofile_post/" method="post" enctype="multipart/form-data">
 <center>
     <span style="color: #0a0a0a">
-        <h4 style="color: #0a0a0a; font-weight: bold; text-decoration: underline;">Worker Profile</h4>
+        <h4 style="color: blue          ; font-weight: bold;" class="custom-font"><u>{{ data.Username }}</u></h4>
     </span>
 </center>
 <br><br>
@@ -85,25 +96,12 @@
 
 </table>
 
+Previous workes<br>
+
   <div class="row">
-{#    <style>#}
-{#        .photo-container {#}
-{#            padding: 10px;#}
-{#            border-radius: 5px;#}
-{#            color: white;#}
-{#            text-align: center;#}
-{#            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow background */#}
-{#            margin-bottom: 20px; /* Add some space between div elements */#}
-{#        }#}
-{##}
-{#        .photo-container img {#}
-{#            width: 150px; /* Adjust the width of the photos */#}
-{#            height: auto; /* Maintain aspect ratio */#}
-{#        }#}
-{#    </style>#}
-    <div class="col-lg-3 photo-container"><label for="textfield">Photo 1</label><img src="{{ data.Photo1 }}" alt="" /></div>
-    <div class="col-lg-3 photo-container"><label for="textfield">Photo 2</label><img src="{{ data.Photo2 }}" alt="" /></div>
-    <div class="col-lg-3 photo-container"><label for="textfield">Photo 3</label><img src="{{ data.Photo3 }}" alt="" /></div>
+    <div class="col-lg-4 photo-container"><label for="textfield">Photo 1</label><img src="{{ data.Photo1 }}" alt="" /></div>
+    <div class="col-lg-4 photo-container"><label for="textfield">Photo 2</label><img src="{{ data.Photo2 }}" alt="" /></div>
+    <div class="col-lg-4 photo-container"><label for="textfield">Photo 3</label><img src="{{ data.Photo3 }}" alt="" /></div>
 </div>
 
 <br><br><br>
@@ -139,27 +137,7 @@
 
 </table>
 
-
-
-
-
-{#    {% if check == "yes" %}#}
-{#        <table>#}
-{#        <tr>#}
-{#            <td>Fee Info</td>#}
-{#            <td>{{ Feetype }}<br>{{ Fee }}Rs/-<br>{{ Date }}<br>{{ status }}</td>#}
-{#        </tr>#}
-{#        <tr>#}
-{#    <th><input type="submit" name="button" id="button" value="Approve" /></th>#}
-{#    <td colspan="2"><input type="submit" name="button" id="button2" value="Reject" /></td>#}
-{#  </tr>#}
-{#        </table>#}
-{#    {% else %}#}
-{#      <div style="color: red">No Payment#}
-{##}
-{#      </div>#}
-{#    {% endif %}#}
-</form><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</form>
 </div>
 </body>
 {#</html>#}

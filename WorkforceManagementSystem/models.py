@@ -43,7 +43,7 @@ class Projects(models.Model):
     EMPLOYER = models.ForeignKey(Employer,on_delete=models.CASCADE)
 
     projecttitle= models.CharField(max_length=100)
-
+    # projectstartdate=models.CharField(max_length=100)
     projectdescription = models.CharField(max_length=100)
     projectlocation = models.CharField(max_length=100)
     created_date= models.CharField(max_length=100)

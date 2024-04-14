@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <br><br><title>Edit Profile</title>
+  <title>Edit Profile</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -68,10 +68,16 @@
     </style>
 </head>
 <body>
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <a href="/wForce/employerviewprofile/" class="btn btn-secondary" style="background-color: #cfe7d0;">
+  <i class="fas fa-arrow-left" style="color: #629aa9"></i> <!-- Font Awesome back arrow icon -->
+</a>
 <h1 class="edit-profile-heading">Edit Profile</h1>
 <form action="/wForce/editemployerviewprofile_POST/" method="post" enctype="multipart/form-data">
     {% csrf_token %}
- <table class="stylish-table">
+ <table class="stylish-table" style="background-color: white">
 
 
 
@@ -164,7 +170,7 @@
     <th>&nbsp;</th>
     <td colspan="2"><input type="submit" name="button" class="btn btn-danger" id="button" value="Update" /></td>
   </tr>
-</table><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</table>
 </form>
 <script src="/static/empsignup/js/jquery-ui.js"></script>
 	<script>

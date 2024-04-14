@@ -1,10 +1,15 @@
 {% extends "admindashinboxduplicate.html" %}
 {% block body %}
-     {% if len.data == 0 %}
+     {% if l == 0%}
 
-    <h3>No data </h3>
+   <h3 align="center" style="color: red">No employers found</h3>
     {% else %}
-<body style="background-color: black"><form action="/wForce/approvalofregistrationemployer_POST/#about" method="post">
+<body style="background-color: black">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <a href="/wForce/approvalofregistrationemployer/" class="btn btn-secondary" style="background-color: darkseagreen">
+  <i class="fas fa-arrow-left" style="color: white"></i> <!-- Font Awesome back arrow icon -->
+</a>
   <center>
     <span style="color: #0a0a0a">
         <h4 style="color:darkred; font-weight: bold; text-decoration: underline;">Employer Verification</h4>
@@ -72,21 +77,25 @@
     <div class="search-container"></div>
   {% csrf_token %}
 <br>
+<form action="/wForce/approvalofregistrationemployer_POST/#about" method="post">
   <tr>
-    <th  scope="col"><input type="text" name="textfield" id="textfield" class="form-control oval-search" placeholder="Search with name" style="font-family: 'Times New Roman', Times, serif;"/></th>
+    <th  scope="col"><input type="text" name="a" id="textfield" class="form-control oval-search" placeholder="Search with name or district" style="font-family: 'Times New Roman', Times, serif;"/></th>
     <th  scope="col">
-      <button type="submit" name="button" id="button" class="btn btn-success search-button">
+      <button type="submit" name="button"  id="button" class="btn btn-success search-button">
         <i class="fas fa-search"></i> <!-- Font Awesome search icon -->
       </button>
     </th>
-  </tr></div>
+  </tr>
 
-
+</form></div>
+</table>
+{% if data %}
 <table class="table  table-striped table-boardered" style="width: auto;background-color: white;">
 {% csrf_token %}
 <br><br>
   <tr >
     <th   scope="col" > </th>
+      <th style="color: darkred" scope="col">Logo</th>
     <th style="color: darkred" scope="col">Company Name</th>
     <th style="color: darkred" scope="col">Address</th>
     <th style="color: darkred" scope="col">Phone</th>
@@ -100,9 +109,10 @@
    {% for i in data %}
   <tr>
     <td >&nbsp;{{ forloop.counter }}</td>
-    <td>&nbsp;{{ i.Companyname }}<br> &nbsp; <img src="{{ i.Photo }}" style="max-width: 115px"> </td>
+      <td>&nbsp; <img src="{{ i.Photo }}" style="max-width: 85px;max-height: 85px;"> </td>
+      <td>&nbsp;{{ i.Companyname }}</td>
 
-      <td>{{ i.Place}}<br>{{ i.District}}<br>{{ i.State}}<br>{{ i.Pincode}}</td>
+      <td>{{ i.Place }}, {{ i.Post }}, {{ i.District }}, {{ i.State }}, {{ i.Pincode }}</td>
     <td>{{ i.Phone }}</td>
     <td>{{i.Email}}</td>
       <td>{{i.registration_date}}</td>
@@ -127,8 +137,13 @@
 {#    <td><a href="#">Reject</a></td>#}
   </tr>
   {% endfor %}
-</table></table>
-</form>
+</table>
+
+
+{#</form>#}
+{% else %}
+   <br>     <p >No employers found :(</p>
+    {% endif %}
 </body>
         {% endif %}
 

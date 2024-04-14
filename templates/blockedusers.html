@@ -6,7 +6,7 @@
         <h4 style="color: #0a0a0a; font-weight: bold; text-decoration: underline;">Blocked Users</h4>
     </span>
 </center>
-<br><br>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <head>
 <meta charset="UTF-8">
@@ -43,93 +43,143 @@
   }
 </style>
 </head>
-<body>
+<body style="background-color: cadetblue;">
 
-<table class="pull-left">
-  {% csrf_token %}
-  <tr>
-    <th scope="col"><input type="text" name="textfield" id="textfield" class="form-control oval-search" placeholder="Search with name"/></th>
-    <th scope="col">
-      <button type="submit" name="button" id="button" class="btn btn-success search-button">
-        <i class="fas fa-search"></i> <!-- Font Awesome search icon -->
-      </button>
-    </th>
-  </tr>
+{#<table class="pull-left">#}
+{#  {% csrf_token %}#}
+{#  <tr>#}
+{#    <th scope="col"><input type="text" name="textfield" id="textfield" class="form-control oval-search" placeholder="Search with name"/></th>#}
+{#    <th scope="col">#}
+{#      <button type="submit" name="button" id="button" class="btn btn-success search-button">#}
+{#        <i class="fas fa-search"></i> <!-- Font Awesome search icon -->#}
+{#      </button>#}
+{#    </th>#}
+{#  </tr>#}
+{#</table>#}
+
+</body>
+   <h4 align="left" style="color: royalblue">Blocked workers</h4>
+<style>
+    .custom-table {
+        width: 100%;
+        border: 1px solid darkred; /* Add border to the table */
+        border-collapse: collapse;
+    }
+
+    .custom-table th, .custom-table td {
+        padding: 8px;
+        text-align: left;
+        border: 1px solid darkred; /* Add border to cells */
+    }
+
+    .custom-table th {
+        background-color: #f2f2f2;
+        color: darkred;
+        font-weight: bold;
+    }
+
+    .custom-table img {
+        max-width: 50px;
+        border-radius: 50%;
+    }
+
+    .custom-table tr:hover {
+        background-color: #f5f5f5;
+    }
+
+    /* Apply overflow and text ellipsis to specific cells */
+    .custom-table .truncate {
+        max-width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+</style>
+<table class="custom-table" style="background-color: white">
+    {% csrf_token %}
+    <tr>
+        <th> </th>
+        <th >Photo</th>
+        <th >Worker</th>
+        <th>Job Type</th>
+        <th >Email</th>
+        <th >Phone</th>
+        <th >Address</th>
+        <th >Registration Date</th>
+    </tr>
+    {% for i in data1 %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td><img src="{{ i.Photo }}"></td>
+        <td class="truncate">{{ i.Username }}</td>
+        <td>{{ i.Jobtype }}</td>
+        <td class="truncate">{{ i.Email }}</td>
+        <td class="truncate">{{ i.Phone }}</td>
+        <td>{{ i.district }},{{ i.post }}, {{ i.state }}, {{ i.Pincode }}</td>
+        <td>{{ i.registration_date }}</td>
+    </tr>
+    {% endfor %}
+</table>
+    <br>
+  <h4 align="left" style="color: royalblue">Blocked Employers</h4>
+<style>
+    .custom-table {
+        width: 100%;
+        border: 1px solid #b3b3b3; /* Add border to the table */
+        border-collapse: collapse;
+    }
+
+    .custom-table th, .custom-table td {
+        padding: 8px;
+        text-align: left;
+        border: 1px solid blanchedalmond; /* Add border to cells */
+    }
+
+    .custom-table th {
+        background-color: #f2f2f2;
+        color: #7ca37c;
+        font-weight: bold;
+    }
+
+    .custom-table img {
+        max-width: 50px;
+        border-radius: 50%;
+    }
+
+    .custom-table tr:hover {
+        background-color: #f5f5f5;
+    }
+</style>
+
+<table class="custom-table" style="background-color: white">
+    {% csrf_token %}
+    <tr>
+        <th></th>
+        <th>Logo</th>
+        <th>Company Name</th>
+        <th>Founded on</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Registration Date</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td><img src="{{ i.Photo }}"></td> <!-- Display photo -->
+        <td>{{ i.Companyname }}</td>
+        <td>{{ i.Date }}</td>
+        <td>{{ i.Email }}</td>
+        <td>{{ i.Phone }}</td>
+        <td>{{ i.Place }}, {{ i.Post }}, {{ i.District }}, {{ i.State }}, {{ i.Pincode }}</td>
+        <td>{{ i.registration_date }}</td>
+    </tr>
+    {% endfor %}
 </table>
 
-</body><br><br><br>
-    <center><h3><b>Blocked workers</b></h3></center>
-<div class="card-body">
-
-    <table class="table table-striped">
-        {% csrf_token %}
-          <tr>
-        <th> </th>
-        <th style="color: darkred">Photo</th>
-        <th style="color: darkred">Worker</th>
-          <th style="color: darkred">Job Type</th>
-        <th style="color: darkred">Email</th>
-        <th style="color: darkred">Phone</th>
-        <th style="color: darkred">Address</th>
-
-        <th style="color: darkred">Registration Date</th>
-        <th style="color: darkred"></th>
-{#        <th style="color: darkred">&nbsp;</th>#}
-      </tr>
-        {% for i in data1 %}
-      <tr>
-        <td>{{ forloop.counter }}</td>
-           <td><img src="{{ i.Photo }}" style="max-width: 50px; border-radius: 50%;">
-        </td>
-        <td style="max-width: 100px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-            {{ i.Username }}</td>
-
-          <td>{{ i.Jobtype }}</td>
-        <td style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ i.Email }}</td>
-        <td style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ i.Phone }}</td>
-        <td>{{ i.district }},{{ i.post }}, {{ i.state }}, {{ i.Pincode }}</td>
-
-        <td>{{ i.registration_date }}</td>
-        <td><a href="/wForce/viewrejectedworkersmore/{{ i.LOGIN.id }}" class="btn btn-success">view profile</a></td>
-      </tr>
-        {% endfor %}
-    </table></div>
-    <br><br><br><br><br>
-    <center> <h3><b>Blocked Employers</b></h3></center>
- <div class="card-body">
-    <table class="table table-striped">
-        {% csrf_token %}
-        <tr>
-            <th></th>
-            <th style="color: darkred">Logo</th>
-            <th style="color: darkred">Company Name</th>
-            <th style="color: darkred">Address</th>
-            <th style="color: darkred">Phone</th>
-            <th style="color: darkred">Email</th>
-            <th style="color: darkred">Registration Date</th>
-             <!-- New column for photo -->
-            <th></th>
-        </tr>
-        {% for i in data %}
-        <tr>
-            <td>{{ forloop.counter }}</td>
-            <td><img src="{{ i.Photo }}" style="max-width: 50px; border-radius: 80%;"></td> <!-- Display photo -->
-
-            <td>{{ i.Companyname }}</td>
-            <td>{{ i.Place }}, {{ i.Post }}, {{ i.District }}, {{ i.State }}, {{ i.Pincode }}</td>
-            <td>{{ i.Phone }}</td>
-            <td>{{ i.Email }}</td>
-            <td>{{ i.registration_date }}</td>
-            <td><a href="/wForce/viewrejectedemployersmore/{{ i.LOGIN.id }}" class="btn btn-success">view profile</a></td>
-        </tr>
-        {% endfor %}
-    </table><br><br><br>
-</div>
 
 
-    <br><br><br><br><br><br><br>
 
-<br><br>
 </form>
 </body>
 {% endblock %}

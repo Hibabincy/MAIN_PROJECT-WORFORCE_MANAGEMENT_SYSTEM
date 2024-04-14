@@ -1,19 +1,23 @@
 {% extends "employerdashindexduplicate.html" %}
 {% block body %}
-<br>
-    <br>
+
 <body>
 <!-- Adding styled search box -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+    <a href="/wForce/viewproject/" class="btn btn-secondary" style="background-color: #cfe7d0">
+  <i class="fas fa-arrow-left" style="color: #629aa9"></i> <!-- Font Awesome back arrow icon -->
+</a>
 <!-- End of styled search box -->
 
+{% if data %}
 <form action="/wForce/viewjobvacancy/" method="post">
    <center>
     <span style="color: #0a0a0a">
-        <h2 style="color:blue ; font-weight: bold;">Workers of My Projects</h2>
+        <h3 style="color:blue ; font-weight: bold;">WORKERS OF MY PROJECTS</h3>
     </span>
    </center>
-<br><br>
+
 <div class="container">
     <form action="/wForce/viewjobvacancy/" method="post" class="mt-4">
         <div class="row">
@@ -25,7 +29,7 @@
             </div>
         </div>
     </form>
-</div><br><br><br>
+</div><br>
 <div class="card">
     <div class="card-header" style="background-color: lightgrey;">
         <h3 class="card-title" style="color: palevioletred; font-weight: bold;">{{ i.project.projecttitle }}</h3>
@@ -40,6 +44,7 @@
                         <th scope="col">Worker</th>
                         <th scope="col">Photo</th>
                         <th scope="col">Actions</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -62,6 +67,8 @@
                             </svg> Message
                         </a>
                     </td>
+
+
                 </tr>
                 {% endfor %}
                 </tbody>
@@ -69,9 +76,11 @@
         </div>
     </div>
 </div>
-<br><br>
+
 {#{% endfor %}#}
 </form>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% else %}
+    <p class="text-center">no data</p>
+{% endif %}
 </body>
 {% endblock %}

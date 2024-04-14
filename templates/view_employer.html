@@ -7,19 +7,30 @@
 {% block body %}
 
 <body>
+<style>.custom-font {
+    font-family: Arial, sans-serif; /* Specify the desired font family */
+    font-size: 28px; /* Adjust the font size as needed */
+    /* Add any other custom styles you want */
+}
+</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <a href="/wForce/approvalofregistrationemployer/" class="btn btn-secondary" style="background-color: darkseagreen">
+  <i class="fas fa-arrow-left"></i> <!-- Font Awesome back arrow icon -->
+</a>
 <div class="card p-4 shadow">
 
 <form action="/wForce/employerprofile_post/" method="post" enctype="multipart/form-data">
 <center>
     <span style="color: #0a0a0a">
-        <h4 style="color: #0a0a0a; font-weight: bold; text-decoration: underline;">Employer Profile</h4>
+        <h4 style="color: blue; font-weight: bold;" class="custom-font"><u>{{ data.Companyname }}</u></h4>
     </span>
 </center>
 <br><br>
     <table class="table table-striped table-primary table-bordered">
 <div class="card p-3 shadow mb-3">
-            <div class=""><label for="textfield">Cover Photo</label><br><img src="{{ data.Photo}}" alt="" style="max-width: 350px"/></div>
-
+         <center>  <div class="" style="background-color: #b8c9f1"><label for="textfield">Logo</label><br><img src="{{ data.Photo}}" alt="" style="max-width: 150px"/><br></div>
+</center>
 </div>
   <tr >
     <td ><label for="textfield">Employer Name </label></td>
@@ -83,10 +94,10 @@
          <tr >
              <td ><label for="textfield">Our previous projects:</label></td></tr><br><br>
 {#    </style>#}
-    <div class="col-lg-3 photo-container"><label for="textfield">Photo 1</label><img src="{{ data.Photo1 }}" alt="" /></div>
-    <div class="col-lg-3 photo-container"><label for="textfield">Photo 2</label><img src="{{ data.Photo2 }}" alt="" /></div>
-    <div class="col-lg-3 photo-container"><label for="textfield">Photo 3</label><img src="{{ data.Photo3 }}" alt="" /></div>
-
+    <center><div class="col-lg-4 photo-container"><label for="textfield">Photo 1</label><img src="{{ data.Photo1 }}" alt="" /></div>
+    <div class="col-lg-4 photo-container"><label for="textfield">Photo 2</label><img src="{{ data.Photo2 }}" alt="" /></div>
+    <div class="col-lg-4 photo-container"><label for="textfield">Photo 3</label><img src="{{ data.Photo3 }}" alt="" /></div>
+</center>
 
 </div>
     <br>

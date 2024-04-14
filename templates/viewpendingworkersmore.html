@@ -6,13 +6,25 @@
 {% extends "admindashinboxduplicate.html" %}
 {% block body %}
 
-<body>
+<body style="background-color: #629aa9">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <a href="/wForce/viewpendingworkers/" class="btn btn-secondary" style="background-color: darkseagreen">
+  <i class="fas fa-arrow-left" style="color: darkred"></i> <!-- Font Awesome back arrow icon -->
+</a>
+
+<style>.custom-font {
+    font-family: Arial, sans-serif; /* Specify the desired font family */
+    font-size: 28px; /* Adjust the font size as needed */
+    /* Add any other custom styles you want */
+}
+</style>
 <div class="card p-4 shadow">
 
 <form action="/wForce/employerprofile_post/" method="post" enctype="multipart/form-data">
 <center>
     <span style="color: #0a0a0a">
-        <h4 style="color: #0a0a0a; font-weight: bold; text-decoration: underline;">Worker Profile</h4>
+        <h4 style="color: blue; font-weight: bold;" class="custom-font"><u>{{ data.Username }}</u></h4>
     </span>
 </center>
 <br><br>

@@ -1,9 +1,9 @@
 {% extends "admindashinboxduplicate.html" %}
 {% block body %}
-<body>
+<body style="background-color: #629aa9">
 <form action="/wForce/ViewNotification_post/" method="post">
     <br><br>
-    <h1 align="center" style="font-family: Arial, sans-serif; font-weight: normal; font-size: 24px; color: white; background-color: #629aa9;"><b>NOTIFICATIONS</b></h1>
+    <h1 align="center" style="font-family: Arial, sans-serif; font-weight: normal; font-size: 24px; color: white; color: black;"><b>NOTIFICATIONS</b></h1>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <br><br>
     <a href="/wForce/AddNotification/" class="btn btn-primary"><i class="fas fa-plus fa-2x"></i> Add </a>
@@ -11,8 +11,8 @@
     {% csrf_token%}
 {# <div class="card">#}
 {#        <div class="card-body">#}
-    <div class="table-responsive">
-        <table class="table" style="font-family: Arial, sans-serif; font-size: 14px;">
+    <div class="table-responsive " >
+        <table class="table" style="font-family: Arial,sans-serif; background-color: white;font-size: 14px;">
             <thead>
                 <tr>
                     <th style="background-color: #b8c9f1; font-size: 14px;">Sl no</th>
@@ -33,6 +33,9 @@
                         <a href="/wForce/EditNotification/{{ notification.id }}" class="btn btn-danger">Edit</a>
                         {% if notification.Status == "pending" %}
                         <a href="/wForce/UpdateNotification/{{ notification.id }}" class="btn btn-primary">Hide</a>
+                            {% elif notification.Status == "update" %}
+                                                    <a href="/wForce/UpdateNotification1/{{ notification.id }}" class="btn btn-primary">Unhide</a>
+
                         {% endif %}
                     </td>
                 </tr>

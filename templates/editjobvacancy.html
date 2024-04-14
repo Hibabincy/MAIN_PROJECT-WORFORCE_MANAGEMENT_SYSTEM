@@ -9,12 +9,12 @@
 {% block body %}
  <br> <center>
     <span style="color: #0a0a0a">
-        <h2 style="color: #0096FF; font-weight: bold;">Edit Jobvacancy</h2>
+        <h3 style="color: #0096FF;text-align: center; font-weight: bold;"><u>Edit Jobvacancy</u></h3>
     </span>
 </center>
 <br>
 <body>
-<form action="/wForce/editjobvacancy_POST/" method="post" onsubmit="return validateDates()">
+<form action="/wForce/editjobvacancy_POST/" method="post" onsubmit="return validateDates()" >
  <table class="table table-bordered table-hover">
      {% csrf_token %}
 
@@ -88,7 +88,7 @@
     <td><input type="submit" name="button" id="button" class="btn btn-success" value="Update" /></td>
   </tr>
 </table>
-</form><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</form>
 <script>
   function validateDates() {
     var startDate = document.getElementById("textfield5").value;
