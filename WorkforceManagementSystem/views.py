@@ -100,8 +100,19 @@ def allreviewsadmin(request):
     return render(request,"viewallreviewsadmin.html",{'data':s})
 
 
+def allreviewsadmin_POST(request):
 
+    sh=request.POST['search_query']
 
+    # from django.db.models import Q
+    #
+    # s = Worker.objects.filter(Q(district__icontains=sh)|Q(Username__icontains=sh),LOGIN__Type="worker")
+    #
+    #
+    # return render(request, "viewallreviewsadmin.html", {'data': s,})
+
+    s = Employer.objects.filter(Companyname__icontains=sh, LOGIN__Type="employer")
+    return render(request, "viewallreviewsadmin.html", {'data': s})
 
 
 # def viewnotification(request):
@@ -205,7 +216,7 @@ def UpdateNotification1(request,id):
 
 
 def WorkerViewNotification(request):
-    n=Notifications.objects.filter(Status='pending')
+    n=Notifications.objects.filter(Status='pending').order_by('-id')
     no=[]
     for i in n:
         no.append({'id':i.id,'Notification':i.Notification_name,
@@ -866,7 +877,7 @@ def addproject_POST(request):
 
 
 def viewproject(request):
-    g = Projects.objects.filter(EMPLOYER__LOGIN_id=request.session['lid'])
+    g = Projects.objects.filter(EMPLOYER__LOGIN_id=request.session['lid']).order_by('-id')
     l=[]
     for i in g:
         s = Jobrequest.objects.filter(JOBVACANCY__PROJECT_id=i.id, status='assigned', WORKER__LOGIN__Type='worker').count()
@@ -1841,7 +1852,7 @@ def viewjobvacancyworker(request):
     jobtitle=request.POST["value"]
     district=request.POST["value"]
     lid=request.POST['lid']
-    p=Jobvaccancy.objects.filter(location__icontains=location)|Jobvaccancy.objects.filter(jobtitle__icontains=jobtitle)|Jobvaccancy.objects.filter(district__icontains=district)
+    p=Jobvaccancy.objects.filter(location__icontains=location)|Jobvaccancy.objects.filter(jobtitle__icontains=jobtitle)|Jobvaccancy.objects.filter(district__icontains=district).order_by('-id')
     l=[]
     for i in p:
         s='yes'
@@ -2257,6 +2268,23 @@ def updateprojectstatus(request):
 from django.db.models import Subquery, OuterRef
 
 
+# def viewallworkerchats(request):
+#     e=request.session['lid']
+#     worker_chats = Chat.objects.filter(TOID_id=e)
+#     l=[]
+#     existIds = []
+#     for i in worker_chats:
+#         name=''
+#         if i.FROMID.id in existIds:
+#             continue
+#         existIds.append(i.FROMID.id)
+#         if i.FROMID.Type=="worker":
+#             name=Worker.objects.get(LOGIN_id=i.FROMID.id)
+#
+#         l.append({"id":i.id,"name":name.Username,'photo':name.Photo,'LOGIN':name.LOGIN.id})
+#
+#     return render(request, "allworkerchats.html", {'data': l})
+#
 def viewallworkerchats(request):
     e=request.session['lid']
     worker_chats = Chat.objects.filter(TOID_id=e)

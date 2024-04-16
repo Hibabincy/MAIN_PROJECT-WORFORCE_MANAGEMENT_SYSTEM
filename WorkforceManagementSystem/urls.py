@@ -210,6 +210,7 @@ urlpatterns = [
     path('viewrejectedemployers_POST/', views.viewrejectedemployers_POST),
     path('viewrejectedworkers_POST/', views.viewrejectedworkers_POST),
     path('viewpendingworkers_POST/', views.viewpendingworkers_POST),
+    path('allreviewsadmin_POST/', views.allreviewsadmin_POST),
     path('viewpendingemployers_POST/', views.viewpendingemployers_POST),
 
 
