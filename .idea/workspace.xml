@@ -7,32 +7,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3e5471f5-c7e6-4e8f-b67b-c233b152cdf5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WorkforceManagementSystem/urls.py" afterPath="$PROJECT_DIR$/WorkforceManagementSystem/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WorkforceManagementSystem/views.py" afterPath="$PROJECT_DIR$/WorkforceManagementSystem/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Approval_of_Registration.html" afterPath="$PROJECT_DIR$/templates/Approval_of_Registration.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Chats.html" afterPath="$PROJECT_DIR$/templates/Chats.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/addjobvaccancy.html" afterPath="$PROJECT_DIR$/templates/addjobvaccancy.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admindashinboxduplicate.html" afterPath="$PROJECT_DIR$/templates/admindashinboxduplicate.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/approveworker.html" afterPath="$PROJECT_DIR$/templates/approveworker.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/editemployerprofile.html" afterPath="$PROJECT_DIR$/templates/editemployerprofile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/editnotification.html" afterPath="$PROJECT_DIR$/templates/editnotification.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/employerdashindex.html" afterPath="$PROJECT_DIR$/templates/employerdashindex.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/employerdashindexduplicate.html" afterPath="$PROJECT_DIR$/templates/employerdashindexduplicate.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/employerviewnotifications.html" afterPath="$PROJECT_DIR$/templates/employerviewnotifications.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/projectlisttoassign.html" afterPath="$PROJECT_DIR$/templates/projectlisttoassign.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/viewacceptedprojectworkers.html" afterPath="$PROJECT_DIR$/templates/viewacceptedprojectworkers.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/viewallreviewsadmin.html" afterPath="$PROJECT_DIR$/templates/viewallreviewsadmin.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/viewapprovedemployers.html" afterPath="$PROJECT_DIR$/templates/viewapprovedemployers.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/viewapprovedworkers.html" afterPath="$PROJECT_DIR$/templates/viewapprovedworkers.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/viewmyreviews.html" afterPath="$PROJECT_DIR$/templates/viewmyreviews.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/viewnotifications.html" afterPath="$PROJECT_DIR$/templates/viewnotifications.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/viewpendingemployers.html" afterPath="$PROJECT_DIR$/templates/viewpendingemployers.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/viewpendingworkers.html" afterPath="$PROJECT_DIR$/templates/viewpendingworkers.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/viewproject.html" afterPath="$PROJECT_DIR$/templates/viewproject.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/viewprojectworkers.html" afterPath="$PROJECT_DIR$/templates/viewprojectworkers.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/viewrejectedemployers.html" afterPath="$PROJECT_DIR$/templates/viewrejectedemployers.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/viewrejectedworkers.html" afterPath="$PROJECT_DIR$/templates/viewrejectedworkers.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/viewworkerrequests.html" afterPath="$PROJECT_DIR$/templates/viewworkerrequests.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -116,7 +90,7 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WorkforceManagementSystem/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2289">
+            <state relative-caret-position="757">
               <caret line="121" column="14" lean-forward="false" selection-start-line="121" selection-start-column="4" selection-end-line="121" selection-end-column="14" />
               <folding />
             </state>
@@ -147,7 +121,7 @@
         <entry file="file://$PROJECT_DIR$/templates/viewpendingworkers.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="189">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -276,6 +250,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -416,8 +392,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -749,8 +723,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-108" y="21" width="1918" height="1028" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.160152" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16232356" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1149,7 +1124,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="672">
           <caret line="32" column="143" lean-forward="false" selection-start-line="32" selection-start-column="143" selection-end-line="32" selection-end-column="143" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1164,7 +1138,7 @@
     <entry file="file://$PROJECT_DIR$/templates/viewpendingworkers.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1229,7 +1203,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WorkforceManagementSystem/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2289">
+        <state relative-caret-position="757">
           <caret line="121" column="14" lean-forward="false" selection-start-line="121" selection-start-column="4" selection-end-line="121" selection-end-column="14" />
           <folding />
         </state>
