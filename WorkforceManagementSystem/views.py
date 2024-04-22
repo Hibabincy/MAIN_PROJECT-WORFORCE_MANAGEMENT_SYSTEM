@@ -73,7 +73,33 @@ def actionblockuser(request,id):
     return HttpResponse('''<script>alert('Blocked');window.location="/wForce/adminhome/"</script>''')
 
 
+def actionunblockuser(request, id):
+    try:
+        # Retrieve the original user type before it was blocked
 
+
+        type="worker"
+        if Worker.objects.filter(LOGIN_id=id).exists():
+            type="worker"
+        else:
+            type="employer"
+
+        # worker = Login.objects.filter(id=id).values_list('', flat=True).first()
+
+        # Update the user's status to unblock
+        Login.objects.filter(id=id).update(Type=type)
+
+        # Update reviews related to the user to unblock
+        Review.objects.filter(TOID_id=id).update(time='unblocked')
+
+        # Redirect to a specific page after unblocking
+        return HttpResponse('''<script>alert('Unblocked');window.location="/wForce/adminhome/"</script>''')
+
+    except Exception as e:
+        # Log any exceptions that occur
+        print("Exception occurred:", e)
+        # Return an error response or handle the exception as appropriate
+        return HttpResponse("Error occurred during unblocking user.")
 #
 # def actionblockuser(request,id):
 #     print("jhuyhbhgbu",id)
@@ -99,10 +125,41 @@ def allreviewsadmin(request):
     s=Review.objects.all().order_by('-id')
     return render(request,"viewallreviewsadmin.html",{'data':s})
 
+#
+# def allreviewsadmin_POST(request):
+#
+#     sh=request.POST['search_query']
+#     s = Employer.objects.filter(Companyname__icontains=sh, LOGIN__Type="employer")
+#     return render(request, "viewallreviewsadmin.html", {'data': s})
 
 def allreviewsadmin_POST(request):
+    sh = request.POST.get('search_query', '')
 
-    sh=request.POST['search_query']
+    try:
+        # Filter reviews based on the search query for worker username
+        worker_reviews = Review.objects.filter(TOID__Username__icontains=sh)
+
+        # Filter reviews based on the search query for employer company name
+        # employer_reviews = Review.objects.filter(FROMID__Companyname__icontains=sh)
+
+        # Combine the results
+        reviews = worker_reviews
+
+    except Review.DoesNotExist:
+        reviews = []
+
+    return render(request, "viewallreviewsadmin.html", {'data': reviews})
+
+
+
+
+
+
+
+
+
+
+
 
     # from django.db.models import Q
     #
@@ -111,8 +168,6 @@ def allreviewsadmin_POST(request):
     #
     # return render(request, "viewallreviewsadmin.html", {'data': s,})
 
-    s = Employer.objects.filter(Companyname__icontains=sh, LOGIN__Type="employer")
-    return render(request, "viewallreviewsadmin.html", {'data': s})
 
 
 # def viewnotification(request):
@@ -160,7 +215,7 @@ def ViewNotification_post(request):
     date_from=request.POST['textfield']
     date_to=request.POST['textfield2']
 
-    res=Notifications.objects.filter(Date__range=(date_from,date_to))
+    res=Notifications.objects.filter(Date__range=(date_from,date_to)).order_by('-id')
     return render(request,"viewnotifications.html",{'data':res})
 
 def employerViewNotification(request):
@@ -172,7 +227,7 @@ def employerViewNotification_post(request):
     date_from=request.POST['textfield']
     date_to=request.POST['textfield2']
 
-    res=Notifications.objects.filter(Date__range=(date_from,date_to))
+    res=Notifications.objects.filter(Date__range=(date_from,date_to)).order_by('-id')
     return render(request,"employerviewnotifications.html",{'data':res})
 
 
@@ -207,7 +262,7 @@ def EditNotification_post(request):
 
 def UpdateNotification(request,id):
     res=Notifications.objects.filter(id=id).update(Status='update')
-    return HttpResponse("<script>alert('Notification Removed');window.location='/wForce/ViewNotification/'</script>")
+    return HttpResponse("<script>alert('Notification hided from users');window.location='/wForce/ViewNotification/'</script>")
 
 def UpdateNotification1(request,id):
     res=Notifications.objects.filter(id=id).update(Status='pending')
@@ -809,7 +864,7 @@ def editemployerviewprofile_POST(request):
     g.registration_date=registration_date
     g.save()
 
-    return HttpResponse('''<script>alert('Update Successfull');window.location="/wForce/editemployerviewprofile/"</script>''')
+    return HttpResponse('''<script>alert('Update Successfull');window.location="/wForce/employerviewprofile/"</script>''')
 
 
 
@@ -882,6 +937,8 @@ def viewproject(request):
     for i in g:
         s = Jobrequest.objects.filter(JOBVACANCY__PROJECT_id=i.id, status='assigned', WORKER__LOGIN__Type='worker').count()
         print(s)
+        b=Workerrequest.objects.filter(PROJECT_id=i.id, status='Accepted')
+        s=s+b.count()
 
         l.append({"id":i.id,"status":i.status,"projecttitle":i.projecttitle,"projectdescription":i.projectdescription,"created_date":i.created_date,
                   "duration":i.duration,"projectlocation":i.projectlocation,"no_of_workers":i.no_of_workers,"count":s
@@ -1044,18 +1101,52 @@ def viewjobvacancy(request):
 
 
 def viewprojectworkers(request,id):
+
+    request.session['pid']=id
     # res=Projects.objects.filter(EMPLOYER__LOGIN_id=request.session['lid']).order_by('-id')
     # l=[]
     # p=Projects.objects.filter(EMPLOYER__LOGIN_id=request.session['lid'])
     # for i in p:
-    s=Jobrequest.objects.filter(JOBVACANCY__PROJECT_id=id,status='assigned',WORKER__LOGIN__Type='worker')
+    s=Jobrequest.objects.filter(JOBVACANCY__PROJECT_id=id,status='assigned',WORKER__LOGIN__Type='worker').order_by('-id')
+    w=Workerrequest.objects.filter(PROJECT_id=id,status='Accepted').order_by('-id')
         # ll=[]
         # for m in s:
         #     ll.append(m)
         # v={'project':i,'job':ll}
         # l.append(v)
         # print(l)
-    return render(request,"viewprojectworkers.html",{'data':s})
+    k=len(s)+len(w)
+    print(s)
+    print(w)
+    print(k)
+    if k> 0:
+        k=0
+    else:
+        k=1
+    return render(request,"viewprojectworkers.html",{'data':s,'w':w,'k':k})
+
+def viewprojectworkers_POST(request):
+    search = request.POST['search_query']
+    s = Jobrequest.objects.filter(JOBVACANCY__PROJECT_id=request.session['pid'], status='assigned', WORKER__LOGIN__Type='worker',WORKER__Jobtype__icontains=search).order_by(
+        '-id')
+    w = Workerrequest.objects.filter(PROJECT_id=request.session['pid'], status='Accepted',WORKER__Jobtype__icontains=search).order_by('-id')
+    k = len(s) + len(w)
+    print(s)
+    print(w)
+    print(k)
+    if k > 0:
+        k = 0
+    else:
+        k = 1
+    return render(request, "viewprojectworkers.html", {'data': s, 'w': w, 'k': k})
+
+# def viewprojectworkers_POST(request):
+#     search_query = request.POST.get('search_query', '')  # Get the search query from POST data
+#     project_id = request.POST.get('project_id', '')  # Assuming you're also passing project_id in POST data
+#     # Assuming Workerrequest and Worker models are related via a ForeignKey and Jobtype is a field in Worker model
+#     w = Workerrequest.objects.filter(PROJECT_id=project_id, status='Accepted', WORKER__Jobtype__icontains=search_query).order_by('-id')
+#     return render(request, "viewprojectworkers.html", {'data': w})
+
 
 
 def addjobvacancy(request):
@@ -1150,11 +1241,6 @@ def deletejobvacancy(request,id):
 #
 #
 #
-# def viewjobvacancy_POST(request):
-#     search= request.POST['textfield']
-#
-#     b = Projects.objects.filter(Type__icontains=search)
-#     return render(request, "viewjobvacancy.html", {'data': b})
 
 
 def viewsearchedworkers(request):
@@ -1899,6 +1985,21 @@ def viewjobvacancyworkermore(request):
                   'vacancynumber':i.eno_of_vaccancy,
                   's':s})
 
+# def applyforjob(request):
+#     lid=request.POST['lid']
+#     jid=request.POST['jid']
+#
+#     if Jobrequest.objects.filter(JOBVACANCY_id=jid,WORKER=Worker.objects.get(LOGIN_id=lid)).exists():
+#         return JsonResponse({'status': 'no'})
+#
+#     jobj=Jobrequest()
+#     jobj.JOBVACANCY_id=jid
+#     jobj.WORKER=Worker.objects.get(LOGIN_id=lid)
+#     jobj.date=datetime.datetime.now().strftime("%d-%m-%Y")
+#     jobj.status="pending"
+#     jobj.save()
+#
+#     return JsonResponse({'status': 'ok'})
 def applyforjob(request):
     lid=request.POST['lid']
     jid=request.POST['jid']
@@ -2027,6 +2128,7 @@ def Viewemployerrequestsworker(request):
                   'date':i.date,
                   'Location':i.PROJECT.EMPLOYER.Place,
                   'status':i.status,
+                  'pid':i.PROJECT.id,
                   })
         print(l,"lllllllllllllllll")
     return JsonResponse({'status': 'ok',"data":l})
@@ -2160,11 +2262,23 @@ def user_viewchat(request):
 def acceptrprojectrequest(request):
     id=request.POST['id']
     lid=request.POST['lid']
-    # if Workerrequest.objects.filter(WORKER_id=Worker.objects.get(LOGIN_id=lid)).exists():
-    #     return JsonResponse({"status": "no", })
+    pid=request.POST['pid']
 
-    Workerrequest.objects.filter(id=id).update(status="Accepted")
-    return JsonResponse({"status": "ok",})
+    s = Workerrequest.objects.filter(PROJECT__id=pid, status='Accepted')
+    if s.exists():
+        return JsonResponse({"status":"none"})
+    elif Jobrequest.objects.filter(JOBVACANCY__PROJECT__id=pid, status="assigned").exists():
+        return JsonResponse({"status":"no"})
+    else:
+        Workerrequest.objects.filter(id=id).update(status='Accepted')
+        return JsonResponse({"status": "ok", })
+
+
+
+
+
+
+
 
 def rejectprojectrequest(request):
     id = request.POST['id']
@@ -2173,7 +2287,7 @@ def rejectprojectrequest(request):
 
 
 def viewacceptedprojectrequests(request):
-    res=Workerrequest.objects.filter(PROJECT__EMPLOYER__LOGIN_id=request.session['lid'],status='Accepted').order_by('-id')
+    res=Workerrequest.objects.filter(PROJECT__EMPLOYER__LOGIN_id=request.session['lid'],status='pending').order_by('-id')
     return render(request, "viewacceptedprojectworkers.html",{"data":res})
 
 def viewacceptedprojectrequests_POST(request):
@@ -2230,6 +2344,29 @@ def viewassigedworks(request):
                       'status': i.status,
                       })
             print(l, "lllllllllllllllll")
+
+        p=Workerrequest.objects.filter(WORKER__LOGIN_id=lid)
+
+        for i in p:
+            l.append({
+                'id': i.id,
+                'pid': i.PROJECT.id,
+                      'Company': i.PROJECT.EMPLOYER.Companyname,
+                      'emid':i.PROJECT.EMPLOYER.id,
+                    "loginid":i.PROJECT.EMPLOYER.LOGIN.id,
+                      'projectdescription': i.PROJECT.projectdescription,
+                      'projectlocation': i.PROJECT.projectlocation,
+                      'projecttitle': i.PROJECT.projecttitle,
+                      'duration': i.PROJECT.duration,
+                      'jobtitle': i.PROJECT.projectdescription,
+                      'no_of_workers': i.PROJECT.no_of_workers,
+                      'date': i.date,
+                      'status': i.status,
+                      })
+            print(l, "lllllllllllllllll")
+
+
+
         return JsonResponse({'status': 'ok', "data": l})
 
 def viewmyprojectmoreworker(request):
@@ -2255,6 +2392,31 @@ def updateprojectstatus(request):
     pid=request.POST['pid']
     Workerrequest.objects.filter(id=pid).update(status='completed')
     return JsonResponse({'status': 'ok'})
+
+
+
+
+
+
+
+
+def assigningtoprojectbyrequest(request,id,pid):
+    s= Workerrequest.objects.get(PROJECT__id=pid,status='Accepted')
+    if s.exists():
+        return HttpResponse("<script>alert('Already Assigned');window.location='/wForce/viewproject/'</script>")
+    elif Jobrequest.objects.get(JOBVACANCY__PROJECT__id=pid,status="assigned").exists():
+        return HttpResponse("<script>alert('Already Assigned');window.location='/wForce/viewproject/'</script>")
+    else:
+        Workerrequest.objects.filter(id=id).update(status='Accepted')
+        return  HttpResponse("<script>alert('Operation done');window.location='/wForce/viewproject/'</script>")
+
+
+
+
+
+
+
+
 
 
 # ===========================================================================================================================================
@@ -2287,7 +2449,7 @@ from django.db.models import Subquery, OuterRef
 #
 def viewallworkerchats(request):
     e=request.session['lid']
-    worker_chats = Chat.objects.filter(TOID_id=e)
+    worker_chats = Chat.objects.filter(TOID_id=e).order_by('-id')
     l=[]
     existIds = []
     for i in worker_chats:
@@ -2307,7 +2469,7 @@ def viewallworkerchats(request):
 
 def allchatscompany(request):
     e = request.POST['lid']
-    employer_chats = Chat.objects.filter(TOID_id=e)
+    employer_chats = Chat.objects.filter(TOID_id=e).order_by('-id')
     l = []
     existIds = []
     for i in employer_chats:

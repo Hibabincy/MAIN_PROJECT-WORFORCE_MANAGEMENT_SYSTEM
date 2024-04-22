@@ -8,7 +8,7 @@
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <a href="/wForce/viewapprovedemployers/" class="btn btn-secondary" style="background-color: darkseagreen">
-  <i class="fas fa-arrow-left" style="color: white"></i> <!-- Font Awesome back arrow icon -->
+  <i class="fas fa-sync-alt" style="color: white"></i> <!-- Font Awesome back arrow icon -->
 </a>
 <form action="/wForce/viewapprovedemployers_POST/#about" method="post">
 
@@ -41,7 +41,7 @@
 {#                            <p class="card-text" style="font-size: 12px;"><strong>Email:</strong> {{ i.Email }}</p>#}
 {#                            <p class="card-text" style="font-size: 12px;"><strong>Registered Date:</strong> {{ i.registration_date }}</p>#}
                             <a href="/wForce/viewapprovedemployersmore/{{ i.LOGIN.id }}" class="btn btn-success btn-sm mt-auto">View Profile</a>
-                          <br>  <a href="/wForce/blockemployer/{{ i.LOGIN.id }}" class="btn btn-danger btn-sm mt-auto">Block</a>
+{#                          <br>  <a href="/wForce/blockemployer/{{ i.LOGIN.id }}" class="btn btn-danger btn-sm mt-auto">Block</a>#}
                         </div>
                     </div>
                 </div>

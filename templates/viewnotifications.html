@@ -1,19 +1,55 @@
 {% extends "admindashinboxduplicate.html" %}
 {% block body %}
 <body style="background-color: #629aa9">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+    .custom-table-container {
+        display: inline-block;
+        max-width: 100%;
+        overflow-x: auto; /* Enable horizontal scroll if needed */
+    }
+
+    .custom-table {
+        width: max-content;
+        width: -moz-max-content;
+    }
+</style>
+    <a href="/wForce/ViewNotification/" class="btn btn-secondary" style="background-color: darkseagreen">
+  <i class="fas fa-sync-alt" style="color: white"></i> <!-- Font Awesome back arrow icon -->
+</a>
 <form action="/wForce/ViewNotification_post/" method="post">
-    <br><br>
+{#    <br><br>#}
     <h1 align="center" style="font-family: Arial, sans-serif; font-weight: normal; font-size: 24px; color: white; color: black;"><b>NOTIFICATIONS</b></h1>
+
+<br>
+ <a href="/wForce/AddNotification/" class="btn btn-primary" style="background-color: #4F52BA"><i class="fas fa-plus fa-2x"></i> Add </a>
+    <br><br>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <br><br>
-    <a href="/wForce/AddNotification/" class="btn btn-primary"><i class="fas fa-plus fa-2x"></i> Add </a>
-    <br><br>
+    <br>
+ <form action="/wForce/ViewNotification_post/" method="post">
+      {% csrf_token %}
+      <table class="px pull-left">
+  <tr>
+    <th>From date &nbsp;</th>&nbsp;&nbsp;&nbsp;
+    <td><input type="Date" name="textfield" id="textfield" /></td>&nbsp;&nbsp;
+    <th>&nbsp;&nbsp;&nbsp;To</th>
+    <td><input type="Date" name="textfield2" id="textfield2" /></td>
+    <td><input type="submit" name="button" id="button" value="Search" class=" btn btn-primary" style="background-color: goldenrod"/></td>
+
+  </tr>
+
+ </table>
+    </form>
+<br><br>
+{#    <br>#}
+
     {% csrf_token%}
 {# <div class="card">#}
 {#        <div class="card-body">#}
-    <div class="table-responsive " >
-        <table class="table" style="font-family: Arial,sans-serif; background-color: white;font-size: 14px;">
-            <thead>
+   <div class="custom-table-container">
+    <table class="table custom-table" style="font-family: Arial, sans-serif; background-color: white; font-size: 14px;">
+         <thead>
                 <tr>
                     <th style="background-color: #b8c9f1; font-size: 14px;">Sl no</th>
                     <th style="background-color: #b8c9f1; font-size: 14px;">Notification title</th>
@@ -43,7 +79,7 @@
             </tbody>
         </table>
 {#    </div>#}
-{#        </div>#}
+        </div>
 </form>
 </body>
 {% endblock %}

@@ -8,6 +8,12 @@
 
 {% extends "employerdashindexduplicate.html" %}
 {% block body %}
+    <body>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <a href="/wForce/viewjobvacancy/" class="btn btn-secondary" style="background-color: #cfe7d0;">
+  <i class="fas fa-arrow-left" style="color: #629aa9"></i> <!-- Font Awesome back arrow icon -->
+</a>
  <center>
     <span style="color: #0a0a0a">
         <h2 style="color: #0096FF; font-weight: bold;">ADD JOBVACANCY</h2>
@@ -15,6 +21,7 @@
 </center><br>
 
 <body>
+
 <form action="/wForce/addjobvacancy_POST/" method="post" style="background-color: rebeccapurple" onsubmit="return validateDates()">
     <div class="card">
         <div class="card-body">

@@ -76,6 +76,7 @@ urlpatterns = [
     path('demotable/', views.demotable),
     path('allreviewsadmin/', views.allreviewsadmin),
     path('actionblockuser/<id>', views.actionblockuser),
+    path('assigningtoprojectbyrequest/<id>/<pid>', views.assigningtoprojectbyrequest),
 
 
 
@@ -94,7 +95,7 @@ urlpatterns = [
     path('UpdateNotification1/<id>', views.UpdateNotification1),
     path('WorkerViewNotification/', views.WorkerViewNotification),
     path('blockedusers/', views.blockedusers),
-
+    path('actionunblockuser/<int:id>/', views.actionunblockuser, name='actionunblockuser'),
 
 
 
@@ -150,6 +151,7 @@ urlpatterns = [
     path('assigningtoproject_post/',views.assigningtoproject_post),
     path('viewassigedworks/',views.viewassigedworks),
     path('viewprojectworkers/<id>',views.viewprojectworkers),
+    path('viewprojectworkers_POST/',views.viewprojectworkers_POST),
 
     path('searchproject/',views.searchproject),
     path('searchproject_post/',views.searchproject_post),
@@ -188,6 +190,11 @@ urlpatterns = [
 
     path('viewemployerprofilemorejb/', views.viewemployerprofilemorejb),
     path('viewallworkerchats/', views.viewallworkerchats),
+
+
+
+
+
 
 
 
