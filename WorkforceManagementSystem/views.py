@@ -271,7 +271,8 @@ def UpdateNotification1(request,id):
 
 
 def WorkerViewNotification(request):
-    n=Notifications.objects.filter(Status='pending').order_by('-id')
+    se=request.POST['search']
+    n=Notifications.objects.filter(Status='pending',Date__icontains=se).order_by('-id')
     no=[]
     for i in n:
         no.append({'id':i.id,'Notification':i.Notification_name,
@@ -1776,7 +1777,8 @@ def flutterlogin(request):
 
 
         if a.Type == 'worker':
-            return JsonResponse({'status': 'ok',"lid":a.id})
+            w=Worker.objects.get(LOGIN__id=a.id)
+            return JsonResponse({'status': 'ok',"lid":a.id,"wskill":w.Skills})
         else:
             return JsonResponse({'status': 'no'})
     else:
@@ -1937,10 +1939,23 @@ def viewjobvacancyworker(request):
     location=request.POST["value"]
     jobtitle=request.POST["value"]
     district=request.POST["value"]
+    wskill=request.POST['wskill']
+    print(wskill,'blueeeeeblyyyyyyyyyy')
     lid=request.POST['lid']
-    p=Jobvaccancy.objects.filter(location__icontains=location)|Jobvaccancy.objects.filter(jobtitle__icontains=jobtitle)|Jobvaccancy.objects.filter(district__icontains=district).order_by('-id')
+    worker_skills = Worker.objects.get(LOGIN_id=lid).Skills.split(",")
+
+    # Query to filter Jobvacancy objects
+    p = Jobvaccancy.objects.none()
+
+    for skill in worker_skills:
+        p |= Jobvaccancy.objects.filter(skills__icontains=skill.strip(),jobtitle__icontains=jobtitle)|Jobvaccancy.objects.filter(skills__icontains=skill.strip(),district__icontains=district)
+
+    p = p.order_by('-id').distinct()
+    # p=Jobvaccancy.objects.filter(location__icontains=location)|Jobvaccancy.objects.filter(jobtitle__icontains=jobtitle)|Jobvaccancy.objects.filter(district__icontains=district)|Jobvaccancy.objects.filter(skills=wskill).order_by('-id')
     l=[]
+    print(p,'ghdfgppppppppp')
     for i in p:
+        print(i,"hlooooooooooooooooooooooooooooo")
         s='yes'
         if Jobrequest.objects.filter(JOBVACANCY=i.id,WORKER=Worker.objects.get(LOGIN_id=lid)).exists():
             s='no'
@@ -1958,6 +1973,7 @@ def viewjobvacancyworker(request):
                   'Skills':i.skills,
                   'No_of_vacancy':i.eno_of_vaccancy,
                   's':s})
+
     return JsonResponse({'status': 'ok',"data":l})
 
 def viewjobvacancyworkermore(request):
@@ -2060,6 +2076,77 @@ def viewemployerprofilemore(request):
                              'Photo3': i.Photo3,
                              'Aboutcompany':i.Aboutcompany,
                            })
+#
+# def viewrequestedemployerprofile(request):
+#
+#         lid =request.POST['lid']
+#         eid =request.POST['eid']
+#         # i = Employer.objects.get(id=lid)
+#         i = Employer.objects.get(LOGIN__id=eid)
+#         # if Jobrequest.objects.filter(EMPLOYER=i.id, WORKER=Worker.objects.get(LOGIN_id=lid)).exists():
+#         #     s = 'no'
+#         return JsonResponse({'status': 'ok', 'id': i.LOGIN.id,
+#                              'Companyname': i.Companyname,
+#                              'Email': i.Email,
+#                              'Phone': i.Phone,
+#                              'Photo': i.Photo,
+#                              'District': i.District,
+#                              'Place': i.Place,
+#                              'Post': i.Post,
+#                              'State': i.State,
+#                              'Pincode': i.Pincode,
+#                              'Category': i.Category,
+#                              'Website': i.Website,
+#                              'Photo1': i.Photo1,
+#                              'Photo2': i.Photo2,
+#                              'Photo3': i.Photo3,
+#                              'Aboutcompany':i.Aboutcompany,
+#                            })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def viewrequestedemployerprofile(request):
+        eid =request.POST['eid']
+        i = Workerrequest.objects.get(id=eid)
+        return JsonResponse({'status': 'ok',
+                             'id': i.PROJECT.EMPLOYER.id,
+                             'Companyname': i.PROJECT.EMPLOYER.Companyname,
+                             'Email': i.PROJECT.EMPLOYER.Email,
+                             'Phone': i.PROJECT.EMPLOYER.Phone,
+                             'Photo': i.PROJECT.EMPLOYER.Photo,
+                             'District': i.PROJECT.EMPLOYER.District,
+                             'Place': i.PROJECT.EMPLOYER.Place,
+                             'Post': i.PROJECT.EMPLOYER.Post,
+                             'State': i.PROJECT.EMPLOYER.State,
+                             'Pincode': i.PROJECT.EMPLOYER.Pincode,
+                             'Category': i.PROJECT.EMPLOYER.Category,
+                             'Website': i.PROJECT.EMPLOYER.Website,
+                             'Photo1': i.PROJECT.EMPLOYER.Photo1,
+                             'Photo2': i.PROJECT.EMPLOYER.Photo2,
+                             'Photo3': i.PROJECT.EMPLOYER.Photo3,
+                             'Aboutcompany':i.PROJECT.EMPLOYER.Aboutcompany,
+                           })
+
+
+
+
+
+
+
+
+
 
 def viewemployerprofilemorejobvacancy(request):
 
@@ -2087,31 +2174,65 @@ def viewemployerprofilemorejobvacancy(request):
                              'Aboutcompany':i.Aboutcompany,
                            })
 
-def viewemployerprofilemorejb(request):
+# def viewemployerprofilemorejb(request):
+#
+#         lid =request.POST['lid']
+#         eid =request.POST['eid']
+#         # i = Employer.objects.get(id=lid)
+#         i = Employer.objects.get(LOGIN__id=eid)
+#         # if Jobrequest.objects.filter(EMPLOYER=i.id, WORKER=Worker.objects.get(LOGIN_id=lid)).exists():
+#         #     s = 'no'
+#         return JsonResponse({'status': 'ok', 'id': i.id,
+#                              'Companyname': i.Companyname,
+#                              'Email': i.Email,
+#                              'Phone': i.Phone,
+#                              'Photo': i.Photo,
+#                              'District': i.District,
+#                              'Place': i.Place,
+#                              'Post': i.Post,
+#                              'State': i.State,
+#                              'Pincode': i.Pincode,
+#                              'Category': i.Category,
+#                              'Website': i.Website,
+#                              'Photo1': i.Photo1,
+#                              'Photo2': i.Photo2,
+#                              'Photo3': i.Photo3,
+#                              'Aboutcompany':i.Aboutcompany,
+#                            })
 
-        lid =request.POST['lid']
-        eid =request.POST['eid']
-        # i = Employer.objects.get(id=lid)
-        i = Employer.objects.get(LOGIN__id=eid)
-        # if Jobrequest.objects.filter(EMPLOYER=i.id, WORKER=Worker.objects.get(LOGIN_id=lid)).exists():
-        #     s = 'no'
-        return JsonResponse({'status': 'ok', 'id': i.id,
-                             'Companyname': i.Companyname,
-                             'Email': i.Email,
-                             'Phone': i.Phone,
-                             'Photo': i.Photo,
-                             'District': i.District,
-                             'Place': i.Place,
-                             'Post': i.Post,
-                             'State': i.State,
-                             'Pincode': i.Pincode,
-                             'Category': i.Category,
-                             'Website': i.Website,
-                             'Photo1': i.Photo1,
-                             'Photo2': i.Photo2,
-                             'Photo3': i.Photo3,
-                             'Aboutcompany':i.Aboutcompany,
-                           })
+
+
+
+
+
+
+
+
+def viewemployerprofilemorejb(request):
+    lid = request.POST['lid']
+    eid = request.POST['eid']
+    # i = Employer.objects.get(id=lid)
+    i = Employer.objects.get(LOGIN__id=eid)
+    # if Jobrequest.objects.filter(EMPLOYER=i.id, WORKER=Worker.objects.get(LOGIN_id=lid)).exists():
+    #     s = 'no'
+    return JsonResponse({'status': 'ok', 'id': i.id,
+                         'Companyname': i.Companyname,
+                         'Email': i.Email,
+                         'Phone': i.Phone,
+                         'Photo': i.Photo,
+                         'District': i.District,
+                         'Place': i.Place,
+                         'Post': i.Post,
+                         'State': i.State,
+                         'Pincode': i.Pincode,
+                         'Category': i.Category,
+                         'Website': i.Website,
+                         'Photo1': i.Photo1,
+                         'Photo2': i.Photo2,
+                         'Photo3': i.Photo3,
+                         'Aboutcompany': i.Aboutcompany,
+                         })
+
 
 def Viewemployerrequestsworker(request):
     lid=request.POST['lid']
@@ -2120,7 +2241,6 @@ def Viewemployerrequestsworker(request):
     for i in p:
         l.append({'id':i.id,
                   'created_date':i.PROJECT.created_date,
-
                   'Company':i.PROJECT.EMPLOYER.Companyname,
                   'Photo':i.PROJECT.EMPLOYER.Photo,
                   'email':i.PROJECT.EMPLOYER.Email,
@@ -2129,6 +2249,7 @@ def Viewemployerrequestsworker(request):
                   'Location':i.PROJECT.EMPLOYER.Place,
                   'status':i.status,
                   'pid':i.PROJECT.id,
+                  'eid':i.PROJECT.EMPLOYER.id,
                   })
         print(l,"lllllllllllllllll")
     return JsonResponse({'status': 'ok',"data":l})
@@ -2325,9 +2446,11 @@ def assigningtoproject_post(request):
 
 
 
+
 def viewassigedworks(request):
         lid = request.POST['lid']
-        p = Jobrequest.objects.filter(WORKER__LOGIN_id=lid).order_by('-id')
+        se = request.POST['value']
+        p = Jobrequest.objects.filter(WORKER__LOGIN_id=lid,date__icontains=se,status='assigned').order_by('-id')|Jobrequest.objects.filter(WORKER__LOGIN_id=lid,JOBVACANCY__PROJECT__projecttitle__icontains=se,status="assigned").order_by('-id')
         l = []
         for i in p:
             l.append({
@@ -2345,7 +2468,7 @@ def viewassigedworks(request):
                       })
             print(l, "lllllllllllllllll")
 
-        p=Workerrequest.objects.filter(WORKER__LOGIN_id=lid)
+        p=Workerrequest.objects.filter(WORKER__LOGIN_id=lid,date__icontains=se,status="Accepted").order_by('-id')|Workerrequest.objects.filter(WORKER__LOGIN_id=lid,PROJECT__projecttitle__icontains=se,status="Accepted")
 
         for i in p:
             l.append({
@@ -2368,6 +2491,54 @@ def viewassigedworks(request):
 
 
         return JsonResponse({'status': 'ok', "data": l})
+
+
+def workerview_works_status(request):
+    lid = request.POST['lid']
+    se = request.POST['value']
+    p = Jobrequest.objects.filter(WORKER__LOGIN_id=lid, status__icontains=se,status__in=['accepted', 'pending']).order_by('-id') | Jobrequest.objects.filter(WORKER__LOGIN_id=lid,
+                                           JOBVACANCY__PROJECT__projecttitle__icontains=se,status__in=['accepted', 'pending']).order_by('-id')
+    l = []
+    for i in p:
+        l.append({
+            'id': i.id,
+            'pid': i.JOBVACANCY.PROJECT.id,
+            'Company': i.JOBVACANCY.EMPLOYER.Companyname, 'emid': i.JOBVACANCY.EMPLOYER.id,
+            "loginid": i.JOBVACANCY.EMPLOYER.LOGIN.id,
+            'projectdescription': i.JOBVACANCY.PROJECT.projectdescription,
+            'projectlocation': i.JOBVACANCY.PROJECT.projectlocation,
+            'projecttitle': i.JOBVACANCY.PROJECT.projecttitle,
+            'duration': i.JOBVACANCY.PROJECT.duration,
+            'jobtitle': i.JOBVACANCY.jobfield,
+            'no_of_workers': i.JOBVACANCY.PROJECT.no_of_workers,
+            'date': i.date,
+            'status': i.status,
+        })
+        print(l, "lllllllllllllllll")
+
+    p = Workerrequest.objects.filter(WORKER__LOGIN_id=lid, date__icontains=se,status='pending') | Workerrequest.objects.filter(
+        WORKER__LOGIN_id=lid, PROJECT__projecttitle__icontains=se,status='pending').order_by('-id')
+
+    for i in p:
+        l.append({
+            'id': i.id,
+            'pid': i.PROJECT.id,
+            'Company': i.PROJECT.EMPLOYER.Companyname,
+            'emid': i.PROJECT.EMPLOYER.id,
+            "loginid": i.PROJECT.EMPLOYER.LOGIN.id,
+            'projectdescription': i.PROJECT.projectdescription,
+            'projectlocation': i.PROJECT.projectlocation,
+            'projecttitle': i.PROJECT.projecttitle,
+            'duration': i.PROJECT.duration,
+            'jobtitle': i.PROJECT.projectdescription,
+            'no_of_workers': i.PROJECT.no_of_workers,
+            'date': i.date,
+            'status': i.status,
+        })
+        print(l, "lllllllllllllllll")
+
+    return JsonResponse({'status': 'ok', "data": l})
+
 
 def viewmyprojectmoreworker(request):
     jid=request.POST['pid']

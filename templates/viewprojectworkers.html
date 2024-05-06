@@ -37,7 +37,7 @@
                 {% csrf_token %}
                 <thead class="thead-dark">
                     <tr style="background-color: #b8c9f1">
-                        <th scope="col">Sl.No</th>
+{#                        <th scope="col">Sl.No</th>#}
                         <th scope="col">Work field</th>
                         <th scope="col">Worker Name</th>
                         <th scope="col">Photo</th>
@@ -48,7 +48,7 @@
                 <tbody>
                 {% for i in data %}
                 <tr>
-                    <td>{{ forloop.counter }}</td>
+{#                    <td>{{ forloop.counter }}</td>#}
 
                      <td>{{ i.WORKER.Jobtype }}</td>
                     <td>{{ i.WORKER.Username }}</td>
@@ -78,7 +78,7 @@
 
                   {% for i in w %}
                 <tr>
-                    <td>{{ forloop.counter }}</td>
+{#                    <td>{{ forloop.counter }}</td>#}
 
                     <td>{{ i.WORKER.Jobtype }}</td>
                     <td>{{ i.WORKER.Username }}</td>

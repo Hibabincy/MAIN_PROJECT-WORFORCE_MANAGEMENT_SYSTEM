@@ -149,7 +149,10 @@ urlpatterns = [
     path('employerrequesttoworker/<id>',views.employerrequesttoworker),
     path('assigningtoproject/<id>',views.assigningtoproject),
     path('assigningtoproject_post/',views.assigningtoproject_post),
+
     path('viewassigedworks/',views.viewassigedworks),
+    path('workerview_works_status/',views.workerview_works_status),
+
     path('viewprojectworkers/<id>',views.viewprojectworkers),
     path('viewprojectworkers_POST/',views.viewprojectworkers_POST),
 
@@ -160,7 +163,16 @@ urlpatterns = [
     path('viewsearchedworkers_post/', views.viewsearchedworkers_post),
     path('viewsearchedworkerprofile/<id>',views.viewsearchedworkerprofile),
     path('viewandsearchemployer/',views.viewandsearchemployer),
+
+
+
+
     path('viewemployerprofilemore/',views.viewemployerprofilemore),
+    path('viewrequestedemployerprofile/',views.viewrequestedemployerprofile),
+
+
+
+
     path('viewapprovedjobrequests/<id>',views.viewapprovedjobrequests),
     path('viewapprovedjobrequests_POST/',views.viewapprovedjobrequests),
     path('Viewemployerrequestsworker/',views.Viewemployerrequestsworker),
